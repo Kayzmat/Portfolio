@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="/style/contact.css">
+</head>
+<body>
+    <!-- Section du formulaire de contact -->
+    <section class="form-section">
+        <h2>Contactez-moi</h2>
+        <form action="https://formspree.io/f/meoaojog" method="post" class="contact-form"> <!-- Formulaire de contact avec action vers Formspree -->
+            <div class="form-group">
+                <label for="name">Nom</label>
+                <input type="text" id="name" name="name" required> 
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required> 
+            </div>
+            <div class="form-group">
+                <label for="tel">Numéro de téléphone</label>
+                <input type="tel" id="tel" name="tel" required>
+            </div>
+            <div class="form-group">
+                <label for="raison">Objet de votre demande</label>
+                <input type="text" id="raison" name="raison" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn">Envoyer</button>
+        </form>
+        <div id="confirmation-message" style="display: none;">
+            <p>Merci pour votre message. Nous vous répondrons dès que possible.</p>
+        </div>
+    </section> 
+
+    <script>
+        // Script pour gérer l'envoi du formulaire et afficher le message de confirmation
+        const form = document.querySelector('.contact-form');
+        const confirmationMessage = document.getElementById('confirmation-message'); 
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêcher le comportement par défaut du formulaire
+            const formData = new FormData(form);
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    form.reset(); // Réinitialiser le formulaire
+                    confirmationMessage.style.display = 'block'; // Afficher le message de confirmation
+                } else {
+                    alert('Une erreur est survenue. Veuillez réessayer.');
+                }
+            }).catch(error => {
+                alert('Une erreur est survenue. Veuillez réessayer.');
+            });
+        });
+    </script>
+
+    <!-- Inclusion de la barre de navigation -->
+    <div w3-include-html="navbar.html"></div>
+    <script src="/js/include.js"></script>
+    <script>
+        includeHTML();
+    </script>
+    <script src="/js/scroll_navbar.js"></script>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div>
+            © 2025 Matéo Gonçalves Mota — Portfolio. Tous droits réservés.
+        </div>
+        <nav class="footer-links">
+            <a href="/HTML/Accueil.html">Accueil</a> |
+            <a href="/HTML/QuiSuisJe.html">Qui suis-je</a> |
+            <a href="/HTML/projets.html">Réalisations</a> |
+            <a href="/HTML/Competences.html">Compétences</a> |
+            <a href="/HTML/Contact.html">Contact</a>
+        </nav>
+    </footer>
+</body>
+</html>

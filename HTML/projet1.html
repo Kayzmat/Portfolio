@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1 - Windows/Linux</title>
+    <link rel="stylesheet" href="/style/projet1.css">
+</head>
+<body>
+    <section class="project-details-section">
+        <h2>Projet 1 - Windows/Linux</h2>
+        <div class="project-details">
+            <div class="project-description">
+                <img src="/img/windows_linux.png" alt="Projet 1" class="clickable-image">
+                <h3>Description du Projet</h3><br>
+                <p>Ce projet consistait a créer une domaine sur windows 2019 avec un certain nombre de compte utilisateur et connecté à celui-ci 2 postes clients windows ainsi qu'un serveur web sur linux (debian). Ces postes windows devaient posséder un antivirus aisni que LibreOffice. Sur le serveur web on devait créer une page web et faire en sorte qu'on puisse y accéder à partir des clients windows.</p>
+            </div>
+            <div class="project-pages">
+                <h3>Le projet est divisé en 4 parties</h3>
+                <ul>
+                    <li>
+                        <img src="/img/domaine_windows.png" alt="Domaine windows" class="clickable-image">
+                        <p>Première partie : création du domaine "humanlab.local" et des utilisateurs</p>
+                    </li>
+                    <li>
+                        <img src="/img/clients_windows.png" alt="Client windows et logiciels" class="clickable-image">
+                        <p>Deuxième partie : Connexion au domaine des clients windows et installations des logiciels.</p>
+                    </li>
+                    <li>
+                        <img src="/img/connexion_domaine_debian.png" alt="Connexion debian au domaine" class="clickable-image">
+                        <p>Troisième partie : Création et connexion au domaine de le poste debian.</p>
+                    </li>
+                    <li>
+                        <img src="/img/page_web_debian.png" alt="Contact" class="clickable-image">
+                        <p>Quatrième partie : Création de la page web sur le poste debian.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="project-challenges">
+                <h3>Défis</h3>
+                <ul>
+                    <li>Connecté tout les postes au domaine.</li>
+                    <li>Apprendre à utiliser un poste sur debian.</li>
+                    <li>Créer une page web sur debian.</li>
+                </ul>
+            </div>
+            <div class="project-features">
+                <h3>Contraintes appliquées</h3>
+                <ul>
+                    <li>
+                        <img src="/img/carrousel.png" alt="Carrousel" class="clickable-image">
+                        <p>Carrousel d'images pour les produits.</p>
+                    </li>
+                    <li>
+                        <img src="/img/map_footer.png" alt="Map Footer" class="clickable-image">
+                        <p>Map dans le footer pour montrer l'emplacement de l'entreprise</p>
+                    </li>
+                    <li>
+                        <img src="/img/mentions_legales.png" alt="Mentions Légales" class="clickable-image">
+                        <p>Page mentions légales</p>
+                    </li>
+                    <li>
+                        <img src="/img/page_erreur.png" alt="Page Erreur" class="clickable-image">
+                        <p>Page d'erreur : la page où les utilisateurs vont être redirigés si l'url est mauvaise</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+    
+    <script>
+        // Modal Image Script
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        const closeModal = document.getElementsByClassName("close")[0];
+
+        document.querySelectorAll('.clickable-image').forEach(img => {
+            img.onclick = function() {
+                modal.style.display = "flex";
+                modalImg.src = this.src;
+            }
+        });
+
+        closeModal.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    <!-- Inclusion de la barre de navigation -->
+    <div w3-include-html="navbar.html"></div>
+    <script src="/js/include.js"></script>
+    <script>
+        includeHTML();
+    </script>
+    <script src="/js/scroll_navbar.js"></script>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div>
+            © 2025 Matéo Gonçalves Mota — Portfolio. Tous droits réservés.
+        </div>
+        <nav class="footer-links">
+            <a href="/HTML/Accueil.html">Accueil</a> |
+            <a href="/HTML/QuiSuisJe.html">Qui suis-je</a> |
+            <a href="/HTML/projets.html">Réalisations</a> |
+            <a href="/HTML/Competences.html">Compétences</a> |
+            <a href="/HTML/Contact.html">Contact</a>
+        </nav>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 2 - BST 79</title>
+    <link rel="stylesheet" href="/style/projet2.css">
+</head>
+<body>
+    <section class="project-details-section">
+        <h2>Projet 2 - BST 79</h2>
+        <div class="project-details">
+            <div class="project-description">
+                <img src="/img/accueil_bst79.png" alt="Projet 2" class="clickable-image">
+                <h3>Description du Projet</h3><br>
+                <p>Ce projet consistait à créer un site vitrine pour l'entreprise BST 79 en utilisant WordPress. Le site présente les produits et services offerts par l'entreprise, ainsi que des informations sur l'entreprise.</p>
+                <a href="https://bst79.fr/" class="btn-visit" target="_blank">Visiter le site</a>
+            </div>
+            <div class="project-pages">
+                <h3>Le site est composé de 4 pages principales</h3>
+                <ul>
+                    <li>
+                        <img src="/img/accueil_bst79.png" alt="Accueil" class="clickable-image">
+                        <p>Accueil : Courte présentation de l'entreprise et les partenaires.</p>
+                    </li>
+                    <li>
+                        <img src="/img/produits_et_services.png" alt="Produits et Services" class="clickable-image">
+                        <p>Produits et services : Produits et services proposés.</p>
+                    </li>
+                    <li>
+                        <img src="/img/a_propos.png" alt="A propos" class="clickable-image">
+                        <p>A propos : Informations sur l'entreprise.</p>
+                    </li>
+                    <li>
+                        <img src="/img/contact.png" alt="Contact" class="clickable-image">
+                        <p>Contact : Informations de contact de l'entreprise et formulaire de contact.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="project-challenges">
+                <h3>Défis</h3>
+                <ul>
+                    <li>Apprendre à utiliser WordPress</li>
+                    <li>Apprendre à faire un site vitrine avec un design professionnel</li>
+                    <li>Respecter le cahier des charges tout en ajoutant des fonctionnalités bonus que l'on trouvait pertinentes.</li>
+                </ul>
+            </div>
+            <div class="project-features">
+                <h3>Fonctionnalités et pages ajoutées</h3>
+                <ul>
+                    <li>
+                        <img src="/img/carrousel.png" alt="Carrousel" class="clickable-image">
+                        <p>Carrousel d'images pour les produits.</p>
+                    </li>
+                    <li>
+                        <img src="/img/map_footer.png" alt="Map Footer" class="clickable-image">
+                        <p>Map dans le footer pour montrer l'emplacement de l'entreprise</p>
+                    </li>
+                    <li>
+                        <img src="/img/mentions_legales.png" alt="Mentions Légales" class="clickable-image">
+                        <p>Page mentions légales</p>
+                    </li>
+                    <li>
+                        <img src="/img/page_erreur.png" alt="Page Erreur" class="clickable-image">
+                        <p>Page d'erreur : la page où les utilisateurs vont être redirigés si l'url est mauvaise</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+    
+    <script>
+        // Modal Image Script
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        const closeModal = document.getElementsByClassName("close")[0];
+
+        document.querySelectorAll('.clickable-image').forEach(img => {
+            img.onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+        });
+
+        closeModal.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    <!-- Inclusion de la barre de navigation -->
+    <div w3-include-html="navbar.html"></div>
+    <script src="/js/include.js"></script>
+    <script>
+        includeHTML();
+    </script>
+    <script src="/js/scroll_navbar.js"></script>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div>
+            © 2025 Matéo Gonçalves Mota — Portfolio. Tous droits réservés.
+        </div>
+        <nav class="footer-links">
+            <a href="/HTML/Accueil.html">Accueil</a> |
+            <a href="/HTML/QuiSuisJe.html">Qui suis-je</a> |
+            <a href="/HTML/projets.html">Réalisations</a> |
+            <a href="/HTML/Competences.html">Compétences</a> |
+            <a href="/HTML/Contact.html">Contact</a>
+        </nav>
+    </footer>
+</body>
+</html>

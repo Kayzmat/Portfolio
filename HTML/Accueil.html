@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="/style/Accueil.css">
+</head>
+<body>
+    <!-- Section d'en-tête avec un message de bienvenue -->
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>Bienvenue sur mon Portfolio</h1>
+            <p>Je suis un étudiant en BTS SIO passionné par le développement web et applicatif.</p>
+            <a href="projets.html" class="btn">Voir mes projets</a>
+        </div>
+    </header>
+
+    <!-- Inclusion de la barre de navigation -->
+    <div w3-include-html="navbar.html"></div>
+    <script src="/js/include.js"></script>
+    <script>
+        includeHTML();
+    </script>
+    <script src="/js/scroll_navbar.js"></script>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div>
+            © 2025 Matéo Gonçalves Mota — Portfolio. Tous droits réservés.
+        </div>
+        <nav class="footer-links">
+            <a href="/HTML/Accueil.html">Accueil</a> |
+            <a href="/HTML/QuiSuisJe.html">Qui suis-je</a> |
+            <a href="/HTML/projets.html">Réalisations</a> |
+            <a href="/HTML/Competences.html">Compétences</a> |
+            <a href="/HTML/Contact.html">Contact</a>
+        </nav>
+    </footer>
+</body>
+</html>

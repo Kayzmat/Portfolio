@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 3 - Tellis</title>
+    <link rel="stylesheet" href="/style/projet3.css">
+</head>
+<body>
+    <section class="project-details-section">
+        <h2>Projet 3 - Tellis</h2>
+        <div class="project-details">
+            <div class="project-description">
+                <img src="/img/accueil_tellis.png" alt="Projet 3" class="clickable-image">
+                <h3>Description du Projet</h3><br>
+                <p>Ce projet consistait à créer un site de réservation d'emplacement de salon pour une entreprise fictive : Tellis. Les utilisateurs devaient pouvoir réserver au maximum 2 emplacements sur un créaneau, une date et un salon.</p>
+                <a href="https://gr10.sio-cholet.fr/" class="btn-visit" target="_blank">Visiter le site</a>
+            </div>
+            <div class="project-pages">
+                <h3>Le site est composé de 4 pages principales</h3>
+                <ul>
+                    <li>
+                        <img src="/img/accueil_tellis.png" alt="Accueil" class="clickable-image">
+                        <p>Accueil : Courte présentation de l'entreprise ainsi qu'une redirection vers la page de connexion pour pouvoir réserver</p>
+                    </li>
+                    <li>
+                        <img src="/img/qui_sommes_nous_tellis.png" alt="Qui sommes nous ?" class="clickable-image">
+                        <p>Qui sommes nous ? : Présentation détaillé de l'entreprise et des services qu'elle offre.</p>
+                    </li>
+                    <li>
+                        <img src="/img/réservations_tellis.png" alt="Réservations" class="clickable-image">
+                        <p>Réservations : Propose un choix entre 3 salons.</p>
+                    </li>
+                    <li>
+                        <img src="/img/salon_tellis.png" alt="Salon" class="clickable-image">
+                        <p>Salon : Plan du salon et formulaire de réservation (les pages des 3 salons sont identiques sauf le plan).</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="project-challenges">
+                <h3>Défis</h3>
+                <ul>
+                    <li>Apprendre à réaliser un site professionnel avec des fonctionnalités et pas seulement un site vitrine.</li>
+                    <li>Mettre en place un système de compte pour les utilisateurs.</li>
+                    <li>Créer et gérer une base de données.</li>
+                    <li>Respecter le cahier des charges tout en ajoutant des fonctionnalités bonus que l'on trouvait pertinentes.</li>
+                </ul>
+            </div>
+            <div class="project-features">
+                <h3>Fonctionnalités et pages ajoutées</h3>
+                <ul>
+                    <li>
+                        <img src="/img/plan_tellis.png" alt="Plan" class="clickable-image">
+                        <p>Plan interactif qui permet de réserver en cliquant directement sur le plan. Les emplacements sur le plan sont disponibles ou non en fonction de s'ils sont déjà réservés sur la date et le créaneau sélectionner ou non.</p>
+                    </li>
+                    <li>
+                        <img src="/img/connexion_tellis.png" alt="Page connexion/inscription" class="clickable-image">
+                        <p>Page de connexion/inscription</p>
+                    </li>
+                    <li>
+                        <img src="/img/admin_tellis.png" alt="Page Admin" class="clickable-image">
+                        <p>Page disponible uniquement pour l'administrateur. Elle lui permet de gérer les utilisateurs et les réservations (ajouter et supprimer).</p>
+                    </li>
+                    <li>
+                        <img src="/img/mentions_legales_tellis.png" alt="Mentions Légales" class="clickable-image">
+                        <p>Page Mentions légales</p>
+                    </li>
+                    <li>
+                        <img src="/img/politique_confidentialité_tellis.png" alt="Politique de confidentialités" class="clickable-image">
+                        <p>Page pour la politique de confidentialité</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+    
+    <script>
+        // Modal Image Script
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        const closeModal = document.getElementsByClassName("close")[0];
+
+        document.querySelectorAll('.clickable-image').forEach(img => {
+            img.onclick = function() {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+        });
+
+        closeModal.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    <!-- Inclusion de la barre de navigation -->
+    <div w3-include-html="navbar.html"></div>
+    <script src="/js/include.js"></script>
+    <script>
+        includeHTML();
+    </script>
+    <script src="/js/scroll_navbar.js"></script>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div>
+            © 2025 Matéo Gonçalves Mota — Portfolio. Tous droits réservés.
+        </div>
+        <nav class="footer-links">
+            <a href="/HTML/Accueil.html">Accueil</a> |
+            <a href="/HTML/QuiSuisJe.html">Qui suis-je</a> |
+            <a href="/HTML/projets.html">Réalisations</a> |
+            <a href="/HTML/Competences.html">Compétences</a> |
+            <a href="/HTML/Contact.html">Contact</a>
+        </nav>
+    </footer>
+</body>
+</html>
