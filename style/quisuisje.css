@@ -1,0 +1,560 @@
+/* Réinitialisation globale */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #333; /* Couleur du texte par défaut */
+    background: #1A252F; /* ou ton dégradé habituel */
+}
+
+/* Style des listes */
+ul {
+    list-style-type: disc; /* Définit le type de puce (peut être 'circle', 'square', etc.) */
+    margin: 1rem 0; /* Ajoute un espacement autour de la liste */
+    padding-left: 1.5rem; /* Ajoute un retrait pour les puces */
+}
+
+ul li {
+    margin-bottom: 0.5rem; /* Ajoute un espacement entre les éléments de la liste */
+    font-size: 1.1rem; /* Ajuste la taille du texte */
+    color: #ECF0F1; /* Couleur du texte */
+}
+
+ul li::marker {
+    color: #3498DB; /* Change la couleur des puces */
+    font-size: 1.2rem; /* Ajuste la taille des puces */
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.2); /* Couleur de fond de la navbar avec transparence */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center; /* Centrer les éléments horizontalement */
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out; /* Animation fluide */
+}
+
+.navbar-hidden {
+    transform: translateY(-100%); /* Cacher la navbar en la déplaçant vers le haut */
+}
+
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.8); /* Couleur de fond au défilement */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-logo {
+    position: absolute;
+    left: 15px; /* Positionner le logo à gauche */
+    top: 50%; /* Centrer verticalement */
+    transform: translateY(-50%); /* Ajuster pour centrer parfaitement */
+}
+
+.navbar-logo img {
+    height: 50px; /* Ajuster la taille du logo */
+    width: auto;
+    transition: transform 0.3s ease; /* Animation au survol */
+}
+
+.navbar-logo img:hover {
+    transform: scale(1.1); /* Zoom léger */
+}
+
+.navbar-links {
+    display: flex;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: #ECF0F1; /* Couleur des liens */
+    font-weight: bold;
+    margin: 0 15px;
+    transition: color 0.3s ease, transform 0.3s ease; /* Ajout de la transition pour le zoom au survol */
+}
+
+.navbar-links a:hover {
+    color: #3498DB; /* Couleur des liens au survol */
+    transform: scale(1.1); /* Zoom léger */
+}
+
+.navbar.scrolled .navbar-links a {
+    color: #ECF0F1; /* Couleur des liens lorsque la navbar est scrollée */
+}
+
+.navbar.scrolled .navbar-links a:hover {
+    color: #E74C3C;
+}
+
+/* Menu déroulant navbar */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    background-color: #23272f;
+    min-width: 200px;
+    box-shadow: 0 12px 32px rgba(52, 152, 219, 0.18), 0 2px 8px rgba(0,0,0,0.10);
+    z-index: 1001;
+    border-radius: 12px;
+    top: calc(100% + 8px); /* Ajoute un espace de 8px sous le bouton */
+    left: 0;
+    transform: none;
+    transition: opacity 0.25s cubic-bezier(.25,.8,.25,1), 
+                visibility 0.25s;
+    padding: 0.5rem 0;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu a {
+    color: #ECF0F1;
+    padding: 14px 28px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.2s, color 0.2s, padding-left 0.2s;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.dropdown-menu a:hover {
+    background-color: #3498DB;
+    color: #fff;
+    padding-left: 38px;
+}
+
+.dropdown-toggle::after {
+    content: " ▼";
+    font-size: 0.7em;
+    transition: transform 0.3s;
+}
+
+.dropdown:hover .dropdown-toggle::after {
+    transform: rotate(-180deg);
+}
+
+/* Qui suis-je Section */
+.QuiSuisJe-section {
+    padding: 6rem 2rem;
+    background-color: #1A252F; /* Couleur de fond de la section */
+    text-align: center;
+    color: #ECF0F1; /* Couleur du texte */
+}
+
+.QuiSuisJe-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #3498DB; /* Couleur du titre */
+}
+
+.QuiSuisJe-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    animation: fadeIn 2s ease;
+}
+
+.QuiSuisJe-card {
+    background-color: #2C3E50; /* Couleur de fond des cartes */
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    width: 80%; /* Ajuster la largeur des cartes */
+    max-width: 800px; /* Limiter la largeur maximale */
+    color: #ECF0F1; /* Couleur du texte dans les cartes */
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.QuiSuisJe-card:hover {
+    box-shadow: 0 8px 32px rgba(52,152,219,0.18);
+    transform: translateY(-6px) scale(1.03);
+}
+
+.QuiSuisJe-card img {
+    width: 100px; /* Ajuster la largeur de l'image */
+    height: auto;
+    margin-right: 1.5rem; /* Ajouter un espace entre l'image et le texte */
+    border-radius: 50%; /* Ajouter des coins arrondis à l'image */
+}
+
+.QuiSuisJe-card img:hover {
+    transform: scale(1.1) rotate(2deg); /* Effet de zoom et de légère rotation */
+}
+
+.QuiSuisJe-card-content {
+    flex: 1; /* Prendre tout l'espace restant */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.QuiSuisJe-card-content p {
+    margin-bottom: 1rem; /* Ajouter un espace entre le texte et le bouton */
+}
+
+.QuiSuisJe-card-content h3 {
+    margin-bottom: 0.5rem; /* Ajouter un espace entre le titre et le texte */
+}
+
+.QuiSuisJe-card-content .btn {
+    align-self: center; /* Centrer le bouton horizontalement */
+    padding: 0.75rem 1.5rem;
+    background-color: #3498DB;
+    color: #ECF0F1;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease transform 0.3s ease; /* Ajout de la transition pour le zoom au survol */
+    animation: pulse 2s infinite; /* Ajout de l'animation de pulsation */
+}
+
+.QuiSuisJe-card-content .btn:hover {
+    background: #217dbb;
+}
+
+/* Style pour les listes dans les cartes */
+.QuiSuisJe-card-content ul {
+    list-style-type: none; /* Change le style des puces pour les listes dans les cartes */
+    padding-left: 1.5rem;
+}
+
+.QuiSuisJe-card-content ul li {
+    margin-bottom: 0.5rem;
+}
+
+.txt-contact {
+    text-align: center;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    margin: 2rem auto 2rem auto;
+    border-left: 3px solid #3498db;
+    max-width: 500px;
+    padding-left: 0;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding-left: 3.5rem;
+    min-height: 48px;
+}
+
+.timeline-icon {
+    position: absolute;
+    left: -23px;
+    top: 0;
+    background: #3498db;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    box-shadow: 0 2px 8px rgba(52,152,219,0.10);
+    border: 3px solid #fff;
+}
+
+.timeline-content {
+    background: #22344a;
+    color: #ECF0F1;
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(52,152,219,0.08);
+    margin-left: 0.5rem;
+    text-align: left;
+    transition: box-shadow 0.3s, transform 0.3s; /* Ajoute la transition */
+}
+
+.timeline-content h3 {
+    margin: 0 0 0.3rem 0;
+    color: #3498db;
+    font-size: 1.15rem;
+}
+
+.timeline-item {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: timelineFadeIn 0.7s forwards;
+}
+
+.timeline-item:hover .timeline-content {
+    box-shadow: 0 8px 32px rgba(52,152,219,0.18), 0 0 12px #3498db88;
+    transform: translateY(-6px) scale(1.03);
+}
+
+.timeline-item:hover .timeline-icon {
+    box-shadow: 0 0 16px #3498db88, 0 2px 8px rgba(52,152,219,0.18);
+    background: #217dbb;
+    transition: box-shadow 0.3s, background 0.3s;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.3s; }
+.timeline-item:nth-child(3) { animation-delay: 0.5s; }
+
+/* Statistiques */
+.stats {
+    display: flex;
+    justify-content: space-around; /* Espace égal entre les statistiques */
+    align-items: flex-start; /* Aligne les éléments en haut */
+    margin-top: 1rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+    gap: 2rem;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column; /* Aligne les chiffres et descriptions verticalement */
+    align-items: center; /* Centre horizontalement les éléments */
+    text-align: center; /* Centre le texte */
+}
+
+.stat-item h3 {
+    font-size: 2rem;
+    color: #3498DB;
+    margin-bottom: 0.5rem; /* Ajoute un espace entre le chiffre et la description */
+}
+
+.stat-item p {
+    font-size: 1.2rem;
+    margin: 0; /* Supprime les marges par défaut */
+    padding-top: 0.5rem; /* Ajoute un espacement vertical */
+}
+
+/* Section Réseaux Sociaux */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.social-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: #ECF0F1;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.social-icon img {
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.social-icon img:hover {
+    transform: scale(1.2);
+    opacity: 0.9;
+    box-shadow: 0 0 12px #3498db88, 0 2px 8px rgba(52,152,219,0.18);
+}
+
+.social-icon span {
+    margin-top: 0.4em;
+    font-size: 0.98rem;
+    color: #ECF0F1;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+    display: block;
+    text-align: center;
+    word-break: break-word;
+}
+
+.social-icon:hover span {
+    color: #3498db;
+}
+
+/*Footer */
+.site-footer {
+    width: 100%;
+    background: #22344a;
+    color: #ECF0F1;
+    text-align: center;
+    padding: 1.2rem 0 1rem 0;
+    font-size: 1rem;
+    margin-top: 3rem;
+    box-shadow: 0 -2px 12px rgba(52,152,219,0.08);
+}
+
+.footer-links {
+    margin-top: 0.5rem;
+}
+
+.footer-links a {
+    position: relative;
+    color: #ECF0F1;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.2s;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.footer-links a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: #3498DB;
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+    transform-origin: left;
+}
+
+.footer-links a:hover {
+    color: #3498DB;
+}
+
+.footer-links a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px; /* Largeur de la scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #2C3E50; /* Couleur de fond de la track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #3498DB, #1A252F); /* Couleur de la thumb */
+    border-radius: 10px; /* Coins arrondis */
+    border: 3px solid #2C3E50; /* Espace autour de la thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #2980B9, #1A252F); /* Couleur de la thumb au survol */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Couleur adaptée à #3498DB */
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(52, 152, 219, 0.7); /* Couleur adaptée à #3498DB */
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 5px rgba(52, 152, 219, 0.5); /* Couleur adaptée à #3498DB */
+    }
+}
+
+@keyframes pulseV2 {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes timelineFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 900px) {
+    .QuiSuisJe-column {
+        width: 98vw;
+        margin: 0 auto 1.5rem auto;
+    }
+    .timeline {
+        margin-left: 0;
+    }
+    .stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .timeline {
+        max-width: 98vw;
+        border-left: 2px solid #1abc9c;
+    }
+    .timeline-item {
+        padding-left: 2.5rem;
+    }
+    .timeline-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+        left: -17px;
+    }
+    .timeline-content {
+        padding: 0.7rem 0.7rem;
+        font-size: 0.98rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .stats {
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+    .stat-item h3 {
+        font-size: 1.4rem;
+    }
+    .stat-item p {
+        font-size: 1rem;
+    }
+}

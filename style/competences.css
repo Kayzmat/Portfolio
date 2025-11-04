@@ -1,0 +1,496 @@
+/* Réinitialisation globale */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1A252F; /* Couleur de fond neutre */
+    color: #333; /* Couleur du texte par défaut */
+    margin: 0; /* Supprimer les marges par défaut du body */
+    padding: 0; /* Supprimer les paddings par défaut du body */
+    min-height: 100vh; /* Assurer que le body prend toute la hauteur de la fenêtre */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(0, 0, 0, 0.2); /* Couleur de fond de la navbar avec transparence */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center; /* Centrer les éléments horizontalement */
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out; /* Animation fluide */
+}
+
+.navbar-hidden {
+    transform: translateY(-100%); /* Cacher la navbar en la déplaçant vers le haut */
+}
+
+.navbar-logo {
+    position: absolute;
+    left: 15px; /* Positionner le logo à gauche */
+    top: 50%; /* Centrer verticalement */
+    transform: translateY(-50%); /* Ajuster pour centrer parfaitement */
+}
+
+.navbar-logo img {
+    height: 50px; /* Ajuster la taille du logo */
+    width: auto;
+    transition: transform 0.3s ease; /* Animation au survol */
+}
+
+.navbar-logo img:hover {
+    transform: scale(1.1); /* Zoom léger */
+}
+
+.navbar-links {
+    display: flex;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: #ECF0F1; /* Couleur des liens */
+    font-weight: bold;
+    margin: 0 15px;
+    transition: color 0.3s ease, transform 0.3s ease; /* Ajout de la transition pour le zoom au survol */
+}
+
+.navbar-links a:hover {
+    color: #3498DB; /* Couleur des liens au survol */
+    transform: scale(1.1); /* Zoom léger */
+}
+
+/* Menu déroulant navbar */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-menu {
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    background-color: #23272f;
+    min-width: 200px;
+    box-shadow: 0 12px 32px rgba(52, 152, 219, 0.18), 0 2px 8px rgba(0,0,0,0.10);
+    z-index: 1001;
+    border-radius: 12px;
+    top: calc(100% + 8px); /* Ajoute un espace de 8px sous le bouton */
+    left: 0;
+    transform: none;
+    transition: opacity 0.25s cubic-bezier(.25,.8,.25,1), 
+                visibility 0.25s;
+    padding: 0.5rem 0;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu a {
+    color: #ECF0F1;
+    padding: 14px 28px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.2s, color 0.2s, padding-left 0.2s;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.dropdown-menu a:hover {
+    background-color: #3498DB;
+    color: #fff;
+    padding-left: 38px;
+}
+
+.dropdown-toggle::after {
+    content: " ▼";
+    font-size: 0.7em;
+    transition: transform 0.3s;
+}
+
+.dropdown:hover .dropdown-toggle::after {
+    transform: rotate(-180deg);
+}
+
+/* Competences Section */
+.competences-section {
+    padding: 4rem 1rem;
+    min-height: 100vh;
+    max-width: 1300px;
+    margin: 0 auto;
+    border-radius: 24px;
+    text-align: center;
+}
+
+.competences-section h2 {
+    color: #3498db;
+    font-size: 2.5rem;
+    margin: 2rem 0 1.5rem 0;
+    text-align: center;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #3498db 40%, #1abc9c 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    display: inline-block;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.competences-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.competence-card {
+    border-radius: 20px;
+    width: 250px;
+    height: 350px;
+    perspective: 1000px;
+    transition: transform 0.3s cubic-bezier(.25,.8,.25,1), box-shadow 0.3s;
+    position: relative;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    animation: fadeInUp 0.8s;
+}
+
+.competence-card img {
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+}
+
+.competence-card:hover {
+    transform: translateY(-12px) scale(1.04);
+    box-shadow: 0 12px 32px rgba(52, 152, 219, 0.25);
+    z-index: 2;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s cubic-bezier(.25,.8,.25,1);
+    transform-style: preserve-3d;
+}
+
+.competence-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.08);
+}
+
+.card-front {
+    color: black;
+}
+
+.card-back {
+    color: black;
+    transform: rotateY(180deg);
+}
+
+.competence-card img {
+    width: 120px;
+    height: 80px;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.10));
+}
+
+.competence-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Couleur pour chaque carte */
+/* HTML */
+.competence-card.html .card-front {
+    background-color: #f18429;
+}
+
+.competence-card.html .card-back {
+    background-color: #f18429;
+}
+
+/* CSS */
+.competence-card.css .card-front {
+    background-color: #28abe3;
+}
+
+.competence-card.css .card-back {
+    background-color: #28abe3;
+}
+
+/* Javascript */
+.competence-card.javascript .card-front {
+    background-color: #febb1b;
+}
+
+.competence-card.javascript .card-back {
+    background-color: #febb1b;
+}
+
+/* PHP */
+.competence-card.php .card-front {
+    background-color: #58379f;
+}
+
+.competence-card.php .card-back {
+    background-color: #58379f;
+}
+
+/* SQL */
+.competence-card.sql .card-front {
+    background-color: #f0c9af;
+}
+
+.competence-card.sql .card-back {
+    background-color: #f0c9af;
+}
+
+/* Wordpress */
+.competence-card.wordpress .card-front {
+    background-color: #0275a1;
+}
+
+.competence-card.wordpress .card-back {
+    background-color: #0275a1;
+}
+
+/* C++ */
+.competence-card.c .card-front {
+    background-color: #1a4d89;
+}
+
+.competence-card.c .card-back {
+    background-color: #1a4d89;
+}
+
+/* Java */
+.competence-card.java .card-front {
+    background-color: #12192c;
+}
+
+.competence-card.java .card-back {
+    background-color: #12192c;
+}
+
+/* Python */
+.competence-card.python .card-front {
+    background-color: #224b69;
+}
+
+.competence-card.python .card-back {
+    background-color: #224b69;
+}
+
+/* Windev */
+.competence-card.windev .card-front {
+    background-color: #fad32e;
+}
+
+.competence-card.windev .card-back {
+    background-color: #fad32e;
+}
+
+/* Lisibilité sur cartes foncées */
+.competence-card.c .card-front,
+.competence-card.c .card-back,
+.competence-card.java .card-front,
+.competence-card.java .card-back,
+.competence-card.python .card-front,
+.competence-card.python .card-back,
+.competence-card.wordpress .card-front,
+.competence-card.wordpress .card-back,
+.competence-card.php .card-front,
+.competence-card.php .card-back {
+    color: #fff;
+}
+
+.competence-tableau-card {
+    background: #23272f;
+    border-radius: 18px;
+    box-shadow: 0 4px 32px rgba(52,152,219,0.13);
+    padding: 2rem 1.5rem;
+    max-width: 420px;
+    margin: 2.5rem auto 0 auto;
+    text-align: center;
+    animation: fadeInUp 0.9s;
+}
+
+.competence-tableau-card h3 {
+    color: #1abc9c;
+    margin-bottom: 0.7rem;
+    font-size: 1.35rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-shadow: 0 2px 8px rgba(52,152,219,0.10);
+}
+
+.competence-tableau-card p {
+    color: #bfc9d1;
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+}
+
+.btn-compétences {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.8rem 1.5rem;
+    background: linear-gradient(90deg, #3498db 60%, #1abc9c 100%);
+    color: #fff;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.08rem;
+    text-decoration: none;
+    box-shadow: 0 4px 24px rgba(52,152,219,0.13);
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: auto;
+    min-width: 0;
+}
+
+.btn-compétences:hover {
+    background: linear-gradient(90deg, #217dbb 60%, #16a085 100%);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 16px 2px #1abc9c88, 0 4px 24px rgba(52,152,219,0.18);
+}
+
+.btn-compétences .excel-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 0.4em;
+    vertical-align: middle;
+}
+
+@media (max-width: 900px) {
+    .competence-tableau-card {
+        max-width: 95vw;
+        padding: 1.2rem 0.5rem;
+    }
+    .btn-compétences {
+        font-size: 1rem;
+        padding: 0.8rem 1.2rem;
+    }
+}
+
+/*Footer */
+.site-footer {
+    width: 100%;
+    background: #22344a;
+    color: #ECF0F1;
+    text-align: center;
+    padding: 1.2rem 0 1rem 0;
+    font-size: 1rem;
+    margin-top: 3rem;
+    box-shadow: 0 -2px 12px rgba(52,152,219,0.08);
+}
+
+.footer-links {
+    margin-top: 0.5rem;
+}
+
+.footer-links a {
+    position: relative;
+    color: #ECF0F1;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: color 0.2s;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.footer-links a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: #3498DB;
+    transform: scaleX(0);
+    transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+    transform-origin: left;
+}
+
+.footer-links a:hover {
+    color: #3498DB;
+}
+
+.footer-links a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    background: #2C3E50;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #3498DB, #1A252F);
+    border-radius: 10px;
+    border: 3px solid #2C3E50;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #2980B9, #1A252F);
+}
+
+@media (max-width: 900px) {
+    .competences-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .competence-card {
+        width: 90vw;
+        max-width: 350px;
+        height: 260px;
+    }
+}
