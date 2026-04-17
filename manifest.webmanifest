@@ -1,7 +1,7 @@
 {
   "name": "Portfolio Matéo Gonçalves Mota",
   "short_name": "Portfolio MG",
-  "start_url": "/",
+  "start_url": "/Portfolio/",
   "display": "standalone",
   "background_color": "#0C0E16",
   "theme_color": "#3366FF",
