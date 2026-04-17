@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="À propos de Matéo Gonçalves Mota — parcours, philosophie de travail et objectifs." />
+  <meta name="author" content="Matéo Gonçalves Mota" />
+  <title>À propos — Matéo Gonçalves Mota</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html"><span>Matéo Gonçalves Mota</span></a>
+      <button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Ouvrir le menu">
+        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+      </button>
+      <nav class="site-nav" id="site-navigation" aria-label="Navigation principale">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="../index.html">Accueil</a></li>
+          <li><a class="site-nav__link" href="about.html" aria-current="page">À propos</a></li>
+          <li><a class="site-nav__link" href="skills.html">Compétences</a></li>
+          <li><a class="site-nav__link" href="projects.html">Projets</a></li>
+          <li><a class="site-nav__link" href="stages.html">Stages</a></li>
+          <li><a class="site-nav__link" href="veille.html">Veille</a></li>
+          <li><a class="site-nav__link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="site-nav__actions">
+          <a class="btn btn--primary" href="docs/cv.pdf" target="_blank" rel="noreferrer">Télécharger CV</a>
+          <a class="btn btn--outline" href="docs/tableau_competences.xlsx" download="tableau_competences_mateo.xlsx">Télécharger tableau compétences</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ── HERO PAGE ── -->
+    <section class="hero hero--page" aria-labelledby="about-title">
+      <div class="container">
+        <p class="hero__eyebrow"><span class="hero__eyebrow-dot"></span>Mon histoire</p>
+        <h1 class="hero__title" id="about-title">À propos de moi</h1>
+        <p class="hero__subtitle">
+          Étudiant passionné par le développement web et applicatif, je construis des solutions
+          numériques fiables, accessibles et pensées pour les utilisateurs.
+        </p>
+        <div class="hero__actions" style="margin-top:1.5rem;">
+          <a class="btn btn--primary" href="docs/cv.pdf" target="_blank" rel="noreferrer">Télécharger mon CV</a>
+          <a class="btn btn--outline" href="contact.html">Me contacter</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PARCOURS & PHILOSOPHIE ── -->
+    <section class="section" aria-labelledby="parcours-title">
+      <div class="container">
+        <div class="grid grid--2">
+          <!-- Parcours -->
+          <div class="fade-up">
+            <p class="section__overline">Parcours</p>
+            <h2 id="parcours-title">Mon background</h2>
+            <p style="color:var(--muted);margin-top:1rem;">
+              Actuellement en BTS Services Informatiques aux Organisations (option SLAM), j'ai acquis
+              des bases solides en développement web, gestion de bases de données et architecture
+              applicative. En parallèle, je réalise des projets personnels pour explorer de nouvelles
+              technologies et consolider mes acquis.
+            </p>
+
+            <div style="margin-top:2rem;">
+              <h3 style="margin-bottom:1.25rem;">Objectifs</h3>
+              <div class="card--highlight">
+                <ul class="list--check">
+                  <li><strong>Projets ambitieux</strong> — rejoindre des équipes impliquées sur des défis concrets</li>
+                  <li><strong>Apprentissage continu</strong> — certifications en ligne</li>
+                  <li><strong>Interfaces performantes</strong> — priorité à la vitesse &amp; l'accessibilité</li>
+                </ul>
+              </div>
+            </div>
+
+            <div style="margin-top:2rem;">
+              <h3 style="margin-bottom:1.25rem;">Certifications</h3>
+              <div class="card--highlight">
+                <ul class="list--check">
+                  <li><strong>Voltaire</strong> — Score : 587/1000 <a href="docs/VOLTAIRE.pdf" target="_blank" rel="noreferrer" style="color:var(--primary);text-decoration:underline;">(Voir le certificat)</a></li>
+                  <li><strong>TOEIC</strong> — Score : 885/990 <a href="docs/TOEIC.pdf" target="_blank" rel="noreferrer" style="color:var(--primary);text-decoration:underline;">(Voir le certificat)</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div style="margin-top:1.5rem;display:flex;gap:.85rem;flex-wrap:wrap;">
+              <a class="btn btn--primary" href="contact.html">Me contacter</a>
+              <a class="btn btn--outline" href="skills.html">Voir mes compétences</a>
+            </div>
+          </div>
+
+          <!-- Philosophie -->
+          <div class="fade-up delay-2">
+            <p class="section__overline">Approche</p>
+            <h2>Philosophie de travail</h2>
+            <p style="color:var(--muted);margin-top:1rem;">
+              J'applique les principes du développement durable : code clair, documentation soignée,
+              tests réguliers et optimisation des performances. Chaque projet est une occasion d'apprendre.
+            </p>
+
+            <div style="margin-top:1.5rem;display:grid;gap:1rem;">
+              <div class="card--highlight">
+                <h4>🤝 Collaboration</h4>
+                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">
+                  Communication transparente, revue de code, respect des délais.
+                </p>
+              </div>
+              <div class="card--highlight">
+                <h4>♿ Accessibilité</h4>
+                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">
+                  Navigation clavier, contraste élevé, support des technologies d'assistance.
+                </p>
+              </div>
+              <div class="card--highlight">
+                <h4>⚡ Performance</h4>
+                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">
+                  Optimisation des images, chargement asynchrone, réduction des dépendances.
+                </p>
+              </div>
+              <div class="card--highlight">
+                <h4>🔧 Maintenabilité</h4>
+                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">
+                  Structure modulaire et commentaires clairs pour faciliter la montée en charge.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── TIMELINE ── -->
+    <section class="section section--surface" aria-labelledby="timeline-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__overline">Chronologie</p>
+          <h2 id="timeline-title">Mon parcours</h2>
+          <p class="section__lead">Les étapes clés qui ont forgé mon profil de développeur.</p>
+        </header>
+
+        <div style="max-width:680px;margin:0 auto;">
+          <div class="timeline fade-up">
+            <div class="timeline__item">
+              <span class="timeline__dot"></span>
+              <p class="timeline__year">2024 – 2026</p>
+              <p class="timeline__title">BTS SIO — option SLAM</p>
+              <p class="timeline__desc">
+                Formation en développement logiciel et applicatif : web, bases de données, architecture MVC,
+                gestion de projet Agile et stages en entreprise.
+              </p>
+            </div>
+            <div class="timeline__item">
+              <span class="timeline__dot"></span>
+              <p class="timeline__year">2025 (Stage 2)</p>
+              <p class="timeline__title">Stage — Fondation Amipi</p>
+              <p class="timeline__desc">
+                Développement et maintenance d'applications internes avec Windev, SQL et AS400
+                au sein des usines de production.
+              </p>
+            </div>
+            <div class="timeline__item">
+              <span class="timeline__dot"></span>
+              <p class="timeline__year">2024 (Stage 1)</p>
+              <p class="timeline__title">Stage — Fondation Amipi</p>
+              <p class="timeline__desc">
+                Prise en main de l'environnement Windev, développement d'outils de suivi
+                et de gestion pour les équipes de production.
+              </p>
+            </div>
+            <div class="timeline__item">
+              <span class="timeline__dot"></span>
+              <p class="timeline__year">Juin 2024</p>
+              <p class="timeline__title">Baccalauréat général — Mention Bien</p>
+              <p class="timeline__desc">
+                Spécialités Mathématiques et NSI, option Mathématiques expertes.
+                Lycée Dom Sortais - Beaupréau (49).
+              </p>
+            </div>
+            <div class="timeline__item">
+              <span class="timeline__dot"></span>
+              <p class="timeline__year">Juin 2021</p>
+              <p class="timeline__title">Brevet des collèges — Mention Bien</p>
+              <p class="timeline__desc">
+                Collège Frédéric Ozanam - Saint-Pierre-Montlimart (49).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CE QUE J'APPORTE ── -->
+    <section class="section" aria-labelledby="apport-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__overline">Valeur ajoutée</p>
+          <h2 id="apport-title">Ce que j'apporte</h2>
+          <p class="section__lead">Soft skills et posture professionnelle qui font la différence.</p>
+        </header>
+
+        <div class="cards cards--grid fade-up">
+          <article class="card">
+            <div class="card__body">
+              <h3>🧠 Esprit logique</h3>
+              <p class="card__description">Capacité à décomposer des problèmes complexes en étapes claires et à trouver des solutions efficaces.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__body">
+              <h3>🔄 Adaptabilité</h3>
+              <p class="card__description">À l'aise pour apprendre de nouveaux frameworks, langages et environnements de travail rapidement.</p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__body">
+              <h3>👁️ Sens du détail</h3>
+              <p class="card__description">Attention portée à la qualité du code, à l'UI et à l'expérience utilisateur finale.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" aria-label="Pied de page">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="footer-brand__name">Matéo Gonçalves Mota</p>
+        <p class="footer-brand__text">Développeur web &amp; applicatif</p>
+      </div>
+      <nav class="footer-nav">
+        <a class="footer-nav__link" href="../index.html">Accueil</a>
+        <a class="footer-nav__link" href="about.html">À propos</a>
+        <a class="footer-nav__link" href="skills.html">Compétences</a>
+        <a class="footer-nav__link" href="projects.html">Projets</a>
+        <a class="footer-nav__link" href="stages.html">Stages</a>
+        <a class="footer-nav__link" href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a class="footer-social__link" href="https://github.com/Kayzmat" target="_blank" rel="noreferrer" aria-label="GitHub">🐙 GitHub</a>
+        <a class="footer-social__link" href="https://linkedin.com/in/mateo-goncalves-mota" target="_blank" rel="noreferrer" aria-label="LinkedIn">👔 LinkedIn</a>
+      </div>
+      <p class="footer-copy">© 2026 Matéo Gonçalves Mota</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>

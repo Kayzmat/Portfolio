@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Projet Tellis — plateforme de réservation pour un salon professionnel." />
+  <meta name="author" content="Matéo Gonçalves Mota" />
+  <title>Projet — Plateforme Tellis — Matéo Gonçalves Mota</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html"><span>Matéo Gonçalves Mota</span></a>
+      <button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Ouvrir le menu">
+        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+      </button>
+      <nav class="site-nav" id="site-navigation" aria-label="Navigation principale">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="../index.html">Accueil</a></li>
+          <li><a class="site-nav__link" href="about.html">À propos</a></li>
+          <li><a class="site-nav__link" href="skills.html">Compétences</a></li>
+          <li><a class="site-nav__link" href="projects.html" aria-current="page">Projets</a></li>
+          <li><a class="site-nav__link" href="stages.html">Stages</a></li>
+          <li><a class="site-nav__link" href="veille.html">Veille</a></li>
+          <li><a class="site-nav__link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="site-nav__actions">
+          <a class="btn btn--primary" href="docs/cv.pdf" target="_blank" rel="noreferrer">Télécharger CV</a>
+          <a class="btn btn--outline" href="docs/tableau_competences.xlsx" download="tableau_competences_mateo.xlsx">Télécharger tableau compétences</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ── HERO ── -->
+    <section class="hero hero--page" aria-labelledby="project-title">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="index.html">Accueil</a>
+          <span class="breadcrumb__sep">›</span>
+          <a href="projects.html">Projets</a>
+          <span class="breadcrumb__sep">›</span>
+          <span>Tellis</span>
+        </nav>
+        <p class="hero__eyebrow"><span class="hero__eyebrow-dot"></span>AP1 - BTS SIO SLAM</p>
+        <h1 id="project-title">Plateforme de réservation<br /><span class="text-gradient">Tellis</span></h1>
+        <p class="hero__subtitle">
+          Site web professionnel et responsive pour la gestion des exposants d'un salon — réservation d'espaces,
+          gestion des inscriptions et tableau de bord organisateur.
+        </p>
+        <div class="hero__actions" style="margin-top:1.5rem;">
+          <div class="project__tags" style="margin:0;">
+            <span class="project__tag">PHP</span>
+            <span class="project__tag">MySQL</span>
+            <span class="project__tag">JavaScript</span>
+            <span class="project__tag">UX</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── APERÇU ── -->
+    <section class="section section--surface">
+      <div class="container">
+        <div class="grid grid--2">
+          <div class="fade-up">
+            <figure>
+              <img src="img/connexion_tellis.png" loading="lazy" alt="Page de connexion de la plateforme Tellis" />
+              <figcaption>Écran de connexion — design clair et navigation fluide.</figcaption>
+            </figure>
+            <figure style="margin-top:1.25rem;">
+              <img src="img/accueil_tellis.png" loading="lazy" alt="Accueil de la plateforme Tellis" />
+              <figcaption>Page d'accueil — présentation du salon et accès aux réservations.</figcaption>
+            </figure>
+          </div>
+          <div class="fade-up delay-2">
+            <div class="project__meta">
+              <div class="project__meta-item">
+                <strong>Rôle</strong>
+                <span>Développeur full-stack</span>
+              </div>
+              <div class="project__meta-item">
+                <strong>Durée</strong>
+                <span>3 mois</span>
+              </div>
+              <div class="project__meta-item">
+                <strong>Contexte</strong>
+                <span>AP1 - BTS SIO SLAM</span>
+              </div>
+              <div class="project__meta-item">
+                <strong>Focus</strong>
+                <span>UX &amp; accessibilité</span>
+              </div>
+            </div>
+
+            <div class="card--highlight" style="margin-top:1.5rem;">
+              <h3>Technologies</h3>
+              <div class="tag-cloud" style="margin-top:.75rem;">
+                <span class="tag tag--primary">HTML &amp; CSS</span>
+                <span class="tag tag--primary">PHP</span>
+                <span class="tag tag--primary">MySQL</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Responsive</span>
+              </div>
+            </div>
+
+            <div class="card--highlight" style="margin-top:1rem;">
+              <h3>Public cible</h3>
+              <ul class="list--check" style="margin-top:.75rem;">
+                <li>Associations et entreprises souhaitant exposer</li>
+                <li>Organisateurs du salon (planning, suivi)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FONCTIONNALITÉS ── -->
+    <section class="section" aria-labelledby="features-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__overline">Fonctionnalités</p>
+          <h2 id="features-title">Ce que la plateforme permet</h2>
+          <p class="section__lead">Une solution complète pour les organisateurs comme pour les exposants.</p>
+        </header>
+
+        <div class="grid grid--2 fade-up">
+          <div>
+            <h3 style="margin-bottom:1rem;">Côté exposants</h3>
+            <ul class="list--check">
+              <li>Création de compte et authentification sécurisée</li>
+              <li>Visualisation des espaces disponibles</li>
+              <li>Réservation de créneaux et d'emplacements</li>
+              <li>Suivi de son inscription et statut</li>
+            </ul>
+          </div>
+          <div>
+            <h3 style="margin-bottom:1rem;">Côté organisateurs</h3>
+            <ul class="list--check">
+              <li>Tableau de bord de gestion du salon</li>
+              <li>Gestion des espaces et créneaux disponibles</li>
+              <li>Validation et suivi des inscriptions exposants</li>
+              <li>Export et administration des données</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid grid--2 fade-up" style="margin-top:2.5rem;">
+          <div class="card--highlight">
+            <h3>Compétences mises en œuvre</h3>
+            <ul class="list--check" style="margin-top:.75rem;">
+              <li>Conception UX et maquettage</li>
+              <li>Développement front-end et back-end</li>
+              <li>Tests fonctionnels et validation des flux</li>
+              <li>Gestion de versions avec Git</li>
+            </ul>
+          </div>
+          <div>
+            <figure>
+              <img src="img/plan_tellis.png" loading="lazy" alt="Plan interactif de réservation des espaces" />
+              <figcaption>Plan interactif des emplacements disponibles dans le salon.</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div style="margin-top:2.5rem;">
+          <a class="btn btn--outline" href="projects.html">← Retour aux projets</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" aria-label="Pied de page">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="footer-brand__name">Matéo Gonçalves Mota</p>
+        <p class="footer-brand__text">Développeur web &amp; applicatif</p>
+      </div>
+      <nav class="footer-nav">
+        <a class="footer-nav__link" href="../index.html">Accueil</a>
+        <a class="footer-nav__link" href="about.html">À propos</a>
+        <a class="footer-nav__link" href="skills.html">Compétences</a>
+        <a class="footer-nav__link" href="projects.html">Projets</a>
+        <a class="footer-nav__link" href="stages.html">Stages</a>
+        <a class="footer-nav__link" href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a class="footer-social__link" href="https://github.com/Kayzmat" target="_blank" rel="noreferrer" aria-label="GitHub">🐙 GitHub</a>
+        <a class="footer-social__link" href="https://linkedin.com/in/mateo-goncalves-mota" target="_blank" rel="noreferrer" aria-label="LinkedIn">👔 LinkedIn</a>
+      </div>
+      <p class="footer-copy">© 2026 Matéo Gonçalves Mota</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
