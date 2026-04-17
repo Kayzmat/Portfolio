@@ -1,0 +1,122 @@
+[
+  {
+    "title": "Low-Code vs No-Code: Les différences essentielles en 2024",
+    "link": "https://dev.to/lowcodefr/low-code-vs-no-code-les-differences-essentielles-en-2024-abc",
+    "pubDate": "2024-10-04T10:00:00.000Z",
+    "author": "LowcodeFR",
+    "sourceId": "fallback",
+    "sourceName": "Veille (hors ligne)",
+    "description": "Analyse détaillée des deux approches et de leurs cas d'usage optimaux.",
+    "thumbnailUrl": "https://example.com/lowcode-nocode.jpg"
+  },
+  {
+    "title": "Bubble.io: Créer une SaaS complète sans code backend",
+    "link": "https://dev.to/nocodefr/bubble-io-creer-une-saas-complete-sans-code-backend-xyz",
+    "pubDate": "2024-10-03T16:30:00.000Z",
+    "author": "NoCodeFR",
+    "sourceId": "fallback",
+    "sourceName": "Veille (hors ligne)",
+    "description": "Tutoriel complet pour build MVP avec Bubble, Airtable et Stripe.",
+    "thumbnailUrl": "https://example.com/bubble-saas.jpg"
+  },
+  {
+    "title": "Mendix 10: Nouvelles features IA pour le Low-Code",
+    "link": "https://www.mendix.com/blog/mendix-10-ai-features-low-code/",
+    "pubDate": "2024-10-02T14:00:00.000Z",
+    "author": "Mendix Team",
+    "sourceId": "fallback",
+    "sourceName": "Veille (hors ligne)",
+    "description": "Intégration native d'IA générative dans les workflows Low-Code.",
+    "thumbnailUrl": "https://mendix.com/hubfs/mendix-10-ai.jpg"
+  },
+  {
+    "title": "Pourquoi le Low-Code réduit le churn développeur de 30%",
+    "link": "https://dev.to/lowcode/low-code-developer-burnout-30percent-pqr",
+    "pubDate": "2024-10-01T09:15:00.000Z",
+    "author": "Dev.to Lowcode",
+    "sourceId": "fallback",
+    "sourceName": "Veille (hors ligne)",
+    "description": "Étude Forrester: productivité ↑, burnout ↓ avec plateformes LCNC.",
+    "thumbnailUrl": "https://example.com/burnout-lowcode.jpg"
+  },
+  {
+    "title": "Webflow + Memberspace: Membership sans dev",
+    "link": "https://dev.to/nocode/webflow-memberspace-tutorial-stu",
+    "pubDate": "2024-09-30T18:45:00.000Z",
+    "author": "NoCode Daily",
+    "sourceId": "fallback",
+    "sourceName": "Veille (hors ligne)",
+    "description": "Monétiser site avec abonnements payants en 2h de config.",
+    "thumbnailUrl": "https://example.com/webflow-members.jpg"
+  },
+  {
+    "title": "OutSystems vs Power Apps: Qui choisir en 2024?",
+    "link": "https://dev.to/enterprise-lowcode/outsystems-powerapps-comparatif-vwx",
+    "pubDate": "2024-09-29T13:20:00.000Z",
+    "author": "Enterprise LC",
+    "sourceId": "fallback",
+    "sourceName": "Veille (hors ligne)",
+    "description": "Benchmark performances, pricing, écosystème pour grandes entreprises.",
+    "thumbnailUrl": "https://example.com/outsystems-powerapps.jpg"
+  },
+  {
+    "title": "Airtable Interfaces: Le killer du tableur No-Code",
+    "link": "https://dev.to/airtable/airtable-interfaces-tutorial-yz1",
+    "pubDate": "2024-09-28T11:10:00.000Z",
+    "author": "Airtable Pro",
+    "sourceId": "fallback",
+    "sourceName": "Veille (hors ligne)",
+    "description": "Transformez vos bases en dashboards pros sans code additionnel.",
+    "thumbnailUrl": "https://example.com/airtable-interfaces.jpg"
+  },
+  {
+    "title": "Vendor Lock-in No-Code: Comment migrer sans drame",
+    "link": "https://dev.to/nocodefr/vendor-lockin-strategies-234",
+    "pubDate": "2024-09-27T15:40:00.000Z",
+    "author": "NoCodeFR",
+    "sourceId": "fallback",
+    "sourceName": "Veille (hors ligne)",
+    "description": "5 stratégies testées pour exporter données/logique vers concurrents.",
+    "thumbnailUrl": "https://example.com/vendor-lockin.jpg"
+  },
+  {
+    "title": "Low-Code Security Best Practices (RGPD/HDS)",
+    "link": "https://www.mendix.com/blog/lowcode-security-rgpd-hds/",
+    "pubDate": "2024-09-26T10:30:00.000Z",
+    "author": "Mendix Security",
+    "sourceId": "fallback",
+    "sourceName": "Veille (hors ligne)",
+    "description": "Checklist conformité pour apps LCNC hébergées en Europe.",
+    "thumbnailUrl": "https://mendix.com/security-lowcode.jpg"
+  },
+  {
+    "title": "Appsmith: Open Source Low-Code pour dashboards internes",
+    "link": "https://dev.to/lowcode/appsmith-open-source-alternative-retool-567",
+    "pubDate": "2024-09-25T17:00:00.000Z",
+    "author": "OpenSourceLC",
+    "sourceId": "fallback",
+    "sourceName": "Veille (hors ligne)",
+    "description": "Self-hosted, gratuit, intégration 50+ datasources out-of-box.",
+    "thumbnailUrl": "https://example.com/appsmith-dashboard.jpg"
+  },
+  {
+    "title": "No-Code AI Agents avec n8n + OpenAI",
+    "link": "https://dev.to/nocode/ai-agents-n8n-openai-890",
+    "pubDate": "2024-09-24T12:25:00.000Z",
+    "author": "AI NoCode",
+    "sourceId": "fallback",
+    "sourceName": "Veille (hors ligne)",
+    "description": "Automatisez tâches complexes avec LLM via workflows visuels.",
+    "thumbnailUrl": "https://example.com/n8n-ai.jpg"
+  },
+  {
+    "title": "Gartner 2024: LCNC = 75% des nouvelles apps d'ici 2027",
+    "link": "https://dev.to/gartner/gartner-lcnc-prediction-2027-abc",
+    "pubDate": "2024-09-23T09:50:00.000Z",
+    "author": "Gartner Watch",
+    "sourceId": "fallback",
+    "sourceName": "Veille (hors ligne)",
+    "description": "Rapport Magic Quadrant + prévisions marché 5 ans.",
+    "thumbnailUrl": "https://example.com/gartner-lcnc.jpg"
+  }
+]

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Projets réalisés par Matéo Gonçalves Mota — applications web, infrastructure réseau, portfolio." />
+  <meta name="author" content="Matéo Gonçalves Mota" />
+  <title>Projets — Matéo Gonçalves Mota</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html"><span>Matéo Gonçalves Mota</span></a>
+      <button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Ouvrir le menu">
+        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+      </button>
+      <nav class="site-nav" id="site-navigation" aria-label="Navigation principale">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="../index.html">Accueil</a></li>
+          <li><a class="site-nav__link" href="about.html">À propos</a></li>
+          <li><a class="site-nav__link" href="skills.html">Compétences</a></li>
+          <li><a class="site-nav__link" href="projects.html" aria-current="page">Projets</a></li>
+          <li><a class="site-nav__link" href="stages.html">Stages</a></li>
+          <li><a class="site-nav__link" href="veille.html">Veille</a></li>
+          <li><a class="site-nav__link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="site-nav__actions">
+          <a class="btn btn--primary" href="docs/cv.pdf" target="_blank" rel="noreferrer">Télécharger CV</a>
+          <a class="btn btn--outline" href="docs/tableau_competences.xlsx" download="tableau_competences_mateo.xlsx">Télécharger tableau compétences</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ── HERO ── -->
+    <section class="hero hero--page" aria-labelledby="projects-title">
+      <div class="container">
+        <p class="hero__eyebrow"><span class="hero__eyebrow-dot"></span>Réalisations</p>
+        <h1 id="projects-title">Mes projets</h1>
+        <p class="hero__subtitle">
+          Du prototype à la solution déployée — une sélection de réalisations techniques réalisées
+          en équipe ou en autonomie.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── GRILLE PROJETS ── -->
+    <section class="section" aria-labelledby="grid-title">
+      <div class="container">
+        <h2 id="grid-title" class="sr-only">Liste des projets</h2>
+
+        <div class="cards cards--grid">
+          <article class="card fade-up">
+            <img class="card__media" loading="lazy" src="/img/portfolio_accueil.png" alt="Capture d'écran de ce portfolio" />
+            <div class="card__body">
+              <h3 class="card__title">Portfolio personnel</h3>
+              <p class="card__description">
+                Ce portfolio est lui-même un projet : conçu pour être performant, accessible et facile
+                à maintenir — sans dépendances lourdes, 100% HTML/CSS/JS vanilla.
+              </p>
+              <div class="tag-cloud" style="margin-top:.5rem;">
+                <span class="tag tag--primary">HTML5</span>
+                <span class="tag tag--primary">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">SEO</span>
+              </div>
+              <a class="card__cta" href="project-portfolio.html">Voir le projet</a>
+            </div>
+          </article>
+
+          <article class="card fade-up delay-1">
+            <img class="card__media" loading="lazy" src="img/sigansud_accueil.png" alt="Interface application mobile de gestion des repas" />
+            <div class="card__body">
+              <h3 class="card__title">Gestion des repas — SIGEANSUD</h3>
+              <p class="card__description">
+                Application complète pour parc animalier : app mobile de traçabilité des repas,
+                back-office de gestion, API REST avec Symfony 7 et déploiement sur IONOS.
+              </p>
+              <div class="tag-cloud" style="margin-top:.5rem;">
+                <span class="tag tag--primary">Android</span>
+                <span class="tag tag--primary">Symfony 7</span>
+                <span class="tag tag--primary">MySQL</span>
+                <span class="tag">API REST</span>
+              </div>
+              <a class="card__cta" href="project-sigeansud.html">Voir le projet</a>
+            </div>
+          </article>
+
+          <article class="card fade-up delay-2">
+            <img class="card__media" loading="lazy" src="img/triathlon_accueil_admin.png" alt="Tableau de bord administrateur du projet triathlon" />
+            <div class="card__body">
+              <h3 class="card__title">Gestion d'événement sportif</h3>
+              <p class="card__description">
+                Application full-stack permettant de gérer les inscriptions, le suivi des participants
+                et les statistiques en temps réel pour un triathlon.
+              </p>
+              <div class="tag-cloud" style="margin-top:.5rem;">
+                <span class="tag tag--primary">PHP</span>
+                <span class="tag tag--primary">MySQL</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">MVC</span>
+              </div>
+              <a class="card__cta" href="project-triathlon.html">Voir le projet</a>
+            </div>
+          </article>
+
+          <article class="card fade-up delay-3">
+            <img class="card__media" loading="lazy" src="img/castellane_accueil.png" alt="Interface de gestion des leçons Castellane Auto" />
+            <div class="card__body">
+              <h3 class="card__title">Gestion des leçons — Castellane Auto</h3>
+              <p class="card__description">
+                Application de gestion pour une auto-école : planification des leçons, suivi des moniteurs,
+                gestion du matériel roulant et facturation. Projet utilisé pour l'entrainement de l'épreuve E6.
+              </p>
+              <div class="tag-cloud" style="margin-top:.5rem;">
+                <span class="tag tag--primary">PHP</span>
+                <span class="tag tag--primary">MySQL</span>
+                <span class="tag">MVC</span>
+                <span class="tag">Laragon</span>
+              </div>
+              <a class="card__cta" href="project-castellane-auto.html">Voir le projet</a>
+            </div>
+          </article>
+
+          <article class="card fade-up delay-4">
+            <img class="card__media" loading="lazy" src="img/connexion_tellis.png" alt="Page de connexion de la plateforme Tellis" />
+            <div class="card__body">
+              <h3 class="card__title">Plateforme de réservation — Tellis</h3>
+              <p class="card__description">
+                Solution de réservation pour un salon professionnel : authentification, gestion des espaces disponibles,
+                inscription des exposants et tableau de bord organisateur.
+              </p>
+              <div class="tag-cloud" style="margin-top:.5rem;">
+                <span class="tag tag--primary">PHP</span>
+                <span class="tag tag--primary">MySQL</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Laragon</span>
+              </div>
+              <a class="card__cta" href="project-tellis.html">Voir le projet</a>
+            </div>
+          </article>
+
+          <article class="card fade-up delay-5">
+            <img class="card__media" loading="lazy" src="img/windows_linux.png" alt="Schéma d'infrastructure réseau Windows et Linux" />
+            <div class="card__body">
+              <h3 class="card__title">Infrastructure réseau Windows / Linux</h3>
+              <p class="card__description">
+                Mise en place d'une infrastructure réseau sécurisée : segmentation VLAN, firewall,
+                domaine Windows Server et serveur web sous Linux Debian.
+              </p>
+              <div class="tag-cloud" style="margin-top:.5rem;">
+                <span class="tag tag--primary">Windows Server</span>
+                <span class="tag tag--primary">Linux</span>
+                <span class="tag">Cisco</span>
+                <span class="tag">VLAN</span>
+              </div>
+              <a class="card__cta" href="project-windows-linux.html">Voir le projet</a>
+            </div>
+          </article>
+
+          
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="section section--surface">
+      <div class="container" style="text-align:center;max-width:560px;">
+        <p class="section__overline">Collaboration</p>
+        <h2>Vous avez un projet ?</h2>
+        <p class="section__lead">Je suis disponible pour des stages, alternances ou collaborations sur des projets ambitieux.</p>
+        <a class="btn btn--primary" href="contact.html" style="margin-top:1.5rem;">Me contacter</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" aria-label="Pied de page">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="footer-brand__name">Matéo Gonçalves Mota</p>
+        <p class="footer-brand__text">Développeur web &amp; applicatif</p>
+      </div>
+      <nav class="footer-nav">
+        <a class="footer-nav__link" href="../index.html">Accueil</a>
+        <a class="footer-nav__link" href="about.html">À propos</a>
+        <a class="footer-nav__link" href="skills.html">Compétences</a>
+        <a class="footer-nav__link" href="projects.html">Projets</a>
+        <a class="footer-nav__link" href="stages.html">Stages</a>
+        <a class="footer-nav__link" href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a class="footer-social__link" href="https://github.com/Kayzmat" target="_blank" rel="noreferrer" aria-label="GitHub">🐙 GitHub</a>
+        <a class="footer-social__link" href="https://linkedin.com/in/mateo-goncalves-mota" target="_blank" rel="noreferrer" aria-label="LinkedIn">👔 LinkedIn</a>
+      </div>
+      <p class="footer-copy">© 2026 Matéo Gonçalves Mota</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>

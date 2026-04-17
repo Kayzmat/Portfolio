@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Compétences techniques de Matéo Gonçalves Mota — langages, frameworks, outils et méthodes." />
+  <meta name="author" content="Matéo Gonçalves Mota" />
+  <title>Compétences — Matéo Gonçalves Mota</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html"><span>Matéo Gonçalves Mota</span></a>
+      <button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Ouvrir le menu">
+        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+      </button>
+      <nav class="site-nav" id="site-navigation" aria-label="Navigation principale">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="../index.html">Accueil</a></li>
+          <li><a class="site-nav__link" href="about.html">À propos</a></li>
+          <li><a class="site-nav__link" href="skills.html" aria-current="page">Compétences</a></li>
+          <li><a class="site-nav__link" href="projects.html">Projets</a></li>
+          <li><a class="site-nav__link" href="stages.html">Stages</a></li>
+          <li><a class="site-nav__link" href="veille.html">Veille</a></li>
+          <li><a class="site-nav__link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="site-nav__actions">
+          <a class="btn btn--primary" href="docs/cv.pdf" target="_blank" rel="noreferrer">Télécharger CV</a>
+          <a class="btn btn--outline" href="docs/tableau_competences.xlsx" download="tableau_competences_mateo.xlsx">Télécharger tableau compétences</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ── HERO ── -->
+    <section class="hero hero--page" aria-labelledby="skills-title">
+      <div class="container">
+        <p class="hero__eyebrow"><span class="hero__eyebrow-dot"></span>Mes outils</p>
+        <h1 id="skills-title">Compétences</h1>
+        <p class="hero__subtitle">
+          Technologies que j'utilise régulièrement, frameworks que j'explore et outils qui rythment mon quotidien de développeur.
+        </p>
+        <div class="hero__actions" style="margin-top:1.5rem;">
+          <a class="btn btn--outline" href="docs/tableau_competences.xlsx" download="tableau_competences_mateo.xlsx">Télécharger tableau compétences</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LANGAGES ── -->
+    <section class="section" aria-labelledby="langages-title">
+      <div class="container">
+        <div class="grid grid--2">
+          <!-- Langages web & back -->
+          <div class="fade-up">
+            <p class="section__overline">Langages</p>
+            <h2 id="langages-title">Web &amp; Back-end</h2>
+            <p style="color:var(--muted);margin-top:.75rem;margin-bottom:1.5rem;font-size:.95rem;">
+              Les langages que j'utilise pour construire des applications web complètes, du front au back.
+            </p>
+            <ul class="skill-grid" aria-label="Compétences en langages web">
+              <li class="skill-item">
+                <span class="skill__name">HTML5 / CSS3</span>
+                <span class="skill__bar"><span class="skill__fill" style="--progress:95%"></span></span>
+                <span class="skill__pct">95%</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill__name">PHP</span>
+                <span class="skill__bar"><span class="skill__fill" style="--progress:85%"></span></span>
+                <span class="skill__pct">85%</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill__name">MySQL / SQL</span>
+                <span class="skill__bar"><span class="skill__fill" style="--progress:85%"></span></span>
+                <span class="skill__pct">85%</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill__name">JavaScript</span>
+                <span class="skill__bar"><span class="skill__fill" style="--progress:75%"></span></span>
+                <span class="skill__pct">75%</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill__name">Python</span>
+                <span class="skill__bar"><span class="skill__fill" style="--progress:70%"></span></span>
+                <span class="skill__pct">70%</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Langages applicatifs -->
+          <div class="fade-up delay-2">
+            <p class="section__overline">Applicatif</p>
+            <h2>Langages systèmes</h2>
+            <p style="color:var(--muted);margin-top:.75rem;margin-bottom:1.5rem;font-size:.95rem;">
+              Langages orientés applicatif et systèmes, utilisés en cours et en stage.
+            </p>
+            <ul class="skill-grid" aria-label="Compétences en langages applicatifs">
+              <li class="skill-item">
+                <span class="skill__name">Wlangage (Windev)</span>
+                <span class="skill__bar"><span class="skill__fill" style="--progress:75%"></span></span>
+                <span class="skill__pct">75%</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill__name">Java</span>
+                <span class="skill__bar"><span class="skill__fill" style="--progress:65%"></span></span>
+                <span class="skill__pct">65%</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill__name">C++</span>
+                <span class="skill__bar"><span class="skill__fill" style="--progress:60%"></span></span>
+                <span class="skill__pct">60%</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FRAMEWORKS & OUTILS ── -->
+    <section class="section section--surface" aria-labelledby="frameworks-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__overline">Frameworks &amp; Outils</p>
+          <h2 id="frameworks-title">Environnement de développement</h2>
+          <p class="section__lead">Les frameworks, architectures et outils qui structurent ma façon de développer.</p>
+        </header>
+
+        <div class="grid grid--2">
+          <div class="fade-up">
+            <h3 style="margin-bottom:1.25rem;">Frameworks &amp; Architectures</h3>
+            <ul class="skill-grid">
+              <li class="skill-item">
+                <span class="skill__name">Architecture MVC</span>
+                <span class="skill__bar"><span class="skill__fill" style="--progress:80%"></span></span>
+                <span class="skill__pct">80%</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill__name">Symfony</span>
+                <span class="skill__bar"><span class="skill__fill" style="--progress:55%"></span></span>
+                <span class="skill__pct">55%</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill__name">React</span>
+                <span class="skill__bar"><span class="skill__fill" style="--progress:50%"></span></span>
+                <span class="skill__pct">50%</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill__name">Android Studio</span>
+                <span class="skill__bar"><span class="skill__fill" style="--progress:50%"></span></span>
+                <span class="skill__pct">50%</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill__name">WordPress</span>
+                <span class="skill__bar"><span class="skill__fill" style="--progress:50%"></span></span>
+                <span class="skill__pct">50%</span>
+              </li>
+              <li class="skill-item">
+                <span class="skill__name">RDI / AS400</span>
+                <span class="skill__bar"><span class="skill__fill" style="--progress:45%"></span></span>
+                <span class="skill__pct">45%</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="fade-up delay-2">
+            <h3 style="margin-bottom:1.25rem;">Méthodes &amp; Pratiques</h3>
+            <div class="cards cards--grid" style="grid-template-columns:1fr;">
+              <div class="card--highlight">
+                <h4>🔀 Versionning</h4>
+                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 .75rem;">Git &amp; GitHub — branches, pull requests, issues.</p>
+                <div class="tag-cloud">
+                  <span class="tag tag--primary">Git</span>
+                  <span class="tag tag--primary">GitHub</span>
+                </div>
+              </div>
+              <div class="card--highlight">
+                <h4>📐 Conception</h4>
+                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 .75rem;">Modélisation et conception de bases de données relationnelles.</p>
+                <div class="tag-cloud">
+                  <span class="tag tag--primary">MCD / MLD</span>
+                  <span class="tag tag--primary">Merise</span>
+                  <span class="tag tag--primary">UML</span>
+                </div>
+              </div>
+              <div class="card--highlight">
+                <h4>🔄 Gestion de projet</h4>
+                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 .75rem;">Méthodes agiles pour livrer régulièrement et s'adapter aux besoins.</p>
+                <div class="tag-cloud">
+                  <span class="tag tag--primary">Agile</span>
+                  <span class="tag tag--primary">Scrum</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── OUTILS WORKFLOW ── -->
+    <section class="section" aria-labelledby="workflow-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__overline">Workflow</p>
+          <h2 id="workflow-title">Outils du quotidien</h2>
+          <p class="section__lead">Les outils qui m'accompagnent pour livrer des projets de qualité.</p>
+        </header>
+
+        <div class="cards cards--grid fade-up">
+          <article class="card">
+            <div class="card__body">
+              <h3>🖊️ IDE &amp; Édition</h3>
+              <p class="card__description">Visual Studio Code avec extensions pour linting, IntelliSense, débogage et gestion de Git intégrée.</p>
+              <div class="tag-cloud" style="margin-top:.75rem;">
+                <span class="tag">VS Code</span><span class="tag">Windev</span><span class="tag">Eclipse</span>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__body">
+              <h3>🔀 Versionning</h3>
+              <p class="card__description">Git pour le suivi des versions, GitHub pour l'hébergement et la collaboration sur les projets.</p>
+              <div class="tag-cloud" style="margin-top:.75rem;">
+                <span class="tag">Git</span><span class="tag">GitHub</span>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__body">
+              <h3>🌐 Déploiement</h3>
+              <p class="card__description">Hébergement statique sur GitHub Pages ou Netlify. Exploration de solutions CI/CD.</p>
+              <div class="tag-cloud" style="margin-top:.75rem;">
+                <span class="tag">GitHub Pages</span><span class="tag">Netlify</span>
+              </div>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__body">
+              <h3>🌍 Langues</h3>
+              <p class="card__description">Anglais technique courant pour lire de la documentation et collaborer dans des contextes internationaux.</p>
+              <div class="tag-cloud" style="margin-top:.75rem;">
+                <span class="tag">Anglais B2</span><span class="tag">Espagnol B1</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" aria-label="Pied de page">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="footer-brand__name">Matéo Gonçalves Mota</p>
+        <p class="footer-brand__text">Développeur web &amp; applicatif</p>
+      </div>
+      <nav class="footer-nav">
+        <a class="footer-nav__link" href="../index.html">Accueil</a>
+        <a class="footer-nav__link" href="about.html">À propos</a>
+        <a class="footer-nav__link" href="skills.html">Compétences</a>
+        <a class="footer-nav__link" href="projects.html">Projets</a>
+        <a class="footer-nav__link" href="stages.html">Stages</a>
+        <a class="footer-nav__link" href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a class="footer-social__link" href="https://github.com/Kayzmat" target="_blank" rel="noreferrer" aria-label="GitHub">🐙 GitHub</a>
+        <a class="footer-social__link" href="https://linkedin.com/in/mateo-goncalves-mota" target="_blank" rel="noreferrer" aria-label="LinkedIn">👔 LinkedIn</a>
+      </div>
+      <p class="footer-copy">© 2026 Matéo Gonçalves Mota</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>

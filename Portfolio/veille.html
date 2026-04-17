@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Veille technologique sur le Low-Code et le No-Code — définitions, outils, tendances et articles récents." />
+  <meta name="keywords" content="veille technologique, low-code, no-code, développement, outils, tendances" />
+  <meta name="author" content="Matéo Gonçalves Mota" />
+  <meta property="og:title" content="Veille technologique — Low-Code & No-Code" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="assets/images/og-preview.svg" />
+  <title>Veille technologique — Low-Code &amp; No-Code — Matéo Gonçalves Mota</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* ── Styles spécifiques à la page veille ── */
+
+    /* Catégorie pill filter */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-bottom: 2rem;
+    }
+    .filter-btn {
+      padding: .4rem 1rem;
+      border-radius: 99px;
+      font-size: .85rem;
+      font-weight: 600;
+      border: 1.5px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all var(--dur) var(--ease);
+    }
+    .filter-btn:hover { border-color: var(--primary); color: var(--primary); }
+    .filter-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+
+    /* Article feed cards */
+    .feed-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .feed-card {
+      border-radius: var(--radius-lg);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease), border-color var(--dur) var(--ease);
+      text-decoration: none;
+      color: inherit;
+    }
+    .feed-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: color-mix(in srgb, var(--primary) 30%, var(--border));
+    }
+    .feed-card__img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      background: linear-gradient(135deg,
+        color-mix(in srgb, var(--primary) 15%, var(--surface)),
+        color-mix(in srgb, var(--primary-2) 10%, var(--surface)));
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+    }
+    .feed-card__img img { width: 100%; height: 100%; object-fit: cover; }
+    .feed-card__body { padding: 1.25rem 1.5rem; display: flex; flex-direction: column; gap: .5rem; flex: 1; }
+    .feed-card__source {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--primary);
+    }
+    .feed-card__source-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--primary); flex-shrink: 0; }
+    .feed-card__meta {
+      font-size: .82rem;
+      color: var(--muted);
+      margin-top: .5rem;
+      letter-spacing: .01em;
+    }
+    .feed-card__title {
+      font-family: var(--font-head);
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text);
+      display: -webkit-box;
+      line-clamp: 2;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-top: .5rem;
+    }
+    .feed-card__excerpt {
+      font-size: .88rem;
+      color: var(--muted);
+      line-height: 1.55;
+      display: -webkit-box;
+      line-clamp: 3;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .feed-card__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: .75rem;
+      font-size: .8rem;
+      color: var(--muted);
+    }
+    .feed-card__date { display: flex; align-items: center; gap: .3rem; }
+    .feed-card__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: .25rem;
+      font-weight: 700;
+      font-size: .82rem;
+      color: var(--primary);
+    }
+    .feed-card__cta::after { content: '→'; transition: transform var(--dur) var(--ease); }
+    .feed-card:hover .feed-card__cta::after { transform: translateX(4px); }
+
+    /* Skeleton loader */
+    .skeleton { animation: shimmer 1.4s ease infinite; }
+    @keyframes shimmer {
+      0%   { background-position: -600px 0; }
+      100% { background-position: 600px 0; }
+    }
+    .skeleton-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      background: var(--bg);
+    }
+    .skeleton-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: linear-gradient(90deg, var(--surface) 25%, var(--surface-2) 50%, var(--surface) 75%);
+      background-size: 1200px 100%;
+      animation: shimmer 1.4s ease infinite;
+    }
+    .skeleton-body { padding: 1.25rem 1.5rem; display: grid; gap: .75rem; }
+    .skeleton-line {
+      border-radius: 6px;
+      background: linear-gradient(90deg, var(--surface) 25%, var(--surface-2) 50%, var(--surface) 75%);
+      background-size: 1200px 100%;
+      animation: shimmer 1.4s ease infinite;
+    }
+
+    /* Feed status */
+    .feed-status {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .82rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+    .feed-status__dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--muted);
+      flex-shrink: 0;
+    }
+    .feed-status__dot.live { background: #22c55e; box-shadow: 0 0 0 3px color-mix(in srgb, #22c55e 20%, transparent); }
+    .feed-status__dot.error { background: #ef4444; }
+    .feed-status__dot.loading { background: #f59e0b; animation: pulse 1s ease infinite; }
+    @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:.4; } }
+
+    /* Comparison table */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      font-size: .92rem;
+    }
+    .compare-table th {
+      background: color-mix(in srgb, var(--primary) 10%, var(--bg));
+      color: var(--text);
+      font-family: var(--font-head);
+      font-weight: 700;
+      padding: 1rem 1.25rem;
+      text-align: left;
+      border-bottom: 2px solid color-mix(in srgb, var(--primary) 25%, var(--border));
+    }
+    .compare-table th:first-child { width: 30%; }
+    .compare-table td {
+      padding: .9rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: var(--surface); }
+    .compare-table .check { color: #22c55e; font-weight: 700; }
+    .compare-table .cross { color: #ef4444; font-weight: 700; }
+    .compare-table .partial { color: #f59e0b; font-weight: 700; }
+
+    /* Outil cards */
+    .outil-card {
+      border-radius: var(--radius-lg);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      box-shadow: var(--shadow);
+      transition: transform var(--dur) var(--ease), border-color var(--dur) var(--ease);
+    }
+    .outil-card:hover { transform: translateY(-3px); border-color: color-mix(in srgb, var(--primary) 30%, var(--border)); }
+    .outil-card__icon {
+      width: 3rem; height: 3rem;
+      border-radius: 12px;
+      background: color-mix(in srgb, var(--primary) 10%, var(--bg));
+      display: grid; place-items: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      border: 1px solid color-mix(in srgb, var(--primary) 20%, var(--border));
+    }
+    .outil-card__content { flex: 1; min-width: 0; }
+    .outil-card__name { font-weight: 700; font-size: 1rem; margin-bottom: .2rem; }
+    .outil-card__desc { font-size: .88rem; color: var(--muted); line-height: 1.5; }
+    .outil-card__tags { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .65rem; }
+    .outil-card__tag {
+      padding: .2rem .6rem; border-radius: 99px;
+      font-size: .75rem; font-weight: 600;
+      background: var(--surface); border: 1px solid var(--border); color: var(--muted);
+    }
+
+    /* Chiffre clés */
+    .stat-big {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      border-radius: var(--radius-lg);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+    .stat-big__value {
+      font-family: var(--font-head);
+      font-size: clamp(1.75rem, 5vw, 2.5rem);
+      font-weight: 800;
+      background: linear-gradient(120deg, var(--primary), var(--primary-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      line-height: 1.1;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+    .stat-big__label { font-size: .88rem; color: var(--muted); margin-top: 0; font-weight: 600; line-height: 1.3; }
+    .stat-big__source { font-size: .75rem; color: var(--muted); margin-top: 0; opacity: .7; }
+
+    /* Sources list */
+    .source-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: .85rem 1.1rem;
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      font-size: .9rem;
+      transition: border-color var(--dur) var(--ease);
+    }
+    .source-item:hover { border-color: var(--primary); }
+    .source-item__icon { font-size: 1.1rem; flex-shrink: 0; }
+    .source-item__name { font-weight: 700; color: var(--text); }
+    .source-item__url { font-size: .8rem; color: var(--muted); }
+    .source-item__badge {
+      margin-left: auto;
+      padding: .2rem .55rem; border-radius: 99px;
+      font-size: .72rem; font-weight: 700;
+      background: color-mix(in srgb, #22c55e 12%, var(--bg));
+      color: #16a34a;
+      border: 1px solid color-mix(in srgb, #22c55e 25%, var(--border));
+    }
+  </style>
+  <script defer src="js/main.js"></script>
+  <script defer src="js/veille-feed.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="../index.html"><span>Matéo Gonçalves Mota</span></a>
+      <button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Ouvrir le menu">
+        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+      </button>
+      <nav class="site-nav" id="site-navigation" aria-label="Navigation principale">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="../index.html">Accueil</a></li>
+          <li><a class="site-nav__link" href="about.html">À propos</a></li>
+          <li><a class="site-nav__link" href="skills.html">Compétences</a></li>
+          <li><a class="site-nav__link" href="projects.html">Projets</a></li>
+          <li><a class="site-nav__link" href="stages.html">Stages</a></li>
+          <li><a class="site-nav__link" href="veille.html" aria-current="page">Veille</a></li>
+          <li><a class="site-nav__link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="site-nav__actions">
+          <a class="btn btn--primary" href="docs/cv.pdf" target="_blank" rel="noreferrer">Télécharger CV</a>
+          <a class="btn btn--outline" href="docs/tableau_competences.xlsx" download="tableau_competences_mateo.xlsx">Télécharger tableau compétences</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ══════════════════════════════════════
+         HERO
+    ══════════════════════════════════════════ -->
+    <section class="hero hero--page" aria-labelledby="veille-title">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="index.html">Accueil</a>
+          <span class="breadcrumb__sep">›</span>
+          <span>Veille technologique</span>
+        </nav>
+        <p class="hero__eyebrow"><span class="hero__eyebrow-dot"></span>BTS SIO — Veille technologique</p>
+        <h1 id="veille-title">Low-Code &amp; No-Code<br /><span class="text-gradient">Démocratiser le développement</span></h1>
+        <p class="hero__subtitle">
+          Ces approches transforment la façon de créer des applications : moins de code, plus d'autonomie pour les métiers.
+          Cette veille explore leurs définitions, leurs limites, leurs outils et leurs impacts sur le métier de développeur.
+        </p>
+        <div class="hero__pills" style="margin-top:1.5rem;" aria-label="Thèmes abordés">
+          <span class="hero__pill">Définitions</span>
+          <span class="hero__pill">Chiffres clés</span>
+          <span class="hero__pill">Outils</span>
+          <span class="hero__pill">Comparatif</span>
+          <span class="hero__pill">Enjeux</span>
+          <span class="hero__pill">Articles récents</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         DÉFINITIONS
+    ══════════════════════════════════════════ -->
+    <section class="section section--surface" id="definitions" aria-labelledby="def-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__overline">Point de départ</p>
+          <h2 id="def-title">Qu'est-ce que c'est ?</h2>
+          <p class="section__lead">Deux approches proches mais distinctes, souvent confondues — voici ce qui les différencie.</p>
+        </header>
+
+        <div class="grid grid--2">
+          <div class="fade-up">
+            <div style="padding:2rem;border-radius:var(--radius-lg);background:color-mix(in srgb, var(--primary) 6%, var(--bg));border:1px solid color-mix(in srgb, var(--primary) 20%, var(--border));height:100%;">
+              <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;">
+                <span style="font-size:2rem;">🔧</span>
+                <h3 style="margin:0;">Low-Code</h3>
+              </div>
+              <p style="color:var(--muted);font-size:.95rem;">
+                Le <strong style="color:var(--text);">Low-Code</strong> est une approche de développement qui réduit la quantité de code manuel nécessaire
+                grâce à des interfaces visuelles (glisser-déposer, formulaires de configuration), tout en permettant
+                d'écrire du code personnalisé pour les cas complexes.
+              </p>
+              <p style="color:var(--muted);font-size:.95rem;">
+                Il s'adresse principalement aux <strong style="color:var(--text);">développeurs</strong> et aux équipes IT qui veulent accélérer leur productivité
+                sans renoncer à la flexibilité technique.
+              </p>
+              <div class="tag-cloud" style="margin-top:1.25rem;">
+                <span class="tag tag--primary">Développeurs</span>
+                <span class="tag tag--primary">Équipes IT</span>
+                <span class="tag">Code possible</span>
+                <span class="tag">Haute flexibilité</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="fade-up delay-2">
+            <div style="padding:2rem;border-radius:var(--radius-lg);background:color-mix(in srgb, var(--primary-2) 6%, var(--bg));border:1px solid color-mix(in srgb, var(--primary-2) 30%, var(--border));height:100%;">
+              <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;">
+                <span style="font-size:2rem;">✨</span>
+                <h3 style="margin:0;">No-Code</h3>
+              </div>
+              <p style="color:var(--muted);font-size:.95rem;">
+                Le <strong style="color:var(--text);">No-Code</strong> permet de créer des applications <em>sans écrire une seule ligne de code</em>.
+                Tout se fait via des interfaces visuelles intuitives : blocs, templates, logiques conditionnelles par clic.
+              </p>
+              <p style="color:var(--muted);font-size:.95rem;">
+                Il cible les <strong style="color:var(--text);">non-développeurs</strong> — entrepreneurs, équipes marketing, product managers — qui souhaitent
+                construire leurs propres outils sans dépendre de l'IT.
+              </p>
+              <div class="tag-cloud" style="margin-top:1.25rem;">
+                <span class="tag" style="background:color-mix(in srgb, var(--primary-2) 12%, var(--bg));border-color:color-mix(in srgb, var(--primary-2) 30%, var(--border));color:color-mix(in srgb, var(--primary-2) 80%, #000);">Non-développeurs</span>
+                <span class="tag" style="background:color-mix(in srgb, var(--primary-2) 12%, var(--bg));border-color:color-mix(in srgb, var(--primary-2) 30%, var(--border));color:color-mix(in srgb, var(--primary-2) 80%, #000);">Métiers</span>
+                <span class="tag">Sans code</span>
+                <span class="tag">Accessibilité maximale</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Origine du concept -->
+        <div class="fade-up" style="margin-top:2.5rem;padding:1.75rem 2rem;border-radius:var(--radius-lg);background:var(--bg);border:1px solid var(--border);box-shadow:var(--shadow);">
+          <h3 style="margin-bottom:.75rem;">📖 Origine du concept</h3>
+          <p style="color:var(--muted);margin:0;font-size:.95rem;">
+            Le terme <em>Low-Code</em> a été popularisé par le cabinet Forrester Research en <strong style="color:var(--text);">2014</strong>.
+            Le mouvement No-Code, lui, prend vraiment son essor à partir de <strong style="color:var(--text);">2018-2019</strong> avec l'émergence de plateformes comme Bubble, Webflow ou Airtable.
+            Ces deux paradigmes s'inscrivent dans une tendance plus large : la <strong style="color:var(--text);">démocratisation du développement logiciel</strong>,
+            portée par Gartner sous le terme de <em>"Citizen Developer"</em> — un utilisateur métier capable de créer ses propres applications.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         CHIFFRES CLÉS
+    ══════════════════════════════════════════ -->
+    <section class="section" id="chiffres" aria-labelledby="stats-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__overline">Marché mondial</p>
+          <h2 id="stats-title">Le Low-Code/No-Code en chiffres</h2>
+          <p class="section__lead">Un marché en explosion qui redéfinit les pratiques de développement à l'échelle mondiale.</p>
+        </header>
+
+        <div class="cards cards--grid fade-up" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr));">
+          <div class="stat-big">
+            <div class="stat-big__value">148 Md$</div>
+            <div class="stat-big__label">Valeur du marché mondiale estimée en 2030</div>
+            <div class="stat-big__source">Source : Mordor Intelligence, 2023</div>
+          </div>
+          <div class="stat-big">
+            <div class="stat-big__value">+26%</div>
+            <div class="stat-big__label">Croissance annuelle du marché LCNC (CAGR)</div>
+            <div class="stat-big__source">Source : Gartner, 2023</div>
+          </div>
+          <div class="stat-big">
+            <div class="stat-big__value">70%</div>
+            <div class="stat-big__label">Des nouvelles apps seront Low/No-Code d'ici 2025</div>
+            <div class="stat-big__source">Source : Gartner, 2022</div>
+          </div>
+          <div class="stat-big">
+            <div class="stat-big__value">500M</div>
+            <div class="stat-big__label">Nouveaux développeurs citoyens attendus d'ici 2023</div>
+            <div class="stat-big__source">Source : Forrester Research</div>
+          </div>
+          <div class="stat-big">
+            <div class="stat-big__value">10×</div>
+            <div class="stat-big__label">Gain de vitesse de développement potentiel</div>
+            <div class="stat-big__source">Source : OutSystems, 2022</div>
+          </div>
+          <div class="stat-big">
+            <div class="stat-big__value">60%</div>
+            <div class="stat-big__label">Des entreprises du Fortune 500 utilisent déjà le Low-Code</div>
+            <div class="stat-big__source">Source : Salesforce</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         OUTILS
+    ══════════════════════════════════════════ -->
+    <section class="section section--surface" id="outils" aria-labelledby="outils-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__overline">Écosystème</p>
+          <h2 id="outils-title">Les principaux outils</h2>
+          <p class="section__lead">Un panorama des plateformes phares — des géants du marché aux spécialistes de niche.</p>
+        </header>
+
+        <!-- LOW-CODE -->
+        <h3 style="margin-bottom:1.25rem;">🔧 Plateformes Low-Code</h3>
+        <div style="display:grid;gap:1rem;margin-bottom:2.5rem;">
+
+          <div class="outil-card fade-up">
+            <div class="outil-card__icon">🟠</div>
+            <div class="outil-card__content">
+              <div class="outil-card__name">OutSystems</div>
+              <div class="outil-card__desc">Plateforme Low-Code de référence pour les entreprises. Permet de créer des apps web et mobiles complexes avec intégration DevOps. Leader selon Gartner Magic Quadrant.</div>
+              <div class="outil-card__tags">
+                <span class="outil-card__tag">Enterprise</span>
+                <span class="outil-card__tag">Web &amp; Mobile</span>
+                <span class="outil-card__tag">DevOps</span>
+                <span class="outil-card__tag">Payant</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="outil-card fade-up delay-1">
+            <div class="outil-card__icon">🔵</div>
+            <div class="outil-card__content">
+              <div class="outil-card__name">Mendix</div>
+              <div class="outil-card__desc">Concurrent direct d'OutSystems, racheté par Siemens. Fort sur l'intégration IoT et les applications industrielles. Offre une version communautaire gratuite.</div>
+              <div class="outil-card__tags">
+                <span class="outil-card__tag">Enterprise</span>
+                <span class="outil-card__tag">IoT</span>
+                <span class="outil-card__tag">Freemium</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="outil-card fade-up delay-2">
+            <div class="outil-card__icon">🟣</div>
+            <div class="outil-card__content">
+              <div class="outil-card__name">Microsoft Power Apps</div>
+              <div class="outil-card__desc">Intégré à l'écosystème Microsoft 365. Idéal pour les entreprises déjà sur Azure/SharePoint. Permet de créer rapidement des apps connectées aux données d'entreprise.</div>
+              <div class="outil-card__tags">
+                <span class="outil-card__tag">Microsoft 365</span>
+                <span class="outil-card__tag">Azure</span>
+                <span class="outil-card__tag">Enterprise</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="outil-card fade-up">
+            <div class="outil-card__icon">🟡</div>
+            <div class="outil-card__content">
+              <div class="outil-card__name">Appsmith / Retool</div>
+              <div class="outil-card__desc">Outils Low-Code orientés développeurs pour créer des outils internes (dashboards, CRUD) rapidement. Retool est très populaire dans les startups, Appsmith est open-source.</div>
+              <div class="outil-card__tags">
+                <span class="outil-card__tag">Outils internes</span>
+                <span class="outil-card__tag">Dashboard</span>
+                <span class="outil-card__tag">Open-source</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NO-CODE -->
+        <h3 style="margin-bottom:1.25rem;">✨ Plateformes No-Code</h3>
+        <div style="display:grid;gap:1rem;">
+
+          <div class="outil-card fade-up">
+            <div class="outil-card__icon">🫧</div>
+            <div class="outil-card__content">
+              <div class="outil-card__name">Bubble</div>
+              <div class="outil-card__desc">La référence No-Code pour créer des web apps complexes avec logique métier, base de données intégrée et workflows avancés. Courbe d'apprentissage notable mais très puissant.</div>
+              <div class="outil-card__tags">
+                <span class="outil-card__tag">Web App</span>
+                <span class="outil-card__tag">BDD intégrée</span>
+                <span class="outil-card__tag">Freemium</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="outil-card fade-up delay-1">
+            <div class="outil-card__icon">🌊</div>
+            <div class="outil-card__content">
+              <div class="outil-card__name">Webflow</div>
+              <div class="outil-card__desc">Le standard pour créer des sites web visuellement soignés sans code. Génère du HTML/CSS propre. CMS intégré, animations avancées. Très plébiscité par les designers.</div>
+              <div class="outil-card__tags">
+                <span class="outil-card__tag">Sites web</span>
+                <span class="outil-card__tag">CMS</span>
+                <span class="outil-card__tag">Design</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="outil-card fade-up delay-2">
+            <div class="outil-card__icon">📊</div>
+            <div class="outil-card__content">
+              <div class="outil-card__name">Airtable</div>
+              <div class="outil-card__desc">Un hybride entre tableur et base de données No-Code. Permet de construire des workflows, des tableaux de bord et des mini-applications à partir de données structurées.</div>
+              <div class="outil-card__tags">
+                <span class="outil-card__tag">Base de données</span>
+                <span class="outil-card__tag">Workflows</span>
+                <span class="outil-card__tag">Freemium</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="outil-card fade-up">
+            <div class="outil-card__icon">⚡</div>
+            <div class="outil-card__content">
+              <div class="outil-card__name">Make (ex-Integromat) / Zapier</div>
+              <div class="outil-card__desc">Outils d'automatisation No-Code qui connectent des centaines d'applications entre elles via des workflows visuels. Indispensables pour automatiser les tâches répétitives.</div>
+              <div class="outil-card__tags">
+                <span class="outil-card__tag">Automatisation</span>
+                <span class="outil-card__tag">Intégrations</span>
+                <span class="outil-card__tag">Workflows</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         COMPARATIF
+    ══════════════════════════════════════════ -->
+    <section class="section" id="comparatif" aria-labelledby="compare-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__overline">Analyse</p>
+          <h2 id="compare-title">Low-Code vs No-Code vs Développement traditionnel</h2>
+          <p class="section__lead">Comprendre les forces et les limites de chaque approche pour choisir la bonne selon le contexte.</p>
+        </header>
+
+        <div class="fade-up" style="overflow-x:auto;">
+          <table class="compare-table" aria-label="Comparatif Low-Code, No-Code et développement traditionnel">
+            <thead>
+              <tr>
+                <th>Critère</th>
+                <th>🔧 Low-Code</th>
+                <th>✨ No-Code</th>
+                <th>💻 Développement traditionnel</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Public cible</strong></td>
+                <td>Développeurs, équipes IT</td>
+                <td>Non-développeurs, métiers</td>
+                <td>Développeurs expérimentés</td>
+              </tr>
+              <tr>
+                <td><strong>Courbe d'apprentissage</strong></td>
+                <td><span class="partial">▲</span> Modérée</td>
+                <td><span class="check">✓</span> Faible</td>
+                <td><span class="cross">✗</span> Élevée</td>
+              </tr>
+              <tr>
+                <td><strong>Vitesse de développement</strong></td>
+                <td><span class="check">✓</span> Très rapide</td>
+                <td><span class="check">✓</span> Rapide</td>
+                <td><span class="cross">✗</span> Lente</td>
+              </tr>
+              <tr>
+                <td><strong>Flexibilité technique</strong></td>
+                <td><span class="check">✓</span> Haute</td>
+                <td><span class="partial">▲</span> Limitée</td>
+                <td><span class="check">✓</span> Totale</td>
+              </tr>
+              <tr>
+                <td><strong>Scalabilité</strong></td>
+                <td><span class="check">✓</span> Bonne</td>
+                <td><span class="partial">▲</span> Limitée</td>
+                <td><span class="check">✓</span> Excellente</td>
+              </tr>
+              <tr>
+                <td><strong>Coût initial</strong></td>
+                <td><span class="partial">▲</span> Moyen</td>
+                <td><span class="check">✓</span> Faible</td>
+                <td><span class="cross">✗</span> Élevé</td>
+              </tr>
+              <tr>
+                <td><strong>Dépendance éditeur</strong></td>
+                <td><span class="partial">▲</span> Moyenne</td>
+                <td><span class="cross">✗</span> Forte (vendor lock-in)</td>
+                <td><span class="check">✓</span> Aucune</td>
+              </tr>
+              <tr>
+                <td><strong>Personnalisation UI</strong></td>
+                <td><span class="check">✓</span> Haute</td>
+                <td><span class="partial">▲</span> Modérée</td>
+                <td><span class="check">✓</span> Totale</td>
+              </tr>
+              <tr>
+                <td><strong>Cas d'usage type</strong></td>
+                <td>Apps métier, portails, intégrations</td>
+                <td>MVP, landing pages, workflows</td>
+                <td>Applications complexes, systèmes critiques</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="color:var(--muted);font-size:.82rem;margin-top:.75rem;text-align:center;">
+          <span class="check">✓</span> Avantage &nbsp;·&nbsp; <span class="partial">▲</span> Moyen &nbsp;·&nbsp; <span class="cross">✗</span> Inconvénient
+        </p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         ENJEUX & IMPACT
+    ══════════════════════════════════════════ -->
+    <section class="section section--surface" id="enjeux" aria-labelledby="enjeux-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__overline">Réflexion</p>
+          <h2 id="enjeux-title">Enjeux &amp; impacts sur le métier</h2>
+          <p class="section__lead">Le Low-Code/No-Code ne remplace pas les développeurs — il redéfinit leurs rôles et priorités.</p>
+        </header>
+
+        <div class="grid grid--2">
+          <div class="fade-up">
+            <h3 style="margin-bottom:1.25rem;">✅ Opportunités</h3>
+            <div style="display:grid;gap:1rem;">
+              <div class="card--highlight">
+                <h4>🚀 Accélération du prototypage</h4>
+                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Valider une idée en quelques jours au lieu de semaines. Idéal pour tester un concept avant d'investir dans du développement sur-mesure.</p>
+              </div>
+              <div class="card--highlight">
+                <h4>🤝 Autonomie des équipes métier</h4>
+                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Les équipes non-tech peuvent créer leurs propres outils, réduisant la dépendance à l'IT pour des besoins simples.</p>
+              </div>
+              <div class="card--highlight">
+                <h4>💰 Réduction des coûts</h4>
+                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Moins de code à écrire = moins de temps développeur = projets moins coûteux pour les cas d'usage standards.</p>
+              </div>
+              <div class="card--highlight">
+                <h4>🔗 Focus sur la valeur ajoutée</h4>
+                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Les développeurs se concentrent sur les parties complexes et stratégiques, laissant les tâches répétitives aux plateformes.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="fade-up delay-2">
+            <h3 style="margin-bottom:1.25rem;">⚠️ Risques &amp; limites</h3>
+            <div style="display:grid;gap:1rem;">
+              <div class="card--highlight" style="background:color-mix(in srgb, #ef4444 4%, var(--bg));border-color:color-mix(in srgb, #ef4444 18%, var(--border));">
+                <h4>🔒 Vendor lock-in</h4>
+                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Forte dépendance à l'éditeur de la plateforme. Si le service ferme ou augmente ses prix, migrer est complexe et coûteux.</p>
+              </div>
+              <div class="card--highlight" style="background:color-mix(in srgb, #ef4444 4%, var(--bg));border-color:color-mix(in srgb, #ef4444 18%, var(--border));">
+                <h4>📏 Limites de personnalisation</h4>
+                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Les cas hors-standard ou très spécifiques peuvent être impossibles à implémenter sans sortir du cadre de la plateforme.</p>
+              </div>
+              <div class="card--highlight" style="background:color-mix(in srgb, #ef4444 4%, var(--bg));border-color:color-mix(in srgb, #ef4444 18%, var(--border));">
+                <h4>🛡️ Sécurité &amp; conformité</h4>
+                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Les données sont hébergées chez l'éditeur. Des enjeux RGPD et de sécurité peuvent freiner l'adoption dans des secteurs réglementés.</p>
+              </div>
+              <div class="card--highlight" style="background:color-mix(in srgb, #ef4444 4%, var(--bg));border-color:color-mix(in srgb, #ef4444 18%, var(--border));">
+                <h4>📉 Dette technique cachée</h4>
+                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Des workflows créés par des non-développeurs peuvent devenir ingérables à maintenir et difficiles à faire évoluer.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mon avis -->
+        <div class="fade-up" style="margin-top:2.5rem;padding:2rem;border-radius:var(--radius-lg);background:color-mix(in srgb, var(--primary) 5%, var(--bg));border:1.5px solid color-mix(in srgb, var(--primary) 25%, var(--border));box-shadow:var(--shadow);">
+          <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;">
+            <span style="font-size:1.5rem;">💬</span>
+            <h3 style="margin:0;">Mon analyse en tant que développeur</h3>
+          </div>
+          <p style="color:var(--muted);font-size:.95rem;margin:0;">
+            Le Low-Code/No-Code ne menace pas les développeurs — il <strong style="color:var(--text);">déplace la valeur</strong> vers des compétences plus complexes :
+            architecture, sécurité, optimisation des performances, intégrations avancées.
+            En revanche, les développeurs qui savent <strong style="color:var(--text);">combiner du Low-Code avec du code custom</strong>
+            seront les plus efficaces : ils livrent vite sur les parties standards et codent précisément là où c'est nécessaire.
+            Pour un profil BTS SIO, maîtriser ces outils est un <strong style="color:var(--text);">vrai avantage concurrentiel</strong> sur le marché du travail.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         FLUX RSS — ARTICLES RÉCENTS
+    ══════════════════════════════════════════ -->
+    <section class="section" id="articles" aria-labelledby="articles-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__overline">Veille active</p>
+          <h2 id="articles-title">Articles récents</h2>
+          <p class="section__lead">
+            Articles automatiquement récupérés depuis des sources spécialisées, mis à jour à chaque visite.
+          </p>
+        </header>
+
+        <!-- Méthode de veille -->
+        <div class="fade-up" style="padding:1.5rem 2rem;border-radius:var(--radius-lg);background:var(--surface);border:1px solid var(--border);margin-bottom:2.5rem;">
+          <h3 style="margin-bottom:1rem;font-size:1rem;">🔄 Méthode de veille — Agrégation RSS (méthode Pull)</h3>
+          <p style="color:var(--muted);font-size:.9rem;margin:0 0 1rem;">
+            Cette section utilise la <strong style="color:var(--text);">méthode Pull</strong> : le navigateur interroge régulièrement les flux RSS
+            des sources choisies via l'API <strong style="color:var(--text);">rss2json.com</strong> (convertisseur RSS → JSON avec support CORS).
+            Les résultats sont mis en cache 1 heure en <code style="font-size:.85rem;background:var(--surface-2);padding:.1rem .3rem;border-radius:4px;">localStorage</code>
+            pour éviter les requêtes redondantes. En cas d'indisponibilité des API, des articles de secours s'affichent.
+          </p>
+          <div style="display:flex;flex-wrap:wrap;gap:.5rem;">
+            <span class="tag tag--primary">Méthode Pull</span>
+            <span class="tag">RSS → JSON</span>
+            <span class="tag">Cache localStorage 1h</span>
+            <span class="tag">Fallback statique</span>
+            <span class="tag">Temps réel</span>
+          </div>
+        </div>
+
+        <!-- Sources -->
+        <h3 style="margin-bottom:1rem;">📡 Sources surveillées</h3>
+        <div style="display:grid;gap:.65rem;margin-bottom:2.5rem;" class="fade-up">
+          <div class="source-item">
+            <span class="source-item__icon">👾</span>
+            <div>
+              <div class="source-item__name">Dev.to — tag #lowcode</div>
+              <div class="source-item__url">dev.to/feed/tag/lowcode</div>
+            </div>
+            <span class="source-item__badge">RSS actif</span>
+          </div>
+          <div class="source-item">
+            <span class="source-item__icon">👾</span>
+            <div>
+              <div class="source-item__name">Dev.to — tag #nocode</div>
+              <div class="source-item__url">dev.to/feed/tag/nocode</div>
+            </div>
+            <span class="source-item__badge">RSS actif</span>
+          </div>
+          <div class="source-item">
+            <span class="source-item__icon">🟠</span>
+            <div>
+              <div class="source-item__name">Mendix Blog</div>
+              <div class="source-item__url">mendix.com/blog/feed/</div>
+            </div>
+            <span class="source-item__badge">RSS actif</span>
+          </div>
+        </div>
+
+        <!-- Filtres -->
+        <div class="filter-bar" role="group" aria-label="Filtrer les articles par source">
+          <button class="filter-btn active" data-source="all">Tous les articles</button>
+          <button class="filter-btn" data-source="devto-low">Dev.to #lowcode</button>
+          <button class="filter-btn" data-source="devto-no">Dev.to #nocode</button>
+          <button class="filter-btn" data-source="mendix">Mendix Blog</button>
+        </div>
+
+        <!-- Statut du flux -->
+        <div class="feed-status" id="feed-status" aria-live="polite">
+          <span class="feed-status__dot loading" id="feed-dot"></span>
+          <span id="feed-status-text">Chargement des articles en cours…</span>
+        </div>
+
+        <!-- Bouton refresh -->
+        <div style="display:flex;justify-content:flex-end;margin-bottom:1.25rem;">
+          <button class="btn btn--ghost" id="refresh-feed" style="font-size:.85rem;">
+            🔄 Rafraîchir
+          </button>
+        </div>
+
+        <!-- Grille d'articles -->
+        <div class="feed-grid" id="feed-grid" aria-label="Articles de veille technologique">
+          <!-- Squelettes de chargement -->
+          <div class="skeleton-card" aria-hidden="true">
+            <div class="skeleton-img"></div>
+            <div class="skeleton-body">
+              <div class="skeleton-line" style="height:12px;width:40%;"></div>
+              <div class="skeleton-line" style="height:18px;width:90%;"></div>
+              <div class="skeleton-line" style="height:18px;width:70%;"></div>
+              <div class="skeleton-line" style="height:12px;width:55%;"></div>
+            </div>
+          </div>
+          <div class="skeleton-card" aria-hidden="true">
+            <div class="skeleton-img"></div>
+            <div class="skeleton-body">
+              <div class="skeleton-line" style="height:12px;width:35%;"></div>
+              <div class="skeleton-line" style="height:18px;width:85%;"></div>
+              <div class="skeleton-line" style="height:18px;width:60%;"></div>
+              <div class="skeleton-line" style="height:12px;width:45%;"></div>
+            </div>
+          </div>
+          <div class="skeleton-card" aria-hidden="true">
+            <div class="skeleton-img"></div>
+            <div class="skeleton-body">
+              <div class="skeleton-line" style="height:12px;width:50%;"></div>
+              <div class="skeleton-line" style="height:18px;width:80%;"></div>
+              <div class="skeleton-line" style="height:18px;width:65%;"></div>
+              <div class="skeleton-line" style="height:12px;width:40%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="load-more-wrap" style="display:none;text-align:center;margin-top:2rem;">
+          <button class="btn btn--outline" id="load-more">Charger plus d'articles</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         RESSOURCES
+    ══════════════════════════════════════════ -->
+    <section class="section section--surface" id="ressources" aria-labelledby="ressources-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__overline">Pour aller plus loin</p>
+          <h2 id="ressources-title">Ressources recommandées</h2>
+          <p class="section__lead">Une sélection de lectures, rapports et communautés pour approfondir le sujet.</p>
+        </header>
+
+        <div class="cards cards--grid fade-up">
+          <article class="card">
+            <div class="card__body">
+              <h3>📄 Rapports &amp; études</h3>
+              <ul class="list--check" style="margin-top:.75rem;">
+                <li>Gartner — Magic Quadrant for Enterprise Low-Code Application Platforms</li>
+                <li>Forrester — The Forrester Wave: Low-Code Platforms</li>
+                <li>OutSystems — State of Application Development Report</li>
+              </ul>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__body">
+              <h3>🌐 Communautés &amp; blogs</h3>
+              <ul class="list--check" style="margin-top:.75rem;">
+                <li><a href="https://nocode.tech" target="_blank" rel="noreferrer">nocode.tech</a> — ressources &amp; outils No-Code</li>
+                <li><a href="https://www.makerpad.co" target="_blank" rel="noreferrer">Makerpad</a> — tutoriels et cas pratiques</li>
+                <li><a href="https://dev.to/t/lowcode" target="_blank" rel="noreferrer">Dev.to #lowcode</a> — articles de développeurs</li>
+              </ul>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__body">
+              <h3>🎓 Pour se former</h3>
+              <ul class="list--check" style="margin-top:.75rem;">
+                <li>Bubble University — formation officielle No-Code</li>
+                <li>OutSystems Training — certifications Low-Code</li>
+                <li>Microsoft Learn — Power Apps &amp; Power Automate</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" aria-label="Pied de page">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="footer-brand__name">Matéo Gonçalves Mota</p>
+        <p class="footer-brand__text">Développeur web &amp; applicatif</p>
+      </div>
+      <nav class="footer-nav">
+        <a class="footer-nav__link" href="../index.html">Accueil</a>
+        <a class="footer-nav__link" href="about.html">À propos</a>
+        <a class="footer-nav__link" href="skills.html">Compétences</a>
+        <a class="footer-nav__link" href="projects.html">Projets</a>
+        <a class="footer-nav__link" href="stages.html">Stages</a>
+        <a class="footer-nav__link" href="veille.html">Veille</a>
+        <a class="footer-nav__link" href="contact.html">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a class="footer-social__link" href="https://github.com/Kayzmat" target="_blank" rel="noreferrer" aria-label="GitHub">🐙 GitHub</a>
+        <a class="footer-social__link" href="https://linkedin.com/in/mateo-goncalves-mota" target="_blank" rel="noreferrer" aria-label="LinkedIn">👔 LinkedIn</a>
+      </div>
+      <p class="footer-copy">© 2026 Matéo Gonçalves Mota</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio de Matéo Gonçalves Mota — développeur web & applicatif. Projets, compétences et expériences." />
+  <meta name="author" content="Matéo Gonçalves Mota" />
+  <meta property="og:title" content="Matéo Gonçalves Mota — Portfolio développeur web et applicatif" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/og-preview.svg" />
+  <title>Matéo Gonçalves Mota — Portfolio développeur web</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/Portfolio/css/style.css" />
+  <script defer src="/Portfolio/js/main.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><span>Matéo Gonçalves Mota</span></a>
+      <button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Ouvrir le menu">
+        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+      </button>
+      <nav class="site-nav" id="site-navigation" aria-label="Navigation principale">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="index.html" aria-current="page">Accueil</a></li>
+          <li><a class="site-nav__link" href="/Portfolio/about.html">À propos</a></li>
+          <li><a class="site-nav__link" href="/Portfolio/skills.html">Compétences</a></li>
+          <li><a class="site-nav__link" href="/Portfolio/projects.html">Projets</a></li>
+          <li><a class="site-nav__link" href="/Portfolio/stages.html">Stages</a></li>
+          <li><a class="site-nav__link" href="/Portfolio/veille.html">Veille</a></li>
+          <li><a class="site-nav__link" href="/Portfolio/contact.html">Contact</a></li>
+        </ul>
+        <div class="site-nav__actions">
+          <a class="btn btn--primary" href="/Portfolio/docs/cv.pdf" target="_blank" rel="noreferrer">Télécharger CV</a>
+          <a class="btn btn--outline" href="/Portfolio/docs/tableau_competences.xlsx" download="tableau_competences_mateo.xlsx">Télécharger tableau compétences</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ── HERO ── -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__inner">
+        <div>
+          <p class="hero__eyebrow"><span class="hero__eyebrow-dot"></span>Disponible pour un poste</p>
+          <h1 class="hero__title" id="hero-title">
+            Bonjour, je suis<br />
+            <span class="text-gradient">Matéo</span>
+          </h1>
+          <p class="hero__subtitle">
+            Développeur web &amp; applicatif passionné, je conçois des expériences numériques
+            rapides, accessibles et orientées résultats.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="/Portfolio/contact.html">Me contacter</a>
+            <a class="btn btn--outline" href="/Portfolio/projects.html">Voir mes projets</a>
+          </div>
+          <ul class="hero__pills" aria-label="Technologies principales">
+            <li class="hero__pill">HTML/CSS</li>
+            <li class="hero__pill">JavaScript</li>
+            <li class="hero__pill">PHP</li>
+            <li class="hero__pill">MySQL</li>
+            <li class="hero__pill">Windev</li>
+            <li class="hero__pill">Python</li>
+            <li class="hero__pill">Java</li>
+            <li class="hero__pill">C++</li>
+          </ul>
+        </div>
+
+        <div class="hero__visual">
+          <div class="hero__card">
+            <div class="hero__card-header">
+              <span class="hero__card-label">Vue d'ensemble</span>
+              <span class="hero__card-badge">En formation</span>
+            </div>
+            <div class="hero__stat-grid">
+              <div class="hero__stat">
+                <div class="hero__stat-value">5+</div>
+                <div class="hero__stat-label">Projets réalisés</div>
+              </div>
+              <div class="hero__stat">
+                <div class="hero__stat-value">2</div>
+                <div class="hero__stat-label">Stages effectués</div>
+              </div>
+              <div class="hero__stat">
+                <div class="hero__stat-value">10+</div>
+                <div class="hero__stat-label">Technologies</div>
+              </div>
+              <div class="hero__stat">
+                <div class="hero__stat-value">2</div>
+                <div class="hero__stat-label">Ans en BTS SIO</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PROJETS RÉCENTS ── -->
+    <section class="section section--surface" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__overline">Réalisations</p>
+          <h2 id="projects-title">Projets récents</h2>
+          <p class="section__lead">Sélection de réalisations techniques, du prototype à la solution déployée.</p>
+        </header>
+
+        <div class="cards cards--grid">
+          <article class="card fade-up">
+            <img class="card__media" loading="lazy" src="/img/portfolio_accueil.png" alt="Capture d'écran de ce portfolio" />
+            <div class="card__body">
+              <h3 class="card__title">Portfolio personnel</h3>
+              <p class="card__description">Ce portfolio est conçu pour être performant, accessible et facile à maintenir — 100% HTML/CSS/JS vanilla.</p>
+              <p class="card__meta"><strong>Stack :</strong> HTML5, CSS, JavaScript</p>
+              <a class="card__cta" href="/Portfolio/project-portfolio.html">Voir le projet</a>
+            </div>
+          </article>
+
+          <article class="card fade-up delay-1">
+            <img class="card__media" loading="lazy" src="/Portfolio/img/sigansud_accueil.png" alt="Interface application mobile de gestion des repas" />
+            <div class="card__body">
+              <h3 class="card__title">Gestion des repas — SIGEANSUD</h3>
+              <p class="card__description">Application complète pour parc animalier : app mobile, back-office et API REST avec Symfony 7.</p>
+              <p class="card__meta"><strong>Stack :</strong> Android, Symfony 7, MySQL</p>
+              <a class="card__cta" href="/Portfolio/project-sigeansud.html">Voir le projet</a>
+            </div>
+          </article>
+
+          <article class="card fade-up delay-2">
+            <img class="card__media" loading="lazy" src="/Portfolio/img/triathlon_accueil_admin.png" alt="Interface d'administration d'une application de triathlon" />
+            <div class="card__body">
+              <h3 class="card__title">Gestion d'événement sportif</h3>
+              <p class="card__description">Application full-stack pour gérer inscriptions, parcours et statistiques d'un triathlon.</p>
+              <p class="card__meta"><strong>Stack :</strong> PHP, MySQL, JavaScript</p>
+              <a class="card__cta" href="/Portfolio/project-triathlon.html">Voir le projet</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="section__footer">
+          <a class="btn btn--outline" href="/Portfolio/projects.html">Voir tous les projets</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── À PROPOS ── -->
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="grid grid--2">
+          <div class="fade-up">
+            <p class="section__overline">À propos</p>
+            <h2 id="about-title">Qui suis-je ?</h2>
+            <p style="color:var(--muted);margin-top:1rem;">
+              Étudiant en BTS SIO (Services Informatiques aux Organisations), je conçois, développe et
+              maintiens des applications web et des services informatiques. Passionné par la performance
+              et l'accessibilité, j'aime transformer des idées en produits numériques fiables.
+            </p>
+            <ul class="list--check" style="margin-top:1.25rem;">
+              <li>Code lisible, modulaire et maintenable</li>
+              <li>Interfaces accessibles et performantes</li>
+              <li>Collaboration transparente et orientée résultats</li>
+            </ul>
+            <div style="margin-top:1.75rem;display:flex;gap:.85rem;flex-wrap:wrap;">
+              <a class="btn btn--primary" href="/Portfolio/about.html">En savoir plus</a>
+              <a class="btn btn--outline" href="/Portfolio/docs/cv.pdf" target="_blank" rel="noreferrer">Télécharger CV</a>
+            </div>
+          </div>
+
+          <div class="fade-up delay-2">
+            <div class="card--highlight">
+              <h3>Quelques chiffres</h3>
+              <div class="hero__stat-grid" style="margin-top:1rem;">
+                <div class="hero__stat">
+                  <div class="hero__stat-value">5+</div>
+                  <div class="hero__stat-label">Projets</div>
+                </div>
+                <div class="hero__stat">
+                  <div class="hero__stat-value">2</div>
+                  <div class="hero__stat-label">Stages</div>
+                </div>
+                <div class="hero__stat">
+                  <div class="hero__stat-value">10+</div>
+                  <div class="hero__stat-label">Technologies</div>
+                </div>
+                <div class="hero__stat">
+                  <div class="hero__stat-value">2</div>
+                  <div class="hero__stat-label">Ans en BTS SIO</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card--highlight" style="margin-top:1.5rem;">
+              <h3>Objectifs</h3>
+              <ul class="list--check" style="margin-top:.75rem;">
+                <li>Devenir développeur applicatif</li>
+                <li>Rejoindre des équipes sur des projets ambitieux</li>
+                <li>Continuer à apprendre et à me perfectionner</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTACT CTA ── -->
+    <section class="section section--surface" id="contact-cta" aria-labelledby="cta-title">
+      <div class="container" style="text-align:center;max-width:600px;">
+        <p class="section__overline">Contact</p>
+        <h2 id="cta-title">Vous avez un projet ?</h2>
+        <p class="section__lead">Stage, alternance, freelance ou collaboration — discutons-en.</p>
+        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;">
+          <a class="btn btn--primary" href="/Portfolio/contact.html">Me contacter</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" aria-label="Pied de page">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="footer-brand__name">Matéo Gonçalves Mota</p>
+        <p class="footer-brand__text">Développeur web &amp; applicatif</p>
+      </div>
+      <nav class="footer-nav" aria-label="Liens du pied de page">
+        <a class="footer-nav__link" href="index.html">Accueil</a>
+        <a class="footer-nav__link" href="/Portfolio/about.html">À propos</a>
+        <a class="footer-nav__link" href="/Portfolio/skills.html">Compétences</a>
+        <a class="footer-nav__link" href="/Portfolio/projects.html">Projets</a>
+        <a class="footer-nav__link" href="/Portfolio/stages.html">Stages</a>
+        <a class="footer-nav__link" href="/Portfolio/contact.html">Contact</a>
+      </nav>
+      <div class="footer-social">
+        <a class="footer-social__link" href="https://github.com/Kayzmat" target="_blank" rel="noreferrer" aria-label="GitHub">🐙 GitHub</a>
+        <a class="footer-social__link" href="https://linkedin.com/in/mateo-goncalves-mota" target="_blank" rel="noreferrer" aria-label="LinkedIn">👔 LinkedIn</a>
+      </div>
+      <p class="footer-copy">© 2026 Matéo Gonçalves Mota</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
