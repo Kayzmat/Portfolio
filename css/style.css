@@ -58,6 +58,7 @@ body {
   letter-spacing: normal;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 body.menu-open {
@@ -99,6 +100,7 @@ button, input, select, textarea { font-family: inherit; }
   backdrop-filter: blur(18px) saturate(1.8);
   -webkit-backdrop-filter: blur(18px) saturate(1.8);
   border-bottom: 1px solid var(--border);
+  overflow: visible;
 }
 .header-inner {
   display: flex; align-items: center; justify-content: space-between;
@@ -460,7 +462,7 @@ figcaption { text-align: center; font-size: .82rem; color: var(--muted); margin-
   color: var(--primary); transition: color var(--dur) var(--ease), background var(--dur) var(--ease);
 }
 .footer-social__link:hover { background: color-mix(in srgb, var(--primary) 12%, var(--bg)); }
-.footer-copy { font-size: .82rem; color: var(--muted); white-space: nowrap; }
+.footer-copy { font-size: .82rem; color: var(--muted); }
 
 /* ─────── TOAST ─────── */
 .toast {
@@ -495,15 +497,17 @@ figcaption { text-align: center; font-size: .82rem; color: var(--muted); margin-
     gap: 2rem;
     background: #000; color: #fff;
     transform: translateX(100%);
-    transition: transform var(--dur) var(--ease);
+    visibility: hidden;
+    transition: transform var(--dur) var(--ease), visibility var(--dur) var(--ease);
     z-index: 120;
     min-height: 100vh;
     overflow-y: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
   }
-  .nav-toggle__bar { background: #fff; }
   .site-nav[data-open="true"] {
     transform: translateX(0);
+    visibility: visible;
   }
   body.menu-open { overflow: hidden; }
   .site-nav__list {
@@ -557,4 +561,19 @@ figcaption { text-align: center; font-size: .82rem; color: var(--muted); margin-
   .skill-item { grid-template-columns: 1fr; gap: .3rem; }
   .skill__pct { text-align: left; }
   .project__meta { grid-template-columns: 1fr 1fr; }
+}
+
+/* ─────── ANTI-OVERFLOW GLOBAL SAFEGUARD ─────── */
+/* Prevent any element from causing horizontal scroll */
+html, body {
+  max-width: 100%;
+}
+img, video, iframe, table {
+  max-width: 100%;
+}
+/* Ensure the hidden menu never causes scroll even on old Safari/Chrome */
+@media (max-width: 980px) {
+  .site-nav:not([data-open="true"]) {
+    pointer-events: none;
+  }
 }
