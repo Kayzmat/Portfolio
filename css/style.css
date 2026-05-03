@@ -495,7 +495,7 @@ figcaption { text-align: center; font-size: .82rem; color: var(--muted); margin-
 .delay-3 { transition-delay: .3s; }
 .delay-4 { transition-delay: .4s; }
 .delay-5 { transition-delay: .5s; }
-.delay-5 { transition-delay: .6s; }
+.delay-6 { transition-delay: .6s; }
 
 /* ─────── RESPONSIVE ─────── */
 @media (max-width: 980px) {
