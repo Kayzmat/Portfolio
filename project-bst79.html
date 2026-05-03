@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Projet WordPress bst79 — réalisation d'un site pour une entreprise réelle en groupe de 4." />
+  <meta name="author" content="Matéo Gonçalves Mota" />
+  <title>Projet — Site WordPress bst79 — Matéo Gonçalves Mota</title>
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+
+   <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><span>Matéo Gonçalves Mota</span></a>
+      <button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Ouvrir le menu">
+        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
+      </button>
+      <nav class="site-nav" id="site-navigation" aria-label="Navigation principale">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="index.html" aria-current="page">Accueil</a></li>
+          <li><a class="site-nav__link" href="about.html">À propos</a></li>
+          <li><a class="site-nav__link" href="skills.html">Compétences</a></li>
+          <li><a class="site-nav__link" href="projects.html">Projets</a></li>
+          <li><a class="site-nav__link" href="stages.html">Stages</a></li>
+          <li><a class="site-nav__link" href="veille.html">Veille</a></li>
+          <li><a class="site-nav__link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="site-nav__actions">
+          <a class="btn btn--primary" href="docs/cv.pdf" target="_blank" rel="noreferrer">Télécharger CV</a>
+          <a class="btn btn--outline" href="docs/tableau_competences.xlsx" download="tableau_competences_mateo.xlsx">Tableau compétences</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ── HERO ── -->
+    <section class="hero hero--page" aria-labelledby="project-title">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <a href="index.html">Accueil</a>
+          <span class="breadcrumb__sep">›</span>
+          <a href="projects.html">Projets</a>
+          <span class="breadcrumb__sep">›</span>
+          <span>bst79</span>
+        </nav>
+        <p class="hero__eyebrow"><span class="hero__eyebrow-dot"></span>AP1 - BTS SIO SLAM</p>
+        <h1 id="project-title">Site WordPress<br /><span class="text-gradient">bst79</span></h1>
+        <p class="hero__subtitle">
+          Réalisation d'un site WordPress pour l'entreprise réelle bst79. Projet réalisé en groupe de 4,
+          avec intégration, configuration et optimisation du site existant.
+        </p>
+        <div class="hero__actions" style="margin-top:1.5rem;">
+          <div class="project__tags" style="margin:0;">
+            <span class="project__tag">WordPress</span>
+            <span class="project__tag">PHP</span>
+            <span class="project__tag">HTML</span>
+            <span class="project__tag">CSS</span>
+            <span class="project__tag">Responsive</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── APERÇU ── -->
+    <section class="section section--surface">
+      <div class="container">
+        <div class="grid grid--2">
+          <div class="fade-up">
+            <figure>
+              <img src="img/portfolio_accueil.png" loading="lazy" alt="Accueil du site WordPress bst79" />
+              <figcaption>Capture d'écran d'un site WordPress professionnel.</figcaption>
+            </figure>
+          </div>
+          <div class="fade-up delay-2">
+            <div class="project__meta">
+              <div class="project__meta-item">
+                <strong>Rôle</strong>
+                <span>Développeur web</span>
+              </div>
+              <div class="project__meta-item">
+                <strong>Durée</strong>
+                <span>28/11/2024 – 16/01/2025</span>
+              </div>
+              <div class="project__meta-item">
+                <strong>Contexte</strong>
+                <span>AP1 - BTS SIO SLAM</span>
+              </div>
+              <div class="project__meta-item">
+                <strong>Équipe</strong>
+                <span>Groupe de 4</span>
+              </div>
+            </div>
+
+            <div class="card--highlight" style="margin-top:1.5rem;">
+              <h3>Technologies</h3>
+              <div class="tag-cloud" style="margin-top:.75rem;">
+                <span class="tag tag--primary">WordPress</span>
+                <span class="tag tag--primary">PHP</span>
+                <span class="tag tag--primary">HTML &amp; CSS</span>
+                <span class="tag">SEO</span>
+                <span class="tag">Responsive</span>
+              </div>
+            </div>
+
+            <div class="card--highlight" style="margin-top:1rem;">
+              <h3>Objectifs</h3>
+              <ul class="list--check" style="margin-top:.75rem;">
+                <li>Créer ou refondre le site WordPress existant de bst79</li>
+                <li>Adapter le contenu à l'identité de l'entreprise</li>
+                <li>Rendre le site responsive et accessible</li>
+                <li>Optimiser les performances et le référencement</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DÉTAILS ── -->
+    <section class="section" aria-labelledby="detail-title">
+      <div class="container">
+        <div class="grid grid--2">
+          <div class="fade-up">
+            <h2 id="detail-title">Détails du projet</h2>
+            <p style="color:var(--muted);margin-top:.75rem;">
+              Mise en ligne d'un site WordPress fonctionnel pour bst79, avec configuration du thème,
+              adaptation du contenu, installation des plugins essentiels et mise en place d'un design cohérent.
+            </p>
+
+            <h3 style="margin-top:2rem;">Réalisations principales</h3>
+            <ul class="list--check" style="margin-top:1rem;">
+              <li>Choix et personnalisation d'un thème WordPress adapté</li>
+              <li>Intégration de pages de présentation, contact et services</li>
+              <li>Configuration de plugins SEO, sécurité et sauvegarde</li>
+              <li>Optimisation pour mobile et compatibilité multi-navigateurs</li>
+              <li>Tests de navigation et validation finale avant mise en ligne</li>
+            </ul>
+          </div>
+
+          <div class="fade-up delay-2">
+            <h2>Ce que j'ai appris</h2>
+            <div style="display:grid;gap:1rem;margin-top:1rem;">
+              <div class="card--highlight">
+                <h4>🧩 Travail en équipe</h4>
+                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Coordination et répartition des tâches entre 4 membres pour livrer le site ensemble.</p>
+              </div>
+              <div class="card--highlight">
+                <h4>⚙️ Configuration WordPress</h4>
+                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Installation de thèmes et plugins, gestion des mises à jour et sécurisation du back-office.</p>
+              </div>
+              <div class="card--highlight">
+                <h4>📱 Adaptation responsive</h4>
+                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Optimisation de l'affichage sur mobile et tablette pour une expérience utilisateur uniforme.</p>
+              </div>
+              <div class="card--highlight">
+                <h4>🔎 Référencement</h4>
+                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Amélioration du SEO grâce à une structure de pages claire et un contenu optimisé.</p>
+              </div>
+            </div>
+
+            <div style="margin-top:2rem;">
+              <figure>
+                <img src="img/portfolio_accueil.png" loading="lazy" alt="Page du site WordPress bst79" />
+                <figcaption>Visuel d'un site WordPress moderne et responsive.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:2.5rem;">
+          <a class="btn btn--outline" href="projects.html">← Retour aux projets</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" aria-label="Pied de page">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <p class="footer-brand__name">Matéo Gonçalves Mota</p>
+        <p class="footer-brand__text">Développeur web &amp; applicatif</p>
+      </div>
+      <nav class="footer-nav" aria-label="Liens du pied de page">
+        <a class="footer-nav__link" href="index.html">Accueil</a>
+        <a class="footer-nav__link" href="about.html">À propos</a>
+        <a class="footer-nav__link" href="skills.html">Compétences</a>
+        <a class="footer-nav__link" href="projects.html">Projets</a>
+        <a class="footer-nav__link" href="stages.html">Stages</a>
+        <a class="footer-nav__link" href="contact.html">Contact</a>
+        <a class="footer-nav__link" href="veille.html">Veille</a>
+      </nav>
+      <div class="footer-social">
+        <a class="footer-social__link" href="https://github.com/Kayzmat" target="_blank" rel="noreferrer" aria-label="GitHub">🐙 GitHub</a>
+        <a class="footer-social__link" href="https://linkedin.com/in/mateo-goncalves-mota" target="_blank" rel="noreferrer" aria-label="LinkedIn">👔 LinkedIn</a>
+      </div>
+      <p class="footer-copy">© 2026 Matéo Gonçalves Mota</p>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
