@@ -287,6 +287,14 @@ button, input, select, textarea { font-family: inherit; }
   width: 100%; aspect-ratio: 16/10; object-fit: cover;
   background: var(--surface); border-bottom: 1px solid var(--border);
 }
+.card__media.card__media--placeholder {
+  display: grid; place-items: center; padding: 1rem;
+  color: var(--muted); text-align: center; font-weight: 700;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--surface) 95%, var(--primary) 10%) 0%, var(--surface) 100%);
+}
+.card__media.card__media--placeholder span {
+  line-height: 1.4;
+}
 .card__body { padding: 1.5rem; display: flex; flex-direction: column; gap: .6rem; flex: 1; }
 .card__title { font-size: 1.1rem; font-weight: 700; }
 .card__description { color: var(--muted); font-size: .95rem; line-height: 1.6; }
