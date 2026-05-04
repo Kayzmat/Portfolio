@@ -60,12 +60,20 @@ function initAccessibility() {
   });
 }
 
+function checkSuccessMessage() {
+  if (window.location.search.includes('success=true')) {
+    const msg = document.getElementById('success-message');
+    if (msg) msg.style.display = 'block';
+  }
+}
+
 function init() {
   initMenu();
   initScrollAnimations();
   initSkillBars();
   initSmoothScroll();
   initAccessibility();
+  checkSuccessMessage();
 }
 
 document.readyState === 'loading'
