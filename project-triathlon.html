@@ -51,7 +51,7 @@
           <span class="breadcrumb__sep">›</span>
           <span>Triathlon</span>
         </nav>
-        <p class="hero__eyebrow"><span class="hero__eyebrow-dot"></span>AP4 - BTS SIO SLAM</p>
+        <p class="hero__eyebrow"><span class="hero__eyebrow-dot"></span>AP3 - BTS SIO SLAM</p>
         <h1 id="project-title">Gestion d'événement sportif<br /><span class="text-gradient">Application Triathlon</span></h1>
         <p class="hero__subtitle">
           Application full-stack réalisée en équipe de 4 étudiants pour simplifier l'organisation et le suivi
@@ -63,6 +63,7 @@
             <span class="project__tag">MySQL</span>
             <span class="project__tag">JavaScript</span>
             <span class="project__tag">MVC</span>
+            <span class="project__tag">Mobile</span>
           </div>
         </div>
       </div>
@@ -94,7 +95,7 @@
               </div>
               <div class="project__meta-item">
                 <strong>Contexte</strong>
-                <span>AP4 - BTS SIO SLAM</span>
+                <span>AP3 - BTS SIO SLAM</span>
               </div>
             </div>
 
@@ -114,68 +115,104 @@
       </div>
     </section>
 
-    <!-- ── DÉTAILS ── -->
-    <section class="section" aria-labelledby="detail-title">
+    <!-- ── MISSIONS GLOBALES ── -->
+    <section class="section section--surface" aria-labelledby="context-title">
       <div class="container">
-        <div class="grid grid--2">
-          <div class="fade-up">
-            <h2 id="detail-title">Contexte du projet</h2>
-            <p style="color:var(--muted);margin-top:.75rem;">
-              Le triathlon, discipline olympique depuis Sydney 2000, réunit natation, cyclisme et course à pied.
-              En France, il est géré par la FFTRI puis par les ligues régionales et comités départementaux.
-            </p>
-            <p style="color:var(--muted);">
-              La mission consistait à développer une application web sécurisée destinée aux clubs et comités
-              pour gérer les compétitions, les inscriptions et les résultats.
-            </p>
+        <header class="section__header">
+          <p class="section__overline">Contexte</p>
+          <h2 id="context-title">Missions globales du projet</h2>
+          <p class="section__lead">La FFTRI devait disposer d'une application web sécurisée pour gérer ses compétitions, ses clubs et ses licenciés.</p>
+        </header>
 
-            <h3 style="margin-top:2rem;">Objectifs</h3>
+        <div class="grid grid--2 fade-up">
+          <div>
+            <h3>Pour le gestionnaire FFTRI</h3>
             <ul class="list--check" style="margin-top:1rem;">
-              <li>Concevoir une application PHP/MySQL respectant l'architecture MVC</li>
-              <li>Assurer ergonomie et simplicité de visualisation des pages</li>
-              <li>Mettre en place l'authentification et la restriction d'accès</li>
-              <li>Prévoir des tests fonctionnels avant déploiement</li>
+              <li>Gestion des clubs, catégories d'âge et types de triathlons</li>
+              <li>Organisation des triathlons : création, publication</li>
+              <li>Gestion des inscriptions et attribution des dossards</li>
+              <li>Saisie des résultats : classements et temps par épreuve</li>
             </ul>
 
-            <h3 style="margin-top:2rem;">Contraintes techniques</h3>
+            <h3 style="margin-top:2rem;">Pour les responsables de clubs</h3>
             <ul class="list--check" style="margin-top:1rem;">
-              <li>Respect des normes de développement (nommage, architecture, modularité)</li>
-              <li>Base de données modélisée en MCD (Merise)</li>
-              <li>Publication sur hébergement PHP/MySQL avec Git pour le versionning</li>
+              <li>Gestion de leurs licenciés (ajout, modification)</li>
+              <li>Suivi des inscriptions aux compétitions</li>
+              <li>Consultation des résultats de leurs athlètes</li>
             </ul>
           </div>
 
-          <div class="fade-up delay-2">
-            <h2>Fonctionnalités</h2>
+          <div>
+            <h3>Contraintes du projet</h3>
             <div style="display:grid;gap:1rem;margin-top:1rem;">
               <div class="card--highlight">
-                <h4>🔐 Authentification</h4>
-                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Sessions sécurisées, rôles distincts entre participants, clubs et organisateurs.</p>
+                <h4>🏗️ Architecture MVC</h4>
+                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Application PHP structurée en Model-View-Controller, avec respect des normes de développement et de nommage.</p>
               </div>
               <div class="card--highlight">
-                <h4>📋 Inscriptions</h4>
-                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Gestion des inscriptions par épreuve, validation et confirmation par email.</p>
+                <h4>🔐 Sécurité &amp; accès</h4>
+                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Authentification obligatoire — application réservée au personnel de la fédération et aux responsables de clubs.</p>
               </div>
               <div class="card--highlight">
-                <h4>📊 Résultats &amp; statistiques</h4>
-                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Saisie et affichage des temps par épreuve, classements automatiques.</p>
+                <h4>🧪 Tests fonctionnels</h4>
+                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Aucune fonctionnalité déployée sans tests métier, fonctionnel et unitaire validés.</p>
               </div>
               <div class="card--highlight">
-                <h4>📱 Responsive</h4>
-                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Interface adaptée aux mobiles pour une consultation sur le terrain.</p>
+                <h4>📋 Méthode Agile (SCRUM/KANBAN)</h4>
+                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Suivi des tâches par étudiant via TRELLO, développement itératif et collaboratif avec Git.</p>
               </div>
-            </div>
-
-            <div class="card--highlight" style="margin-top:1rem;">
-              <h3>Ce que j'ai appris</h3>
-              <ul class="list--check" style="margin-top:.75rem;">
-                <li>Architecture d'une application CRUD complète en MVC</li>
-                <li>Gestion des sessions et sécurité applicative</li>
-                <li>Travail en équipe avec Git (branches, merges)</li>
-                <li>Livraison avec tests fonctionnels structurés</li>
-              </ul>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── MISSION ── -->
+    <section class="section" aria-labelledby="mission-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__overline">Mission</p>
+          <h2 id="mission-title">Mes contributions au projet</h2>
+          <p class="section__lead">Au sein de l'équipe de 4 étudiants, j'ai pris en charge les volets conception, base de données et développement front-end.</p>
+        </header>
+
+        <div class="cards cards--grid fade-up">
+          <article class="card">
+            <div class="card__body">
+              <h3>📄 Cahier des charges</h3>
+              <p class="card__description">
+                Rédaction du cahier des charges : définition des besoins fonctionnels,
+                contraintes techniques, périmètre du projet et livrables attendus.
+              </p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__body">
+              <h3>🗺️ Schéma de navigation</h3>
+              <p class="card__description">
+                Modélisation du parcours utilisateur et des enchaînements de pages
+                pour assurer une navigation claire et cohérente dans l'application.
+              </p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__body">
+              <h3>🗄️ Base de données</h3>
+              <p class="card__description">
+                Conception du MCD (Merise), création du schéma MySQL et alimentation
+                des tables avec des jeux de données représentatifs pour les tests.
+              </p>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__body">
+              <h3>📊 Tableau de bord &amp; espace licencié</h3>
+              <p class="card__description">
+                Développement PHP/MVC des pages tableau de bord administrateur et
+                de l'espace dédié aux licenciés : consultation des inscriptions et résultats.
+              </p>
+            </div>
+          </article>
         </div>
 
         <div style="margin-top:2.5rem;">
