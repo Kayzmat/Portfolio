@@ -339,20 +339,44 @@ button, input, select, textarea { font-family: inherit; }
 
 /* ─────── SKILLS ─────── */
 .skill-grid { display: grid; gap: .85rem; }
-.skill-item { display: grid; grid-template-columns: 10rem 1fr 2.5rem; align-items: center; gap: .75rem; }
-.skill__name { font-weight: 600; font-size: .9rem; }
-.skill__bar { height: 8px; border-radius: 99px; background: var(--surface-2); overflow: hidden; }
-.skill__fill {
-  display: block;
-  height: 100%; border-radius: 99px;
-  background: linear-gradient(90deg, var(--primary), var(--primary-2));
-  width: var(--progress, 0);
-  transform-origin: left; transform: scaleX(1);
-  transition: transform .9s cubic-bezier(.4,0,.2,1);
+.skill-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: .75rem;
+  padding: .85rem 0;
+  border-bottom: 1px solid var(--border);
 }
-/* Keep the animation hook for progressive reveal, but keep bars visible even when JS doesn't run */
-.skill__fill.animated { transform: scaleX(1); }
-.skill__pct { font-size: .8rem; color: var(--muted); font-weight: 700; text-align: right; }
+.skill-item:last-child { border-bottom: 0; }
+.skill__name { font-weight: 700; font-size: .95rem; }
+.skill__level {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: .45rem .9rem;
+  border-radius: 999px;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+.skill__level--expert {
+  background: color-mix(in srgb, var(--primary) 16%, var(--bg));
+  color: var(--primary);
+  border-color: transparent;
+}
+.skill__level--advanced {
+  background: color-mix(in srgb, var(--primary) 9%, var(--bg));
+}
+.skill__level--intermediate {
+  background: color-mix(in srgb, var(--muted) 12%, var(--bg));
+}
+.skill__level--learning {
+  background: color-mix(in srgb, var(--primary-2) 12%, var(--bg));
+}
 
 .tag-cloud { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .5rem; }
 .tag {
