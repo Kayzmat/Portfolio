@@ -3,308 +3,206 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Projet — Gestion des repas animaux SIGEANSUD — application mobile et back-office." />
+  <title>SIGEANSUD — application mobile et API Symfony — Matéo Gonçalves Mota</title>
+  <meta name="description" content="Projet SIGEANSUD (BTS SIO) : application Android pour les soigneurs d'un parc animalier, back-office web et API REST Symfony 7 pour tracer les repas. Rôle : développeur mobile." />
   <meta name="author" content="Matéo Gonçalves Mota" />
-  <title>Projet — SIGEANSUD — Matéo Gonçalves Mota</title>
-  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+  <link rel="canonical" href="https://kayzmat.github.io/Portfolio/project-sigeansud.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Matéo Gonçalves Mota — Portfolio" />
+  <meta property="og:title" content="SIGEANSUD — application mobile et API Symfony — Matéo Gonçalves Mota" />
+  <meta property="og:description" content="Projet SIGEANSUD (BTS SIO) : application Android pour les soigneurs d'un parc animalier, back-office web et API REST Symfony 7 pour tracer les repas. Rôle : développeur mobile." />
+  <meta property="og:url" content="https://kayzmat.github.io/Portfolio/project-sigeansud.html" />
+  <meta property="og:image" content="https://kayzmat.github.io/Portfolio/assets/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Matéo Gonçalves Mota — développeur d'applications en alternance" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#1d2250" />
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')d.dataset.theme=t}catch(e){}})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" />
   <link rel="stylesheet" href="css/style.css" />
-  <script defer src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Aller au contenu</a>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
 
   <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html"><span>Matéo Gonçalves Mota</span></a>
-      <button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Ouvrir le menu">
-        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
-      </button>
-      <nav class="site-nav" id="site-navigation" aria-label="Navigation principale">
-        <ul class="site-nav__list">
-          <li><a class="site-nav__link" href="index.html">Accueil</a></li>
-          <li><a class="site-nav__link" href="about.html">À propos</a></li>
-          <li><a class="site-nav__link" href="skills.html">Compétences</a></li>
-          <li><a class="site-nav__link" href="projects.html" aria-current="page">Projets</a></li>
-          <li><a class="site-nav__link" href="stages.html">Stages</a></li>
-          <li><a class="site-nav__link" href="alternance.html">Alternance</a></li>
-          <li><a class="site-nav__link" href="veille.html">Veille</a></li>
-          <li><a class="site-nav__link" href="contact.html">Contact</a></li>
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Matéo Gonçalves Mota — accueil">
+        <span class="brand__mark" aria-hidden="true">M<span>G</span></span>
+        <span class="brand__text">Matéo Gonçalves Mota</span>
+      </a>
+
+      <nav class="nav" id="site-nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html" data-nav="home">Accueil</a></li>
+          <li><a class="nav__link" href="about.html" data-nav="parcours">Parcours</a></li>
+          <li><a class="nav__link" href="projects.html" data-nav="projets" aria-current="page">Projets</a></li>
+          <li><a class="nav__link" href="skills.html" data-nav="competences">Compétences</a></li>
+          <li><a class="nav__link" href="veille.html" data-nav="veille">Veille</a></li>
+          <li><a class="nav__link" href="contact.html" data-nav="contact">Contact</a></li>
         </ul>
-        <div class="site-nav__actions">
-          <a class="btn btn--primary" href="docs/cv.pdf" target="_blank" rel="noreferrer">Télécharger CV</a>
-        </div>
+        <a class="btn btn--primary btn--sm" href="docs/cv.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+          CV (PDF)
+        </a>
       </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Changer de thème">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button class="icon-btn nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Ouvrir le menu">
+          <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main id="main-content">
+  <main id="contenu" tabindex="-1">
 
-    <!-- ── HERO ── -->
-    <section class="hero hero--page" aria-labelledby="project-title">
+    <section class="page-hero" aria-labelledby="page-title">
       <div class="container">
         <nav class="breadcrumb" aria-label="Fil d'Ariane">
-          <a href="index.html">Accueil</a>
-          <span class="breadcrumb__sep">›</span>
-          <a href="projects.html">Projets</a>
-          <span class="breadcrumb__sep">›</span>
-          <span>SIGEANSUD</span>
+          <ol><li><a href="index.html">Accueil</a></li><li><a href="projects.html">Projets</a></li><li aria-current="page">SIGEANSUD</li></ol>
         </nav>
-        <p class="hero__eyebrow"><span class="hero__eyebrow-dot"></span>AP4 - BTS SIO SLAM</p>
-        <h1 id="project-title">Gestion des repas animaux<br /><span class="text-gradient">SIGEANSUD</span></h1>
-        <p class="hero__subtitle">
-          Application complète pour un parc animalier : app mobile de traçabilité des repas,
-          back-office de gestion des soignants et menus, API REST scalable avec Symfony 7.
+        <p class="eyebrow">Projet BTS SIO · AP4</p>
+        <h1 id="page-title">SIGEANSUD : tracer chaque repas d'un parc animalier</h1>
+        <p class="lead">
+          Une solution complète pour un parc animalier : une application Android pour les soigneurs, un back-office pour
+          les gestionnaires et une API REST Symfony 7 qui relie les deux.
         </p>
-        <div class="hero__actions" style="margin-top:1.5rem;">
-          <div class="project__tags" style="margin:0;">
-            <span class="project__tag">Android</span>
-            <span class="project__tag">Symfony 7</span>
-            <span class="project__tag">API REST</span>
-            <span class="project__tag">MySQL</span>
-          </div>
-        </div>
+        <ul class="tags"><li class="tag tag--accent">Java · Android</li><li class="tag tag--accent">Symfony 7</li><li class="tag">API REST</li><li class="tag">MySQL</li><li class="tag">UML</li></ul>
+        <dl class="meta-grid">
+          <div><dt>Contexte</dt><dd>BTS SIO SLAM — AP4</dd></div>
+          <div><dt>Durée</dt><dd>5 mois</dd></div>
+          <div><dt>Équipe</dt><dd>4 étudiants</dd></div>
+          <div><dt>Mon rôle</dt><dd>Développeur mobile</dd></div>
+        </dl>
       </div>
     </section>
 
-    <!-- ── CONTEXTE ── -->
-    <section class="section section--surface">
-      <div class="container">
-        <div class="grid grid--2">
-          <div class="fade-up">
-            <div class="project__meta">
-              <div class="project__meta-item">
-                <strong>Contexte</strong>
-                <span>AP4 - BTS SIO SLAM</span>
-              </div>
-              <div class="project__meta-item">
-                <strong>Durée</strong>
-                <span>Dec. 2024 - Avril 2025</span>
-              </div>
-              <div class="project__meta-item">
-                <strong>Équipe</strong>
-                <span>4 étudiants</span>
-              </div>
-              <div class="project__meta-item">
-                <strong>Rôle</strong>
-                <span>Développeur mobile</span>
-              </div>
-            </div>
+    <section class="section" aria-labelledby="need-title">
+      <div class="container split">
+        <div class="prose" data-reveal>
+          <h2 id="need-title">Le besoin</h2>
+          <p>
+            Le parc animalier SIGEANSUD gérait l'alimentation de ses animaux à la main. Impossible de savoir rapidement
+            qui avait nourri quel animal, à quelle heure et en quelle quantité. Le parc voulait <strong>une traçabilité
+            complète</strong> pour suivre la santé des animaux et organiser le travail des soigneurs.
+          </p>
 
-            <div class="card--highlight" style="margin-top:1.5rem;">
-              <h3>Stack technique</h3>
-              <div class="tag-cloud" style="margin-top:.75rem;">
-                <span class="tag tag--primary">Android (Java)</span>
-                <span class="tag tag--primary">Symfony 7</span>
-                <span class="tag tag--primary">API REST</span>
-                <span class="tag">MySQL</span>
-                <span class="tag">Laragon</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="fade-up delay-2">
-            <h2>Parc animalier SIGEANSUD</h2>
-            <p>
-              Un parc animalier moderne qui doit mettre en place une solution informatique
-              pour gérer l'alimentation de ses animaux de manière traçable et optimisée.
-            </p>
-            <p style="margin-top:1rem;">
-              Jusqu'à présent, la gestion des repas se faisait manuellement. Le projet vise à :
-              moderniser le processus, assurer la traçabilité complète, et faciliter le suivi
-              de la santé des animaux par les gestionnaires du parc.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── OBJECTIFS ── -->
-    <section class="section" aria-labelledby="objectives-title">
-      <div class="container">
-        <header class="section__header">
-          <p class="section__overline">Mission</p>
-          <h2 id="objectives-title">Objectifs du projet</h2>
-          <p class="section__lead">Créer une solution full-stack pour gérer efficacement l'alimentation des animaux du parc.</p>
-        </header>
-
-        <div class="cards cards--grid fade-up">
-          <article class="card">
-            <div class="card__body">
-              <h3>📱 Application Mobile</h3>
-              <p class="card__description">
-                Soignants saisissent en temps réel les heures et quantités de repas donnés aux animaux
-                de leurs espèces affectées.
-              </p>
-
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__body">
-              <h3>🖥️ Back-office Web</h3>
-              <p class="card__description">
-                Gestionnaires administrent les soignants, affectent les espèces, définissent les menus
-                et consultent les historiques de traçabilité complets.
-              </p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__body">
-              <h3>🔗 API REST</h3>
-              <p class="card__description">
-                Couche métier centralisée fournissant les données aux applications mobile et web,
-                avec synchronisation et gestion complète de la persistance.
-              </p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__body">
-              <h3>📊 Base de données</h3>
-              <p class="card__description">
-                MySQL en production (Laragon) : modèle organisationnel complet, MCD normalisé,
-                support de la traçabilité et des historiques.
-              </p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__body">
-              <h3>🎯 Traçabilité</h3>
-              <p class="card__description">
-                Enregistrement complet des repas donnés : heure, quantité, soignant, animal, espèce.
-                Historique consultable et rapports pour les vétérinaires.
-              </p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__body">
-              <h3>⚙️ Gestion des menus</h3>
-              <p class="card__description">
-                Menus adaptés par espèce avec portions, fréquences et recommandations nutritionnelles.
-                Géré centralement, consultable par les soignants sur l'app mobile.
-              </p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── ARCHITECTURE ── -->
-    <section class="section section--surface">
-      <div class="container">
-        <header class="section__header">
-          <p class="section__overline">Structure</p>
-          <h2>Architecture applicative</h2>
-        </header>
-
-        <div class="card--highlight fade-up">
-          <h3>Frontend - Application Mobile (Android)</h3>
-          <ul style="margin-top:1rem;padding-left:1.5rem;">
-            <li>Développement en <strong>Java</strong> sous <strong>Android Studio</strong></li>
-            <li>Interface intuitive pour saisie rapide des repas</li>
-            <li>Synchronisation automatique avec l'API REST</li>
-            <li>Accès filtré selon les espèces affectées au soignant</li>
+          <h2>La solution de l'équipe</h2>
+          <ul class="checklist">
+            <li><strong>Application mobile</strong> : les soigneurs saisissent en temps réel l'heure et la quantité des repas donnés aux espèces dont ils ont la charge.</li>
+            <li><strong>Back-office web</strong> : les gestionnaires administrent les soigneurs, affectent les espèces, définissent les menus et consultent l'historique.</li>
+            <li><strong>API REST Symfony 7</strong> : une couche métier unique qui fournit les données au mobile et au web.</li>
           </ul>
-        </div>
 
-        <div class="card--highlight fade-up delay-1" style="margin-top:1.5rem;">
-          <h3>Backend - Back-office & API (Symfony 7)</h3>
-          <ul style="margin-top:1rem;padding-left:1.5rem;">
-            <li>Framework <strong>Symfony 7</strong> pour robustesse et scalabilité</li>
-            <li>Back-office web pour gestionnaires du parc</li>
-            <li><strong>API REST</strong> pour communication avec le mobile</li>
-            <li>Développement local avec <strong>Laragon</strong></li>
-            <li>Base de données <strong>MySQL</strong> en développement</li>
+          <h2>Ma contribution : l'application Android</h2>
+          <ul class="checklist">
+            <li><strong>Maquettage des écrans</strong> et des parcours, pensés pour le terrain : saisie rapide, peu de manipulations.</li>
+            <li><strong>Développement natif en Java</strong> sous Android Studio : saisie d'un repas, animaux par espèce, menus du jour et historique des repas.</li>
+            <li><strong>Intégration de l'API REST</strong> : récupération des menus et envoi des repas saisis.</li>
+            <li><strong>Accès filtré</strong> : chaque soigneur ne voit que les espèces qui lui sont affectées.</li>
           </ul>
-        </div>
 
-        <div class="card--highlight fade-up delay-2" style="margin-top:1.5rem;">
-          <h3>Documentation & Méthodologie</h3>
-          <ul style="margin-top:1rem;padding-left:1.5rem;">
-            <li>Modèle Organisationnel de Traitement (MOT) validé avec les professeurs</li>
-            <li>Spécification complète de l'API REST</li>
-            <li>Diagrammes UML : classes, séquences, MCD</li>
-            <li>Maquettage détaillé des deux applicatifs</li>
-            <li>Plans de tests avec données cohérentes</li>
-            <li>Documentation utilisateur pour soignants et gestionnaires</li>
-            <li>Suivi agile via <strong>JIRA/Trello</strong></li>
+          <h2>Méthode et livrables</h2>
+          <ul class="bullets">
+            <li>Modèle organisationnel des traitements (MOT) validé avec l'équipe pédagogique.</li>
+            <li>Spécification de l'API, diagrammes UML (classes, séquences) et MCD.</li>
+            <li>Plans de tests avec jeux de données, documentation utilisateur.</li>
+            <li>Suivi Agile des tâches sur Trello.</li>
           </ul>
+
+          <h2>Ce que j'en retiens</h2>
+          <p>
+            Faire communiquer un client mobile avec une API m'a appris à raisonner en contrat d'interface : se mettre
+            d'accord sur les routes et les formats avant de coder, pour que le mobile et le back-office avancent en parallèle.
+          </p>
         </div>
+        <aside class="aside-card sticky" data-reveal="2">
+          <figure class="figure">
+            <button class="zoomable" type="button" data-zoom aria-label="Agrandir la capture du back-office">
+              <img src="img/sigeansud-backoffice.jpg" width="1447" height="656" loading="lazy" alt="Back-office SIGEANSUD : accueil avec le nombre de soignants, d'espèces et de menus" />
+            </button>
+            <figcaption>Back-office des gestionnaires.</figcaption>
+          </figure>
+          <figure class="figure" style="max-width:220px;">
+            <button class="zoomable" type="button" data-zoom aria-label="Agrandir la capture de l'application mobile">
+              <img src="img/sigeansud-mobile.png" width="204" height="441" loading="lazy" alt="Menu de l'application Android SIGEANSUD : saisir un repas, animaux par espèce, menus du jour, historique des repas" />
+            </button>
+            <figcaption>Application Android des soigneurs.</figcaption>
+          </figure>
+          <div class="panel">
+            <h3>Stack</h3>
+            <ul class="tags"><li class="tag tag--accent">Java</li><li class="tag tag--accent">Android Studio</li><li class="tag">Symfony 7</li><li class="tag">API REST</li><li class="tag">MySQL</li><li class="tag">Laragon</li><li class="tag">Trello</li></ul>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <!-- ── MISSION ── -->
-    <section class="section" aria-labelledby="mission-title">
-      <div class="container">
-        <header class="section__header">
-          <p class="section__overline">Mission</p>
-          <h2 id="mission-title">Création de l'application mobile</h2>
-          <p class="section__lead">Conception et développement de l'application Android dédiée aux soigneurs du parc animalier.</p>
-        </header>
-
-        <div class="cards cards--grid fade-up">
-          <article class="card">
-            <div class="card__body">
-              <h3>📐 Conception UX/UI</h3>
-              <p class="card__description">
-                Maquettage des écrans et définition des parcours utilisateurs adaptés
-                aux contraintes terrain des soigneurs (mains occupées, connexion limitée).
-              </p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__body">
-              <h3>📱 Développement Android</h3>
-              <p class="card__description">
-                Développement natif Android en Java/Kotlin : navigation, formulaires de saisie
-                des repas et consultation du planning journalier.
-              </p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__body">
-              <h3>🔌 Intégration API REST</h3>
-              <p class="card__description">
-                Connexion de l'app à l'API Symfony pour récupérer et envoyer les données
-                en temps réel depuis les appareils mobiles.
-              </p>
-            </div>
-          </article>
-        </div>
-
-        <div style="margin-top:2.5rem;">
-          <a class="btn btn--outline" href="projects.html">← Retour aux projets</a>
-        </div>
+    <section class="section" style="padding-top:0;" aria-label="Autres projets">
+      <div class="container container--narrow">
+        <nav class="pager" aria-label="Projets">
+          <a href="projects.html"><span>← Tous les projets</span><strong>Projets</strong></a>
+          <a class="pager__next" href="project-triathlon.html"><span>Suivant →</span><strong>Fédération de triathlon</strong></a>
+        </nav>
       </div>
     </section>
 
   </main>
 
-  <footer class="site-footer" aria-label="Pied de page">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <p class="footer-brand__name">Matéo Gonçalves Mota</p>
-        <p class="footer-brand__text">Développeur web &amp; applicatif</p>
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__about">
+        <a class="brand" href="index.html" aria-label="Matéo Gonçalves Mota — accueil">
+          <span class="brand__mark" aria-hidden="true">M<span>G</span></span>
+          <span class="brand__text">Matéo Gonçalves Mota</span>
+        </a>
+        <p>Développeur d'applications en alternance à la Fondation AMIPI. Je recherche une alternance de 2&nbsp;ans pour mon Master Informatique à partir de septembre&nbsp;2027.</p>
       </div>
-      <nav class="footer-nav">
-        <a class="footer-nav__link" href="index.html">Accueil</a>
-        <a class="footer-nav__link" href="about.html">À propos</a>
-        <a class="footer-nav__link" href="skills.html">Compétences</a>
-        <a class="footer-nav__link" href="projects.html">Projets</a>
-        <a class="footer-nav__link" href="stages.html">Stages</a>
-        <a class="footer-nav__link" href="alternance.html">Alternance</a>
-        <a class="footer-nav__link" href="veille.html">Veille</a>
-        <a class="footer-nav__link" href="contact.html">Contact</a>
-      </nav>
-      <div class="footer-social">
-        <a class="footer-social__link" href="https://github.com/Kayzmat" target="_blank" rel="noreferrer" aria-label="GitHub">🐙 GitHub</a>
-        <a class="footer-social__link" href="https://www.linkedin.com/in/mat%C3%A9o-gon%C3%A7alves-mota" target="_blank" rel="noreferrer" aria-label="LinkedIn">👔 LinkedIn</a>
+      <div>
+        <p class="footer__title">Navigation</p>
+        <ul class="footer__links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="about.html">Parcours</a></li>
+          <li><a href="projects.html">Projets</a></li>
+          <li><a href="skills.html">Compétences</a></li>
+          <li><a href="veille.html">Veille</a></li>
+        </ul>
       </div>
-      <p class="footer-copy">© 2026 Matéo Gonçalves Mota</p>
+      <div>
+        <p class="footer__title">Expériences</p>
+        <ul class="footer__links">
+          <li><a href="alternance.html">Alternance 2026–2027</a></li>
+          <li><a href="stage-2.html">Stage 2 — 2026</a></li>
+          <li><a href="stage-1.html">Stage 1 — 2025</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__title">Contact</p>
+        <ul class="footer__links">
+          <li><a href="mailto:mateo.goncalves@sfr.fr">mateo.goncalves@sfr.fr</a></li>
+          <li><a href="https://www.linkedin.com/in/mat%C3%A9o-gon%C3%A7alves-mota" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/Kayzmat" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="docs/cv.pdf" target="_blank" rel="noopener">CV (PDF)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 Matéo Gonçalves Mota — site statique codé à la main (HTML, CSS, JavaScript).</p>
+      <a href="#contenu">Retour en haut ↑</a>
     </div>
   </footer>
 
-  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

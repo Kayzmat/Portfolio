@@ -1,390 +1,217 @@
-/* eslint-disable no-console */
+/* ==========================================================================
+   Veille — agrégation automatique d'articles (méthode « pull »)
+   - API publique de Dev.to (JSON, CORS autorisé, sans clé ni proxy)
+   - cache localStorage d'une heure
+   - le contenu externe est inséré via textContent / attributs validés,
+     jamais en HTML brut (protection contre l'injection de script)
+   ========================================================================== */
 
-/*
-  Ce script alimente la section "Articles récents" de veille.html.
-  - Récupère des flux RSS via rss2json.com (CORS friendly)
-  - Cache les résultats 1h dans localStorage
-  - Permet de filtrer par source et de charger plus d'articles
-*/
+const FEED_CACHE_KEY = 'veille_feed_cache_v3';
+const FEED_CACHE_TTL = 60 * 60 * 1000;
+const FEED_PAGE = 9;
 
-const VEILLE_CACHE_KEY = 'veille_feed_cache_v1';
-const CACHE_TTL_MS = 1000 * 60 * 60; // 1 heure
-const DEFAULT_RENDER_COUNT = 9;
-const LOAD_MORE_STEP = 6;
+const FEED_SOURCES = [
+  { id: 'lowcode', name: 'Dev.to #lowcode', tag: 'lowcode' },
+  { id: 'nocode', name: 'Dev.to #nocode', tag: 'nocode' },
+  { id: 'powerplatform', name: 'Dev.to #powerplatform', tag: 'powerplatform' },
+].map(s => ({ ...s, url: `https://dev.to/api/articles?tag=${s.tag}&per_page=20`, home: `https://dev.to/t/${s.tag}` }));
 
-const RSS2JSON_API = 'https://api.rss2json.com/v1/api.json?rss_url=';
+const feedState = { articles: [], source: 'all', limit: FEED_PAGE };
 
-const SOURCES = [
-  {
-    id: 'devto-low',
-    name: 'Dev.to #lowcode',
-    feedUrl: 'https://dev.to/feed/tag/lowcode',
-  },
-  {
-    id: 'devto-no',
-    name: 'Dev.to #nocode',
-    feedUrl: 'https://dev.to/feed/tag/nocode',
-  },
-  {
-    id: 'mendix',
-    name: 'Mendix Blog',
-    feedUrl: 'https://mendix.com/blog/feed/',
-  },
-];
-
-
-const FALLBACK_ITEMS = [
-  {
-    title: 'Pourquoi le Low-Code stimule l’innovation en entreprise',
-    link: 'https://example.com/article-veille-1',
-    pubDate: '2026-03-18T00:00:00.000Z',
-    author: 'Matéo G.',
-    sourceId: 'fallback',
-    sourceName: 'Veille (hors ligne)',
-    description: 'Un article de secours affiché lorsque les flux RSS ne sont pas disponibles.',
-  },
-  {
-    title: 'No-Code : outils à connaître en 2026',
-    link: 'https://example.com/article-veille-2',
-    pubDate: '2026-03-17T00:00:00.000Z',
-    author: 'Matéo G.',
-    sourceId: 'fallback',
-    sourceName: 'Veille (hors ligne)',
-    description: 'Une liste des principaux outils No-Code à suivre.',
-  },
-];
-
-async function loadLocalFallback() {
+/* N'accepte que des URL http(s) absolues */
+function safeUrl(value) {
   try {
-    const resp = await fetch('data/veille-feed.json');
-    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-    const data = await resp.json();
-    if (!Array.isArray(data) || !data.length) throw new Error('Format fallback invalide');
-    return data;
-  } catch (err) {
-    console.warn('Impossible de charger les données locales de fallback', err);
-    return FALLBACK_ITEMS;
+    const url = new URL(value);
+    return url.protocol === 'https:' || url.protocol === 'http:' ? url.href : '';
+  } catch (e) {
+    return '';
   }
 }
 
+function formatDate(value) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return '';
+  return new Intl.DateTimeFormat('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' }).format(date);
+}
 
-function formatDate(dateString) {
+function readCache() {
   try {
-    const date = new Date(dateString);
-    return new Intl.DateTimeFormat('fr-FR', { day: '2-digit', month: 'short', year: 'numeric' }).format(date);
-  } catch (err) {
-    return dateString;
+    const cached = JSON.parse(localStorage.getItem(FEED_CACHE_KEY));
+    if (cached && Date.now() - cached.time < FEED_CACHE_TTL && cached.articles?.length) return cached.articles;
+  } catch (e) { /* cache illisible */ }
+  return null;
+}
+
+function writeCache(articles) {
+  try { localStorage.setItem(FEED_CACHE_KEY, JSON.stringify({ time: Date.now(), articles })); } catch (e) { /* stockage plein */ }
+}
+
+function normalize(item, source) {
+  return {
+    title: String(item.title || 'Sans titre').trim(),
+    link: safeUrl(item.url),
+    date: item.published_at || '',
+    author: String(item.user?.name || '').trim(),
+    image: safeUrl(item.cover_image || ''),
+    sourceId: source.id,
+    sourceName: source.name,
+  };
+}
+
+async function fetchWithTimeout(url, ms = 8000) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), ms);
+  try {
+    return await fetch(url, { signal: controller.signal });
+  } finally {
+    clearTimeout(timer);
   }
 }
 
-function getCache() {
-  try {
-    const raw = localStorage.getItem(VEILLE_CACHE_KEY);
-    if (!raw) return null;
-    const parsed = JSON.parse(raw);
-    if (!parsed.timestamp || !Array.isArray(parsed.articles) || !parsed.articles.length) return null;
-    if (Date.now() - parsed.timestamp > CACHE_TTL_MS) return null;
-    return parsed.articles;
-  } catch (err) {
-    console.warn('Erreur lecture cache veille', err);
-    return null;
-  }
+async function fetchSource(source) {
+  const resp = await fetchWithTimeout(source.url);
+  if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+  const items = await resp.json();
+  if (!Array.isArray(items) || !items.length) throw new Error('Aucun article');
+  return items.map(item => normalize(item, source));
 }
 
-function setCache(articles) {
-  try {
-    localStorage.setItem(
-      VEILLE_CACHE_KEY,
-      JSON.stringify({ timestamp: Date.now(), articles })
-    );
-  } catch (err) {
-    // Ignore les erreurs (ex: localStorage plein)
-  }
+function el(tag, className, text) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (text) node.textContent = text;
+  return node;
 }
 
-function createArticleCard(item) {
-  const card = document.createElement('a');
-  card.className = 'feed-card visible';
-  card.href = item.link || '#';
-  card.target = '_blank';
-  card.rel = 'noopener noreferrer';
-  card.setAttribute('aria-label', `Ouvrir l’article ${item.title} (${item.sourceName})`);
+function buildCard(article) {
+  const card = el('article', 'card card--link feed-card');
+  const media = el('div', 'card__media');
+  if (article.image) {
+    const img = el('img');
+    img.src = article.image;
+    img.alt = '';
+    img.loading = 'lazy';
+    img.referrerPolicy = 'no-referrer';
+    img.addEventListener('error', () => {
+      media.classList.add('card__media--placeholder');
+      media.replaceChildren(el('span', '', article.sourceName));
+    });
+    media.append(img);
+  } else {
+    media.classList.add('card__media--placeholder');
+    media.append(el('span', '', article.sourceName));
+  }
 
-  const thumbnail = item.thumbnail || item.enclosure?.link || '';
-  const imageMarkup = thumbnail
-    ? `<img src="${thumbnail}" alt="" loading="lazy" />`
-    : '📰';
+  const body = el('div', 'card__body');
+  const kicker = el('p', 'card__kicker');
+  kicker.append(el('span', '', article.sourceName), el('span', '', formatDate(article.date)));
+  const title = el('h3');
+  const link = el('a', 'card__stretch', article.title);
+  link.href = article.link;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  title.append(link);
+  body.append(kicker, title);
+  if (article.author) body.append(el('p', 'small', `Par ${article.author}`));
 
-  const sourceLabel = item.sourceName || 'Source inconnue';
-  const authorLabel = item.author ? `Auteur : ${item.author}` : '';
-
-  card.innerHTML = `
-    <div class="feed-card__img">${imageMarkup}</div>
-    <div class="feed-card__body">
-      <div class="feed-card__source"><span class="feed-card__source-dot"></span>${sourceLabel}</div>
-      <h3 class="feed-card__title">${item.title || 'Sans titre'}</h3>
-      ${authorLabel ? `<div class="feed-card__meta">${authorLabel}</div>` : ''}
-      <div class="feed-card__footer">
-        <span class="feed-card__date">${formatDate(item.pubDate)}</span>
-        <span class="feed-card__cta">Lire</span>
-      </div>
-    </div>
-  `;
-
+  card.append(media, body);
   return card;
 }
 
-function updateStatus(status, message) {
+function setStatus(state, message) {
   const dot = document.getElementById('feed-dot');
   const text = document.getElementById('feed-status-text');
-  if (!dot || !text) return;
-
-  dot.classList.toggle('loading', status === 'loading');
-  dot.classList.toggle('live', status === 'live');
-  dot.classList.toggle('error', status === 'error');
-  text.textContent = message;
+  if (dot) dot.className = `feed-status__dot is-${state}`;
+  if (text) text.textContent = message;
 }
 
-function sortArticles(articles) {
-  return [...articles].sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
-}
-
-async function fetchFeed(source) {
-  const parseXmlItems = (xmlText) => {
-    const parser = new DOMParser();
-    const xmlDoc = parser.parseFromString(xmlText, 'application/xml');
-
-    const items = Array.from(xmlDoc.querySelectorAll('item'));
-    if (!items.length) throw new Error('Aucun <item> trouvé dans le flux RSS');
-
-    return items.map(item => {
-      const getText = (tag) => {
-        const el = item.querySelector(tag);
-        return el ? el.textContent.trim() : '';
-      };
-
-      const thumbnail = (item.querySelector('media\:thumbnail') || item.querySelector('media\:content') || item.querySelector('enclosure'))?.getAttribute('url') || '';
-
-      return {
-        title: getText('title') || 'Sans titre',
-        link: getText('link') || '#',
-        pubDate: getText('pubDate') || new Date().toISOString(),
-        description: getText('description') || getText('content\:encoded') || '',
-        thumbnail,
-        sourceId: source.id,
-        sourceName: source.name,
-      };
-    });
-  };
-
-  const rss2jsonUrl = `${RSS2JSON_API}${encodeURIComponent(source.feedUrl)}`;
-
-  try {
-    const resp = await fetch(rss2jsonUrl);
-    if (resp.ok) {
-      const json = await resp.json();
-      if (json.status === 'ok' && Array.isArray(json.items) && json.items.length > 0) {
-        return json.items.map(item => ({
-          title: item.title || 'Sans titre',
-          link: item.link || '#',
-          pubDate: item.pubDate || item.isoDate || new Date().toISOString(),
-          description: item.description || item.content || item.contentSnippet || '',
-          thumbnail: item.thumbnail || item.enclosure?.link || '',
-          sourceId: source.id,
-          sourceName: source.name,
-        }));
-      }
-      throw new Error(`Service rss2json renvoyé statut ${json.status}`);
-    }
-    throw new Error(`RSS2JSON HTTP ${resp.status}`);
-  } catch (rssErr) {
-    console.warn(`Échec rss2json pour ${source.name}:`, rssErr);
-  }
-
-  const proxies = [
-    `https://api.allorigins.win/raw?url=${encodeURIComponent(source.feedUrl)}`,
-    `https://corsproxy.io/?${encodeURIComponent(source.feedUrl)}`,
-    `https://thingproxy.freeboard.io/fetch/${encodeURIComponent(source.feedUrl)}`,
-  ];
-
-  let lastError;
-  for (const proxyUrl of proxies) {
-    try {
-      const resp = await fetch(proxyUrl);
-      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-      const xmlText = await resp.text();
-      return parseXmlItems(xmlText);
-    } catch (err) {
-      lastError = err;
-      console.warn(`Proxy échoue pour ${source.name} (${proxyUrl}):`, err);
-    }
-  }
-
-  throw lastError || new Error('Échec récupération du flux RSS');
-}
-
-async function loadArticles({ forceRefresh = false } = {}) {
+function render() {
   const grid = document.getElementById('feed-grid');
-  const loadMoreWrap = document.getElementById('load-more-wrap');
-  if (!grid) return;
+  const more = document.getElementById('feed-more');
+  const list = feedState.source === 'all'
+    ? feedState.articles
+    : feedState.articles.filter(a => a.sourceId === feedState.source);
 
-  updateStatus('loading', 'Chargement des articles en cours…');
-
-  let articles = null;
-
-  if (!forceRefresh) {
-    articles = getCache();
-    if (articles && articles.length > 0) {
-      updateStatus('live', 'Articles chargés depuis le cache (1h).');
-      renderArticles(articles);
-      setupFilters(articles);
-      return;
-    }
-  }
-
-  try {
-    const all = [];
-    const promises = SOURCES.map(src => 
-      fetchFeed(src)
-        .then(items => {
-          console.log(`✓ ${src.name}: ${items.length} articles`);
-          return items;
-        })
-        .catch(err => {
-          console.warn(`✗ ${src.name}: ${err.message}`);
-          return [];
-        })
-    );
-    
-    const results = await Promise.all(promises);
-    results.forEach(arr => all.push(...arr));
-
-    if (all.length === 0) {
-      throw new Error('Aucun article récupéré des sources principales.');
-    }
-
-    articles = sortArticles(all);
-    setCache(articles);
-    updateStatus('live', `✓ ${all.length} articles chargés. Cliquer sur "Rafraîchir" pour recharger.`);
-    console.log(`Veille: ${all.length} articles au total`);
-  } catch (err) {
-    console.error('Erreur RSS:', err);
-    updateStatus('error', `Mode hors ligne. Affichage des articles de secours (${err.message})`);
-    articles = await loadLocalFallback();
-  }
-
-  renderArticles(articles);
-  setupFilters(articles);
-}
-
-function renderArticles(articles, { source = 'all', limit = DEFAULT_RENDER_COUNT } = {}) {
-  const grid = document.getElementById('feed-grid');
-  const loadMoreWrap = document.getElementById('load-more-wrap');
-  if (!grid) return;
-
-  grid.innerHTML = '';
-
-  const isFallback = articles.length > 0 && articles.every(a => a.sourceId === 'fallback');
-  let filtered;
-  
-  if (isFallback) {
-    filtered = articles;
-  } else if (source === 'all') {
-    filtered = articles;
+  grid.replaceChildren();
+  grid.setAttribute('aria-busy', 'false');
+  if (!list.length) {
+    const empty = el('p', 'muted', 'Aucun article pour cette source pour le moment.');
+    empty.style.gridColumn = '1 / -1';
+    grid.append(empty);
   } else {
-    filtered = articles.filter(a => a.sourceId === source);
+    list.slice(0, feedState.limit).forEach(article => grid.append(buildCard(article)));
   }
-  
-  const toRender = filtered.slice(0, limit);
+  if (more) more.hidden = list.length <= feedState.limit;
+}
 
-  if (!toRender.length) {
-    grid.innerHTML = '<div style="grid-column: 1/-1; padding: 3rem; text-align: center;"><p style="color:var(--muted);font-style:italic;">Aucun article trouvé pour ce filtre.</p></div>';
-    if (loadMoreWrap) loadMoreWrap.style.display = 'none';
+function renderOffline() {
+  const grid = document.getElementById('feed-grid');
+  grid.replaceChildren();
+  grid.setAttribute('aria-busy', 'false');
+  FEED_SOURCES.forEach(source => {
+    const card = el('article', 'card card--link');
+    const body = el('div', 'card__body');
+    const title = el('h3');
+    const link = el('a', 'card__stretch', source.name);
+    link.href = source.home;
+    link.target = '_blank';
+    link.rel = 'noopener';
+    title.append(link);
+    body.append(el('p', 'card__kicker', 'Source'), title, el('p', '', 'Consulter les derniers articles directement sur le site.'));
+    card.append(body);
+    grid.append(card);
+  });
+  document.getElementById('feed-more').hidden = true;
+}
+
+async function loadFeed(force = false) {
+  setStatus('loading', 'Chargement des articles…');
+  const cached = force ? null : readCache();
+  if (cached) {
+    feedState.articles = cached;
+    setStatus('live', `${cached.length} articles (mis en cache il y a moins d'une heure)`);
+    render();
     return;
   }
 
-  toRender.forEach((item, idx) => {
-    const card = createArticleCard(item);
-    if (idx < 3) card.classList.add(`delay-${idx}`);
-    grid.appendChild(card);
-  });
+  const results = await Promise.allSettled(FEED_SOURCES.map(fetchSource));
+  const articles = results
+    .filter(r => r.status === 'fulfilled')
+    .flatMap(r => r.value)
+    .filter((a, i, all) => a.link && all.findIndex(b => b.link === a.link) === i)
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  if (grid.children.length === 0) {
-    grid.innerHTML = '<div style="grid-column: 1/-1; padding: 3rem; text-align: center;"><p style="color:var(--muted);font-style:italic;">Aucun article visible. Vérifiez la connexion ou rechargez la page.</p></div>';
-  }
-
-  const hasMore = filtered.length > limit;
-  if (loadMoreWrap) {
-    loadMoreWrap.style.display = hasMore ? 'block' : 'none';
+  if (articles.length) {
+    feedState.articles = articles;
+    writeCache(articles);
+    const failed = results.filter(r => r.status === 'rejected').length;
+    setStatus('live', `${articles.length} articles chargés${failed ? ` (${failed} source indisponible)` : ''}`);
+    render();
+  } else {
+    setStatus('error', 'Flux indisponibles pour le moment : accédez directement aux sources.');
+    renderOffline();
   }
 }
 
-function setupFilters(articles) {
-  const buttons = Array.from(document.querySelectorAll('.filter-btn'));
-  if (!buttons.length) return;
-
-  let current = { source: 'all', limit: DEFAULT_RENDER_COUNT };
-
-  const update = () => {
-    renderArticles(articles, current);
-    buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.source === current.source));
-  };
-
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      current.source = btn.dataset.source || 'all';
-      current.limit = DEFAULT_RENDER_COUNT;
-      update();
-    });
-  });
-
-  const loadMore = document.getElementById('load-more');
-  if (loadMore) {
-    loadMore.addEventListener('click', () => {
-      current.limit += LOAD_MORE_STEP;
-      renderArticles(articles, current);
-    });
-  }
-
-  // Initial render + button state
-  update();
-}
-
-function attachRefresh() {
-  const refreshBtn = document.getElementById('refresh-feed');
-  if (!refreshBtn) return;
-  refreshBtn.addEventListener('click', () => {
-    loadArticles({ forceRefresh: true });
-  });
-}
-
-function initVeilleFeed() {
+function initFeed() {
   if (!document.getElementById('feed-grid')) return;
-  
-  // Charge et affiche les articles immédiatement
-  loadArticles();
-  
-  // Attache le bouton refresh s'il existe
-  attachRefresh();
-  
-  // Si les articles ne se chargent pas (cas edge), affiche le fallback
-  setTimeout(() => {
-    const grid = document.getElementById('feed-grid');
-    if (grid && grid.children.length === 0) {
-      console.warn('Aucun article affiché après 5s, affichage du fallback');
-      loadLocalFallback().then(fallback => {
-        if (fallback.length > 0) {
-          updateStatus('error', 'Mode hors ligne (timeout réseau)');
-          renderArticles(fallback);
-          setupFilters(fallback);
-        }
-      });
-    }
-  }, 5000);
+
+  const buttons = document.querySelectorAll('#feed-filters [data-source]');
+  buttons.forEach(btn => btn.addEventListener('click', () => {
+    feedState.source = btn.dataset.source;
+    feedState.limit = FEED_PAGE;
+    buttons.forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+    if (feedState.articles.length) render();
+  }));
+
+  document.getElementById('feed-more')?.addEventListener('click', () => {
+    feedState.limit += FEED_PAGE;
+    render();
+  });
+  document.getElementById('feed-refresh')?.addEventListener('click', () => loadFeed(true));
+
+  loadFeed();
 }
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initVeilleFeed);
-} else {
-  initVeilleFeed();
-}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initFeed);
+else initFeed();

@@ -3,248 +3,190 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Projet — Gestion des leçons d'auto-école (Castellane Auto) — système de planification et facturation." />
+  <title>Castellane Auto — gestion d'une auto-école — Matéo Gonçalves Mota</title>
+  <meta name="description" content="Projet BTS SIO : informatisation de la gestion des leçons, moniteurs et véhicules d'une auto-école en PHP/MySQL. Rôle : base de données et gestion des véhicules (CRUD)." />
   <meta name="author" content="Matéo Gonçalves Mota" />
-  <title>Projet — Castellane Auto — Matéo Gonçalves Mota</title>
-  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+  <link rel="canonical" href="https://kayzmat.github.io/Portfolio/project-castellane-auto.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Matéo Gonçalves Mota — Portfolio" />
+  <meta property="og:title" content="Castellane Auto — gestion d'une auto-école — Matéo Gonçalves Mota" />
+  <meta property="og:description" content="Projet BTS SIO : informatisation de la gestion des leçons, moniteurs et véhicules d'une auto-école en PHP/MySQL. Rôle : base de données et gestion des véhicules (CRUD)." />
+  <meta property="og:url" content="https://kayzmat.github.io/Portfolio/project-castellane-auto.html" />
+  <meta property="og:image" content="https://kayzmat.github.io/Portfolio/assets/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Matéo Gonçalves Mota — développeur d'applications en alternance" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#1d2250" />
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')d.dataset.theme=t}catch(e){}})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" />
   <link rel="stylesheet" href="css/style.css" />
-  <script defer src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Aller au contenu</a>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
 
   <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html"><span>Matéo Gonçalves Mota</span></a>
-      <button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Ouvrir le menu">
-        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
-      </button>
-      <nav class="site-nav" id="site-navigation" aria-label="Navigation principale">
-        <ul class="site-nav__list">
-          <li><a class="site-nav__link" href="index.html">Accueil</a></li>
-          <li><a class="site-nav__link" href="about.html">À propos</a></li>
-          <li><a class="site-nav__link" href="skills.html">Compétences</a></li>
-          <li><a class="site-nav__link" href="projects.html" aria-current="page">Projets</a></li>
-          <li><a class="site-nav__link" href="stages.html">Stages</a></li>
-          <li><a class="site-nav__link" href="alternance.html">Alternance</a></li>
-          <li><a class="site-nav__link" href="veille.html">Veille</a></li>
-          <li><a class="site-nav__link" href="contact.html">Contact</a></li>
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Matéo Gonçalves Mota — accueil">
+        <span class="brand__mark" aria-hidden="true">M<span>G</span></span>
+        <span class="brand__text">Matéo Gonçalves Mota</span>
+      </a>
+
+      <nav class="nav" id="site-nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html" data-nav="home">Accueil</a></li>
+          <li><a class="nav__link" href="about.html" data-nav="parcours">Parcours</a></li>
+          <li><a class="nav__link" href="projects.html" data-nav="projets" aria-current="page">Projets</a></li>
+          <li><a class="nav__link" href="skills.html" data-nav="competences">Compétences</a></li>
+          <li><a class="nav__link" href="veille.html" data-nav="veille">Veille</a></li>
+          <li><a class="nav__link" href="contact.html" data-nav="contact">Contact</a></li>
         </ul>
-        <div class="site-nav__actions">
-          <a class="btn btn--primary" href="docs/cv.pdf" target="_blank" rel="noreferrer">Télécharger CV</a>
-        </div>
+        <a class="btn btn--primary btn--sm" href="docs/cv.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+          CV (PDF)
+        </a>
       </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Changer de thème">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button class="icon-btn nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Ouvrir le menu">
+          <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main id="main-content">
+  <main id="contenu" tabindex="-1">
 
-    <!-- ── HERO ── -->
-    <section class="hero hero--page" aria-labelledby="project-title">
+    <section class="page-hero" aria-labelledby="page-title">
       <div class="container">
         <nav class="breadcrumb" aria-label="Fil d'Ariane">
-          <a href="index.html">Accueil</a>
-          <span class="breadcrumb__sep">›</span>
-          <a href="projects.html">Projets</a>
-          <span class="breadcrumb__sep">›</span>
-          <span>Castellane Auto</span>
+          <ol><li><a href="index.html">Accueil</a></li><li><a href="projects.html">Projets</a></li><li aria-current="page">Castellane Auto</li></ol>
         </nav>
-        <p class="hero__eyebrow"><span class="hero__eyebrow-dot"></span>AP2 - BTS SIO SLAM</p>
-        <h1 id="project-title">Gestion des leçons<br /><span class="text-gradient">Castellane Auto</span></h1>
-        <p class="hero__subtitle">
-          Informatisation du système de gestion des leçons de conduite : planification, suivi des moniteurs,
-          gestion du matériel roulant et facturation pour une auto-école modernisée.
+        <p class="eyebrow">Projet BTS SIO · AP2</p>
+        <h1 id="page-title">Castellane Auto : en finir avec le planning mural</h1>
+        <p class="lead">
+          Une auto-école de dix moniteurs gérait ses leçons sur des plannings muraux et des fiches cartonnées.
+          Nous avons informatisé la gestion des leçons, des moniteurs et des véhicules.
         </p>
-        <div class="hero__actions" style="margin-top:1.5rem;">
-          <div class="project__tags" style="margin:0;">
-            <span class="project__tag">PHP</span>
-            <span class="project__tag">MySQL</span>
-            <span class="project__tag">Laragon</span>
-          </div>
-        </div>
+        <ul class="tags"><li class="tag tag--accent">PHP</li><li class="tag tag--accent">MySQL</li><li class="tag">CRUD</li><li class="tag">Laragon</li></ul>
+        <dl class="meta-grid">
+          <div><dt>Contexte</dt><dd>BTS SIO SLAM — AP2</dd></div>
+          <div><dt>Durée</dt><dd>1 mois</dd></div>
+          <div><dt>Équipe</dt><dd>3 étudiants</dd></div>
+          <div><dt>Mon rôle</dt><dd>Base de données, gestion des véhicules</dd></div>
+        </dl>
       </div>
     </section>
 
-    <!-- ── CONTEXTE ── -->
-    <section class="section section--surface">
-      <div class="container">
-        <div class="grid grid--2">
-          <div class="fade-up">
-            <div class="project__meta">
-              <div class="project__meta-item">
-                <strong>Contexte</strong>
-                <span>AP2 - BTS SIO SLAM</span>
-              </div>
-              <div class="project__meta-item">
-                <strong>Durée</strong>
-                <span>1 mois</span>
-              </div>
-              <div class="project__meta-item">
-                <strong>Groupe</strong>
-                <span>3 étudiants</span>
-              </div>
-              <div class="project__meta-item">
-                <strong>Rôle</strong>
-                <span>Développeur full-stack</span>
-              </div>
-            </div>
+    <section class="section" aria-labelledby="need-title">
+      <div class="container split">
+        <div class="prose" data-reveal>
+          <h2 id="need-title">Le besoin</h2>
+          <p>
+            Établie depuis trente ans, l'auto-école Castellane Auto se distingue par la variété de ses formules de
+            facturation. Mais planning, suivi et facturation reposaient sur du papier, une organisation devenue
+            intenable pour accompagner sa croissance.
+          </p>
+          <p>Objectifs : planifier les leçons, suivre moniteurs et véhicules, et mieux répartir l'activité entre eux.</p>
 
-            <div class="card--highlight" style="margin-top:1.5rem;">
-              <h3>Stack technique</h3>
-              <div class="tag-cloud" style="margin-top:.75rem;">
-                <span class="tag tag--primary">PHP</span>
-                <span class="tag tag--primary">MySQL</span>
-                <span class="tag">Laragon</span>
-                <span class="tag">HTML5</span>
-                <span class="tag">CSS</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="fade-up delay-2">
-            <h2>L'auto-école Castellane Auto</h2>
-            <p>
-              Une auto-école établie depuis trente ans, réputée pour son sérieux et la compétence pédagogique de ses dix moniteurs.
-              Son principal atout : une offre très diversifiée de modes de facturation des leçons.
-            </p>
-            <p style="margin-top:1rem;">
-              Jusqu'à présent, la gestion des leçons (planning, suivi et facturation) se faisait manuellement à l'aide de 
-              plannings muraux et de fiches cartonnées — une solution devenue obsolète face aux besoins de croissance.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── OBJECTIFS ── -->
-    <section class="section" aria-labelledby="objectives-title">
-      <div class="container">
-        <header class="section__header">
-          <p class="section__overline">Mission</p>
-          <h2 id="objectives-title">Objectifs du projet</h2>
-          <p class="section__lead">Mettre en œuvre une solution informatique pour optimiser la gestion de l'auto-école et améliorer le service rendu aux clients.</p>
-        </header>
-
-        <div class="cards cards--grid fade-up">
-          <article class="card">
-            <div class="card__body">
-              <h3>📊 Base de données</h3>
-              <p class="card__description">
-                Implanter une base de données relationnelle sous Laragon à partir du MCD fourni,
-                puis l'alimenter avec des données cohérentes et représentatives.
-              </p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__body">
-              <h3>📝 Gestion des leçons</h3>
-              <p class="card__description">
-                Système CRUD complet : ajouter, modifier et supprimer des leçons de conduite
-                avec assignation aux moniteurs et véhicules disponibles.
-              </p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__body">
-              <h3>🚗 Gestion du matériel</h3>
-              <p class="card__description">
-                Administration des voitures d'école : référencement, suivi de disponibilité,
-                maintenance et association aux moniteurs.
-              </p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__body">
-              <h3>👨‍🏫 Gestion des moniteurs</h3>
-              <p class="card__description">
-                Gestion des profils enseignants, planning des disponibilités et optimisation
-                du taux de rotation pour meilleur service client.
-              </p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__body">
-              <h3>💻 Interface web</h3>
-              <p class="card__description">
-                Application PHP moderne avec page d'accueil accueillante, navigation fluide
-                et interface administrative intuitive pour les opérations CRUD.
-              </p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__body">
-              <h3>💰 Optimisation</h3>
-              <p class="card__description">
-                Améliorer le taux de rotation des moniteurs et du matériel roulant,
-                optimiser la facturation et transformer le processus en atout concurrentiel.
-              </p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── MISSIONS ── -->
-    <section class="section section--surface">
-      <div class="container">
-        <header class="section__header">
-          <p class="section__overline">Missions</p>
-          <h2>Missions réalisées</h2>
-
-        </header>
-        <div class="card--highlight fade-up">
-          <h3>Mission 1 – Base de données</h3>
-
-          <ul style="margin-top:1rem;padding-left:1.5rem;">
-            <li>Implantation du MCD fourni en base de données relationnelle</li>
-            <li>Création des tables : voitures et données associées</li>
-            <li>Déploiement sous Laragon (serveur Apache + MySQL)</li>
-            <li>Alimentation de la base : créations, import et cohérence des données</li>
+          <h2>Ma contribution</h2>
+          <h3>Mission 1 — Base de données</h3>
+          <ul class="checklist">
+            <li>Implantation du MCD fourni en base relationnelle MySQL.</li>
+            <li>Mise en place de l'environnement Laragon (Apache + MySQL).</li>
+            <li>Alimentation de la base avec des données cohérentes et représentatives.</li>
+          </ul>
+          <h3>Mission 2 — Gestion des véhicules</h3>
+          <ul class="checklist">
+            <li>CRUD complet : ajout, modification et suppression des voitures d'école.</li>
+            <li>Formulaires PHP avec validation des données côté serveur.</li>
+            <li>Suivi de la disponibilité du matériel roulant et pages d'administration.</li>
           </ul>
 
+          <h2>Ce que j'en retiens</h2>
+          <p>
+            Un premier projet court et cadré, idéal pour maîtriser les fondamentaux : passer d'un modèle conceptuel à une
+            base réelle, puis écrire un CRUD propre avec validation côté serveur.
+          </p>
         </div>
-
-        <div class="card--highlight fade-up delay-1" style="margin-top:1.5rem;">
-          <h3>Mission 2 – Réalisation : gestion des voitures</h3>
-          <ul style="margin-top:1rem;padding-left:1.5rem;">
-            <li><strong>Gestion des voitures</strong> : ajouter, modifier, supprimer (CRUD complet)</li>
-            <li>Formulaires PHP avec validation des données côté serveur</li>
-            <li>Gestion des informations liées à la disponibilité et au suivi du matériel roulant</li>
-            <li>Pages d'administration avec navigation intuitive</li>
-          </ul>
-        </div>
-
+        <aside class="aside-card sticky" data-reveal="2">
+          <figure class="figure">
+            <button class="zoomable" type="button" data-zoom aria-label="Agrandir la capture"><img src="img/castellane-accueil.jpg" width="1600" height="793" loading="lazy" alt="Page d'accueil de l'application Castellane Auto" /></button>
+            <figcaption>Page d'accueil de l'application.</figcaption>
+          </figure>
+          <div class="panel">
+            <h3>Stack</h3>
+            <ul class="tags"><li class="tag tag--accent">PHP</li><li class="tag tag--accent">MySQL</li><li class="tag">HTML / CSS</li><li class="tag">Laragon</li></ul>
+          </div>
+        </aside>
       </div>
     </section>
+
+    <section class="section" style="padding-top:0;" aria-label="Autres projets">
+      <div class="container container--narrow">
+        <nav class="pager" aria-label="Projets">
+          <a href="project-tellis.html"><span>← Précédent</span><strong>Tellis</strong></a>
+          <a class="pager__next" href="project-bst79.html"><span>Suivant →</span><strong>Site WordPress bst79</strong></a>
+        </nav>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="site-footer" aria-label="Pied de page">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <p class="footer-brand__name">Matéo Gonçalves Mota</p>
-        <p class="footer-brand__text">Développeur web &amp; applicatif</p>
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__about">
+        <a class="brand" href="index.html" aria-label="Matéo Gonçalves Mota — accueil">
+          <span class="brand__mark" aria-hidden="true">M<span>G</span></span>
+          <span class="brand__text">Matéo Gonçalves Mota</span>
+        </a>
+        <p>Développeur d'applications en alternance à la Fondation AMIPI. Je recherche une alternance de 2&nbsp;ans pour mon Master Informatique à partir de septembre&nbsp;2027.</p>
       </div>
-      <nav class="footer-nav">
-        <a class="footer-nav__link" href="index.html">Accueil</a>
-        <a class="footer-nav__link" href="about.html">À propos</a>
-        <a class="footer-nav__link" href="skills.html">Compétences</a>
-        <a class="footer-nav__link" href="projects.html">Projets</a>
-        <a class="footer-nav__link" href="stages.html">Stages</a>
-        <a class="footer-nav__link" href="alternance.html">Alternance</a>
-        <a class="footer-nav__link" href="veille.html">Veille</a>
-        <a class="footer-nav__link" href="contact.html">Contact</a>
-      </nav>
-      <div class="footer-social">
-        <a class="footer-social__link" href="https://github.com/Kayzmat" target="_blank" rel="noreferrer" aria-label="GitHub">🐙 GitHub</a>
-        <a class="footer-social__link" href="https://www.linkedin.com/in/mat%C3%A9o-gon%C3%A7alves-mota" target="_blank" rel="noreferrer" aria-label="LinkedIn">👔 LinkedIn</a>
+      <div>
+        <p class="footer__title">Navigation</p>
+        <ul class="footer__links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="about.html">Parcours</a></li>
+          <li><a href="projects.html">Projets</a></li>
+          <li><a href="skills.html">Compétences</a></li>
+          <li><a href="veille.html">Veille</a></li>
+        </ul>
       </div>
-      <p class="footer-copy">© 2026 Matéo Gonçalves Mota</p>
+      <div>
+        <p class="footer__title">Expériences</p>
+        <ul class="footer__links">
+          <li><a href="alternance.html">Alternance 2026–2027</a></li>
+          <li><a href="stage-2.html">Stage 2 — 2026</a></li>
+          <li><a href="stage-1.html">Stage 1 — 2025</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__title">Contact</p>
+        <ul class="footer__links">
+          <li><a href="mailto:mateo.goncalves@sfr.fr">mateo.goncalves@sfr.fr</a></li>
+          <li><a href="https://www.linkedin.com/in/mat%C3%A9o-gon%C3%A7alves-mota" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/Kayzmat" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="docs/cv.pdf" target="_blank" rel="noopener">CV (PDF)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 Matéo Gonçalves Mota — site statique codé à la main (HTML, CSS, JavaScript).</p>
+      <a href="#contenu">Retour en haut ↑</a>
     </div>
   </footer>
 
-  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

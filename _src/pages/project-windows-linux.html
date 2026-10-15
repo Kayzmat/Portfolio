@@ -1,0 +1,74 @@
+<!--
+title: Infrastructure réseau Windows & Linux — Matéo Gonçalves Mota
+description: Projet BTS SIO : infrastructure réseau simulée avec domaine Active Directory sous Windows Server, serveur web Apache sous Debian, VLAN Cisco Packet Tracer, DNS et DHCP.
+nav: projets
+-->
+  <main id="contenu" tabindex="-1">
+
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <ol><li><a href="index.html">Accueil</a></li><li><a href="projects.html">Projets</a></li><li aria-current="page">Infrastructure réseau</li></ol>
+        </nav>
+        <p class="eyebrow">Projet BTS SIO · AP0</p>
+        <h1 id="page-title">Monter une infrastructure Windows &amp; Linux</h1>
+        <p class="lead">
+          Un réseau d'entreprise simulé de bout en bout : domaine Active Directory, serveur web sous Debian, VLAN et
+          services DNS/DHCP. Un projet côté infrastructure qui m'aide aujourd'hui à comprendre où tournent mes applications.
+        </p>
+        <ul class="tags"><li class="tag tag--accent">Windows Server</li><li class="tag tag--accent">Debian</li><li class="tag">Active Directory</li><li class="tag">Cisco</li><li class="tag">VLAN</li></ul>
+        <dl class="meta-grid">
+          <div><dt>Contexte</dt><dd>BTS SIO — AP0</dd></div>
+          <div><dt>Durée</dt><dd>2 mois</dd></div>
+          <div><dt>Focus</dt><dd>Sécurité et disponibilité</dd></div>
+          <div><dt>Mon rôle</dt><dd>Administration système et réseau</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="need-title">
+      <div class="container split">
+        <div class="prose" data-reveal>
+          <h2 id="need-title">L'objectif</h2>
+          <p>
+            Mettre en place un environnement réseau professionnel : Windows Server pour la gestion des utilisateurs et
+            des postes, Linux Debian pour les services web, le tout segmenté et sécurisé.
+          </p>
+          <h2>Réalisations</h2>
+          <ul class="checklist">
+            <li>Contrôleur de domaine <strong>Active Directory</strong> sous Windows Server, intégration des postes clients.</li>
+            <li>Serveur web <strong>Apache sous Debian</strong>, relié au domaine.</li>
+            <li><strong>Segmentation en VLAN</strong> et routage inter-VLAN simulés sous Cisco Packet Tracer.</li>
+            <li>Configuration <strong>DNS et DHCP</strong>, règles de sécurité.</li>
+            <li>Tests de connectivité et vérification de l'isolation entre sous-réseaux.</li>
+          </ul>
+          <h2>Ce que j'en retiens</h2>
+          <ul class="bullets">
+            <li>Penser la sécurité dès l'architecture, pas après coup.</li>
+            <li>Administrer un domaine : utilisateurs, groupes, stratégies (GPO).</li>
+            <li>Configurer et maintenir un serveur Linux.</li>
+          </ul>
+        </div>
+        <aside class="aside-card sticky" data-reveal="2">
+          <figure class="figure">
+            <button class="zoomable" type="button" data-zoom aria-label="Agrandir le schéma réseau"><img src="img/infra-schema.png" width="792" height="358" loading="lazy" alt="Topologie Cisco Packet Tracer : un serveur relié à un commutateur 2960, lui-même relié à deux postes clients et à une machine Debian" style="background:#fff;" /></button>
+            <figcaption>Topologie simulée dans Cisco Packet Tracer.</figcaption>
+          </figure>
+          <figure class="figure">
+            <button class="zoomable" type="button" data-zoom aria-label="Agrandir la console Active Directory"><img src="img/infra-active-directory.png" width="643" height="452" loading="lazy" alt="Console Utilisateurs et ordinateurs Active Directory du domaine" /></button>
+            <figcaption>Console Active Directory du domaine.</figcaption>
+          </figure>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;" aria-label="Autres projets">
+      <div class="container container--narrow">
+        <nav class="pager" aria-label="Projets">
+          <a href="project-bst79.html"><span>← Précédent</span><strong>Site WordPress bst79</strong></a>
+          <a class="pager__next" href="project-portfolio.html"><span>Suivant →</span><strong>Ce portfolio</strong></a>
+        </nav>
+      </div>
+    </section>
+
+  </main>

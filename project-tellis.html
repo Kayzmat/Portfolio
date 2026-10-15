@@ -3,254 +3,218 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Projet Tellis — plateforme de réservation pour un salon professionnel." />
+  <title>Tellis — plateforme de réservation pour un salon — Matéo Gonçalves Mota</title>
+  <meta name="description" content="Projet BTS SIO : plateforme web PHP/MySQL de réservation d'emplacements pour les exposants d'un salon, avec plan interactif et espace organisateur. Rôle : cahier des charges, planification, page admin et JavaScript." />
   <meta name="author" content="Matéo Gonçalves Mota" />
-  <title>Projet — Plateforme Tellis — Matéo Gonçalves Mota</title>
-  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+  <link rel="canonical" href="https://kayzmat.github.io/Portfolio/project-tellis.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Matéo Gonçalves Mota — Portfolio" />
+  <meta property="og:title" content="Tellis — plateforme de réservation pour un salon — Matéo Gonçalves Mota" />
+  <meta property="og:description" content="Projet BTS SIO : plateforme web PHP/MySQL de réservation d'emplacements pour les exposants d'un salon, avec plan interactif et espace organisateur. Rôle : cahier des charges, planification, page admin et JavaScript." />
+  <meta property="og:url" content="https://kayzmat.github.io/Portfolio/project-tellis.html" />
+  <meta property="og:image" content="https://kayzmat.github.io/Portfolio/assets/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Matéo Gonçalves Mota — développeur d'applications en alternance" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#1d2250" />
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')d.dataset.theme=t}catch(e){}})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" />
   <link rel="stylesheet" href="css/style.css" />
-  <script defer src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Aller au contenu</a>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
 
   <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html"><span>Matéo Gonçalves Mota</span></a>
-      <button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Ouvrir le menu">
-        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
-      </button>
-      <nav class="site-nav" id="site-navigation" aria-label="Navigation principale">
-        <ul class="site-nav__list">
-          <li><a class="site-nav__link" href="index.html">Accueil</a></li>
-          <li><a class="site-nav__link" href="about.html">À propos</a></li>
-          <li><a class="site-nav__link" href="skills.html">Compétences</a></li>
-          <li><a class="site-nav__link" href="projects.html" aria-current="page">Projets</a></li>
-          <li><a class="site-nav__link" href="stages.html">Stages</a></li>
-          <li><a class="site-nav__link" href="alternance.html">Alternance</a></li>
-          <li><a class="site-nav__link" href="veille.html">Veille</a></li>
-          <li><a class="site-nav__link" href="contact.html">Contact</a></li>
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Matéo Gonçalves Mota — accueil">
+        <span class="brand__mark" aria-hidden="true">M<span>G</span></span>
+        <span class="brand__text">Matéo Gonçalves Mota</span>
+      </a>
+
+      <nav class="nav" id="site-nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html" data-nav="home">Accueil</a></li>
+          <li><a class="nav__link" href="about.html" data-nav="parcours">Parcours</a></li>
+          <li><a class="nav__link" href="projects.html" data-nav="projets" aria-current="page">Projets</a></li>
+          <li><a class="nav__link" href="skills.html" data-nav="competences">Compétences</a></li>
+          <li><a class="nav__link" href="veille.html" data-nav="veille">Veille</a></li>
+          <li><a class="nav__link" href="contact.html" data-nav="contact">Contact</a></li>
         </ul>
-        <div class="site-nav__actions">
-          <a class="btn btn--primary" href="docs/cv.pdf" target="_blank" rel="noreferrer">Télécharger CV</a>
-        </div>
+        <a class="btn btn--primary btn--sm" href="docs/cv.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+          CV (PDF)
+        </a>
       </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Changer de thème">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button class="icon-btn nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Ouvrir le menu">
+          <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main id="main-content">
+  <main id="contenu" tabindex="-1">
 
-    <!-- ── HERO ── -->
-    <section class="hero hero--page" aria-labelledby="project-title">
+    <section class="page-hero" aria-labelledby="page-title">
       <div class="container">
         <nav class="breadcrumb" aria-label="Fil d'Ariane">
-          <a href="index.html">Accueil</a>
-          <span class="breadcrumb__sep">›</span>
-          <a href="projects.html">Projets</a>
-          <span class="breadcrumb__sep">›</span>
-          <span>Tellis</span>
+          <ol><li><a href="index.html">Accueil</a></li><li><a href="projects.html">Projets</a></li><li aria-current="page">Tellis</li></ol>
         </nav>
-        <p class="hero__eyebrow"><span class="hero__eyebrow-dot"></span>AP2 - BTS SIO SLAM</p>
-        <h1 id="project-title">Plateforme de réservation<br /><span class="text-gradient">Tellis</span></h1>
-        <p class="hero__subtitle">
-          Site web professionnel et responsive pour la gestion des exposants d'un salon — réservation d'espaces,
-          gestion des inscriptions et tableau de bord organisateur.
+        <p class="eyebrow">Projet BTS SIO</p>
+        <h1 id="page-title">Tellis : réserver son stand en quelques clics</h1>
+        <p class="lead">
+          Une plateforme web pour les exposants d'un salon professionnel : création de compte, choix d'un emplacement sur
+          un plan interactif, suivi de l'inscription — et un tableau de bord pour les organisateurs.
         </p>
-        <div class="hero__actions" style="margin-top:1.5rem;">
-          <div class="project__tags" style="margin:0;">
-            <span class="project__tag">PHP</span>
-            <span class="project__tag">MySQL</span>
-            <span class="project__tag">JavaScript</span>
-            <span class="project__tag">UX</span>
-          </div>
-        </div>
+        <ul class="tags"><li class="tag tag--accent">PHP</li><li class="tag tag--accent">JavaScript</li><li class="tag">MySQL</li><li class="tag">Responsive</li></ul>
+        <dl class="meta-grid">
+          <div><dt>Contexte</dt><dd>BTS SIO SLAM</dd></div>
+          <div><dt>Durée</dt><dd>3 mois</dd></div>
+          <div><dt>Équipe</dt><dd>Projet de groupe</dd></div>
+          <div><dt>Mon rôle</dt><dd>Analyse, planification, admin &amp; JavaScript</dd></div>
+        </dl>
       </div>
     </section>
 
-    <!-- ── APERÇU ── -->
-    <section class="section section--surface">
-      <div class="container">
-        <div class="grid grid--2">
-          <div class="fade-up">
-            <figure>
-              <img src="img/connexion_tellis.png" loading="lazy" alt="Page de connexion de la plateforme Tellis" />
-              <figcaption>Écran de connexion — design clair et navigation fluide.</figcaption>
-            </figure>
-            <figure style="margin-top:1.25rem;">
-              <img src="img/accueil_tellis.png" loading="lazy" alt="Accueil de la plateforme Tellis" />
-              <figcaption>Page d'accueil — présentation du salon et accès aux réservations.</figcaption>
-            </figure>
-          </div>
-          <div class="fade-up delay-2">
-            <div class="project__meta">
-              <div class="project__meta-item">
-                <strong>Rôle</strong>
-                <span>Développeur full-stack</span>
-              </div>
-              <div class="project__meta-item">
-                <strong>Durée</strong>
-                <span>3 mois</span>
-              </div>
-              <div class="project__meta-item">
-                <strong>Contexte</strong>
-                <span>AP1 - BTS SIO SLAM</span>
-              </div>
-              <div class="project__meta-item">
-                <strong>Focus</strong>
-                <span>UX &amp; accessibilité</span>
-              </div>
+    <section class="section" aria-labelledby="need-title">
+      <div class="container split">
+        <div class="prose" data-reveal>
+          <h2 id="need-title">Le besoin</h2>
+          <p>
+            Associations et entreprises veulent réserver un emplacement sur un salon ; les organisateurs, eux, doivent
+            gérer les espaces disponibles et valider les inscriptions. La plateforme sert ces deux publics.
+          </p>
+          <div class="grid grid--2" style="margin:1.25rem 0 1.5rem;">
+            <div class="panel">
+              <h3>Côté exposants</h3>
+              <ul class="bullets small">
+                <li>Création de compte et authentification</li>
+                <li>Visualisation des espaces libres</li>
+                <li>Réservation d'un emplacement</li>
+                <li>Suivi du statut de l'inscription</li>
+              </ul>
             </div>
-
-            <div class="card--highlight" style="margin-top:1.5rem;">
-              <h3>Technologies</h3>
-              <div class="tag-cloud" style="margin-top:.75rem;">
-                <span class="tag tag--primary">HTML &amp; CSS</span>
-                <span class="tag tag--primary">PHP</span>
-                <span class="tag tag--primary">MySQL</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">Responsive</span>
-              </div>
-            </div>
-
-            <div class="card--highlight" style="margin-top:1rem;">
-              <h3>Public cible</h3>
-              <ul class="list--check" style="margin-top:.75rem;">
-                <li>Associations et entreprises souhaitant exposer</li>
-                <li>Organisateurs du salon (planning, suivi)</li>
+            <div class="panel">
+              <h3>Côté organisateurs</h3>
+              <ul class="bullets small">
+                <li>Tableau de bord du salon</li>
+                <li>Gestion des espaces et créneaux</li>
+                <li>Validation des inscriptions</li>
+                <li>Administration des données</li>
               </ul>
             </div>
           </div>
+
+          <h2>Ma contribution</h2>
+          <ul class="checklist">
+            <li><strong>Cahier des charges</strong> : analyse des besoins, parcours utilisateurs, fonctionnalités prioritaires.</li>
+            <li><strong>Planification</strong> : découpage en lots, suivi d'avancement, intégration progressive des modules.</li>
+            <li><strong>Page d'administration</strong> des organisateurs.</li>
+            <li><strong>JavaScript de l'ensemble du site</strong> : gestion des interactions et validation des formulaires côté client.</li>
+          </ul>
+
+          <h2>Ce que j'en retiens</h2>
+          <p>
+            Porter à la fois l'analyse et le JavaScript m'a montré l'intérêt d'un cahier des charges précis : chaque
+            interaction à coder découlait d'un parcours déjà décrit, ce qui a limité les allers-retours.
+          </p>
         </div>
+        <aside class="aside-card sticky" data-reveal="2">
+          <div class="panel">
+            <h3>Stack</h3>
+            <ul class="tags"><li class="tag tag--accent">PHP</li><li class="tag tag--accent">JavaScript</li><li class="tag">MySQL</li><li class="tag">HTML / CSS</li><li class="tag">Git</li><li class="tag">Laragon</li></ul>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <!-- ── FONCTIONNALITÉS ── -->
-    <section class="section" aria-labelledby="features-title">
+    <section class="section section--alt" aria-labelledby="gallery-title">
       <div class="container">
-        <header class="section__header">
-          <p class="section__overline">Fonctionnalités</p>
-          <h2 id="features-title">Ce que la plateforme permet</h2>
-          <p class="section__lead">Une solution complète pour les organisateurs comme pour les exposants.</p>
-        </header>
-
-        <div class="grid grid--2 fade-up">
-          <div>
-            <h3 style="margin-bottom:1rem;">Côté exposants</h3>
-            <ul class="list--check">
-              <li>Création de compte et authentification sécurisée</li>
-              <li>Visualisation des espaces disponibles</li>
-              <li>Réservation de créneaux et d'emplacements</li>
-              <li>Suivi de son inscription et statut</li>
-            </ul>
-          </div>
-          <div>
-            <h3 style="margin-bottom:1rem;">Côté organisateurs</h3>
-            <ul class="list--check">
-              <li>Tableau de bord de gestion du salon</li>
-              <li>Gestion des espaces et créneaux disponibles</li>
-              <li>Validation et suivi des inscriptions exposants</li>
-              <li>Export et administration des données</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="grid grid--2 fade-up" style="margin-top:2.5rem;">
-          <div class="card--highlight">
-            <h3>Compétences mises en œuvre</h3>
-            <ul class="list--check" style="margin-top:.75rem;">
-              <li>Conception UX et maquettage</li>
-              <li>Développement front-end et back-end</li>
-              <li>Tests fonctionnels et validation des flux</li>
-              <li>Gestion de versions avec Git</li>
-            </ul>
-          </div>
-          <div>
-            <figure>
-              <img src="img/plan_tellis.png" loading="lazy" alt="Plan interactif de réservation des espaces" />
-              <figcaption>Plan interactif des emplacements disponibles dans le salon.</figcaption>
-            </figure>
-          </div>
-        </div>
-
-        <div style="margin-top:2.5rem;">
-          <a class="btn btn--outline" href="projects.html">← Retour aux projets</a>
+        <h2 id="gallery-title" style="margin-bottom:1.5rem;">Captures</h2>
+        <div class="gallery">
+          <figure class="figure" data-reveal>
+            <button class="zoomable" type="button" data-zoom aria-label="Agrandir : connexion"><img src="img/tellis-connexion.jpg" width="1600" height="793" loading="lazy" alt="Page de connexion de la plateforme Tellis" /></button>
+            <figcaption>Connexion des exposants.</figcaption>
+          </figure>
+          <figure class="figure" data-reveal="2">
+            <button class="zoomable" type="button" data-zoom aria-label="Agrandir : accueil"><img src="img/tellis-accueil.jpg" width="1350" height="644" loading="lazy" alt="Page d'accueil de Tellis présentant le salon" /></button>
+            <figcaption>Accueil : présentation du salon et accès aux réservations.</figcaption>
+          </figure>
+          <figure class="figure" data-reveal style="grid-column:1 / -1;">
+            <button class="zoomable" type="button" data-zoom aria-label="Agrandir : plan des emplacements"><img src="img/tellis-plan.png" width="1898" height="953" loading="lazy" alt="Plan interactif des emplacements disponibles dans le salon" /></button>
+            <figcaption>Plan interactif des emplacements.</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <!-- ── MISSIONS ── -->
-        <section class="section" aria-labelledby="missions-tellis" style="padding-top:0;">
-          <div class="container">
-            <header class="section__header">
-              <p class="section__overline">Missions</p>
-              <h2 id="missions-tellis">Mes missions réalisées</h2>
-              <p class="section__lead">Cahier des charges, planification et développement des pages admin + JavaScript des fonctionnalités.</p>
-            </header>
+    <section class="section" aria-label="Autres projets">
+      <div class="container container--narrow">
+        <nav class="pager" aria-label="Projets">
+          <a href="project-triathlon.html"><span>← Précédent</span><strong>Fédération de triathlon</strong></a>
+          <a class="pager__next" href="project-castellane-auto.html"><span>Suivant →</span><strong>Castellane Auto</strong></a>
+        </nav>
+      </div>
+    </section>
 
-            <div class="cards cards--grid fade-up">
-              <article class="card">
-                <div class="card__body">
-                  <h3>📄 Cahier des charges</h3>
-                  <ul class="list--check" style="margin-top:.75rem;">
-                    <li>Analyse des besoins et définition des parcours</li>
-                    <li>Formalisation des fonctionnalités clés</li>
-                    <li>Organisation des priorités</li>
-                  </ul>
-                </div>
-              </article>
-
-              <article class="card">
-                <div class="card__body">
-                  <h3>🗓️ Planification des tâches</h3>
-                  <ul class="list--check" style="margin-top:.75rem;">
-                    <li>Découpage du projet en lots</li>
-                    <li>Suivi d’avancement et ajustements</li>
-                    <li>Intégration progressive des modules</li>
-                  </ul>
-                </div>
-              </article>
-
-              <article class="card">
-                <div class="card__body">
-                  <h3>🛠️ Développement (Admin + JavaScript)</h3>
-                  <ul class="list--check" style="margin-top:.75rem;">
-                    <li>Développement de la page Admin</li>
-                    <li>JavaScript pour l’ensemble des pages</li>
-                    <li>Gestion des interactions et validation front</li>
-                  </ul>
-                </div>
-              </article>
-            </div>
-          </div>
-        </section>
   </main>
 
-  <footer class="site-footer" aria-label="Pied de page">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <p class="footer-brand__name">Matéo Gonçalves Mota</p>
-        <p class="footer-brand__text">Développeur web &amp; applicatif</p>
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__about">
+        <a class="brand" href="index.html" aria-label="Matéo Gonçalves Mota — accueil">
+          <span class="brand__mark" aria-hidden="true">M<span>G</span></span>
+          <span class="brand__text">Matéo Gonçalves Mota</span>
+        </a>
+        <p>Développeur d'applications en alternance à la Fondation AMIPI. Je recherche une alternance de 2&nbsp;ans pour mon Master Informatique à partir de septembre&nbsp;2027.</p>
       </div>
-      <nav class="footer-nav">
-        <a class="footer-nav__link" href="index.html">Accueil</a>
-        <a class="footer-nav__link" href="about.html">À propos</a>
-        <a class="footer-nav__link" href="skills.html">Compétences</a>
-        <a class="footer-nav__link" href="projects.html">Projets</a>
-        <a class="footer-nav__link" href="stages.html">Stages</a>
-        <a class="footer-nav__link" href="alternance.html">Alternance</a>
-        <a class="footer-nav__link" href="veille.html">Veille</a>
-        <a class="footer-nav__link" href="contact.html">Contact</a>
-      </nav>
-      <div class="footer-social">
-        <a class="footer-social__link" href="https://github.com/Kayzmat" target="_blank" rel="noreferrer" aria-label="GitHub">🐙 GitHub</a>
-        <a class="footer-social__link" href="https://www.linkedin.com/in/mat%C3%A9o-gon%C3%A7alves-mota" target="_blank" rel="noreferrer" aria-label="LinkedIn">👔 LinkedIn</a>
+      <div>
+        <p class="footer__title">Navigation</p>
+        <ul class="footer__links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="about.html">Parcours</a></li>
+          <li><a href="projects.html">Projets</a></li>
+          <li><a href="skills.html">Compétences</a></li>
+          <li><a href="veille.html">Veille</a></li>
+        </ul>
       </div>
-      <p class="footer-copy">© 2026 Matéo Gonçalves Mota</p>
+      <div>
+        <p class="footer__title">Expériences</p>
+        <ul class="footer__links">
+          <li><a href="alternance.html">Alternance 2026–2027</a></li>
+          <li><a href="stage-2.html">Stage 2 — 2026</a></li>
+          <li><a href="stage-1.html">Stage 1 — 2025</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__title">Contact</p>
+        <ul class="footer__links">
+          <li><a href="mailto:mateo.goncalves@sfr.fr">mateo.goncalves@sfr.fr</a></li>
+          <li><a href="https://www.linkedin.com/in/mat%C3%A9o-gon%C3%A7alves-mota" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/Kayzmat" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="docs/cv.pdf" target="_blank" rel="noopener">CV (PDF)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 Matéo Gonçalves Mota — site statique codé à la main (HTML, CSS, JavaScript).</p>
+      <a href="#contenu">Retour en haut ↑</a>
     </div>
   </footer>
 
-  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

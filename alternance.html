@@ -3,266 +3,304 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Alternance de Matéo Gonçalves Mota — développeur d'applications à la Fondation AMIPI (WinDev 2024, SQL, AS400) en Licence Informatique à l'ESUPEC." />
+  <title>Alternance à la Fondation AMIPI — Matéo Gonçalves Mota</title>
+  <meta name="description" content="Alternance de développeur d'applications à la Fondation AMIPI (2026–2027) : Base Méthodes, checklists numériques avec circuit de validation, application d'impression d'étiquettes. WinDev 2024, SQL, AS400." />
   <meta name="author" content="Matéo Gonçalves Mota" />
-  <title>Alternance — Fondation AMIPI — Matéo Gonçalves Mota</title>
-  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+  <link rel="canonical" href="https://kayzmat.github.io/Portfolio/alternance.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Matéo Gonçalves Mota — Portfolio" />
+  <meta property="og:title" content="Alternance à la Fondation AMIPI — Matéo Gonçalves Mota" />
+  <meta property="og:description" content="Alternance de développeur d'applications à la Fondation AMIPI (2026–2027) : Base Méthodes, checklists numériques avec circuit de validation, application d'impression d'étiquettes. WinDev 2024, SQL, AS400." />
+  <meta property="og:url" content="https://kayzmat.github.io/Portfolio/alternance.html" />
+  <meta property="og:image" content="https://kayzmat.github.io/Portfolio/assets/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Matéo Gonçalves Mota — développeur d'applications en alternance" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#1d2250" />
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')d.dataset.theme=t}catch(e){}})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" />
   <link rel="stylesheet" href="css/style.css" />
-  <script defer src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Aller au contenu</a>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
 
   <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html"><span>Matéo Gonçalves Mota</span></a>
-      <button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Ouvrir le menu">
-        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
-      </button>
-      <nav class="site-nav" id="site-navigation" aria-label="Navigation principale">
-        <ul class="site-nav__list">
-          <li><a class="site-nav__link" href="index.html">Accueil</a></li>
-          <li><a class="site-nav__link" href="about.html">À propos</a></li>
-          <li><a class="site-nav__link" href="skills.html">Compétences</a></li>
-          <li><a class="site-nav__link" href="projects.html">Projets</a></li>
-          <li><a class="site-nav__link" href="stages.html">Stages</a></li>
-          <li><a class="site-nav__link" href="alternance.html" aria-current="page">Alternance</a></li>
-          <li><a class="site-nav__link" href="veille.html">Veille</a></li>
-          <li><a class="site-nav__link" href="contact.html">Contact</a></li>
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Matéo Gonçalves Mota — accueil">
+        <span class="brand__mark" aria-hidden="true">M<span>G</span></span>
+        <span class="brand__text">Matéo Gonçalves Mota</span>
+      </a>
+
+      <nav class="nav" id="site-nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html" data-nav="home">Accueil</a></li>
+          <li><a class="nav__link" href="about.html" data-nav="parcours" aria-current="page">Parcours</a></li>
+          <li><a class="nav__link" href="projects.html" data-nav="projets">Projets</a></li>
+          <li><a class="nav__link" href="skills.html" data-nav="competences">Compétences</a></li>
+          <li><a class="nav__link" href="veille.html" data-nav="veille">Veille</a></li>
+          <li><a class="nav__link" href="contact.html" data-nav="contact">Contact</a></li>
         </ul>
-        <div class="site-nav__actions">
-          <a class="btn btn--primary" href="docs/cv.pdf" target="_blank" rel="noreferrer">Télécharger CV</a>
-        </div>
+        <a class="btn btn--primary btn--sm" href="docs/cv.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+          CV (PDF)
+        </a>
       </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Changer de thème">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button class="icon-btn nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Ouvrir le menu">
+          <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main id="main-content">
+  <main id="contenu" tabindex="-1">
 
-    <!-- ── HERO ── -->
-    <section class="hero hero--page" aria-labelledby="alternance-title">
+    <section class="page-hero" aria-labelledby="page-title">
       <div class="container">
         <nav class="breadcrumb" aria-label="Fil d'Ariane">
-          <a href="index.html">Accueil</a>
-          <span class="breadcrumb__sep">›</span>
-          <span>Alternance</span>
+          <ol><li><a href="index.html">Accueil</a></li><li><a href="about.html">Parcours</a></li><li aria-current="page">Alternance</li></ol>
         </nav>
-        <p class="hero__eyebrow"><span class="hero__eyebrow-dot"></span>Alternance — sept. 2026 – sept. 2027</p>
-        <h1 id="alternance-title">Fondation AMIPI<br /><span class="text-gradient">Développeur d'applications</span></h1>
-        <p class="hero__subtitle">
-          En Licence Informatique à l'ESUPEC (Cholet), je développe des applications métier pour le
-          service Méthodes et l'atelier d'une entreprise industrielle — avec WinDev 2024 et l'ERP AS400.
+        <span class="badge"><span class="badge__dot" aria-hidden="true"></span>En cours · sept. 2026 – sept. 2027</span>
+        <h1 id="page-title" style="margin-top:1rem;">Développeur d'applications à la Fondation AMIPI</h1>
+        <p class="lead">
+          En alternance pendant ma Licence Informatique, je conçois et développe les applications du service Méthodes
+          et de l'atelier : des outils WinDev connectés à l'ERP AS400, qui remplacent le papier et les manipulations manuelles.
         </p>
-        <div class="project__meta" style="max-width:720px;">
-          <div class="project__meta-item">
-            <strong>Entreprise</strong>
-            <span>Fondation AMIPI — industrie</span>
-          </div>
-          <div class="project__meta-item">
-            <strong>Poste</strong>
-            <span>Développeur d'applications</span>
-          </div>
-          <div class="project__meta-item">
-            <strong>Formation</strong>
-            <span>Licence Informatique — ESUPEC, Cholet</span>
-          </div>
-          <div class="project__meta-item">
-            <strong>Période</strong>
-            <span>Sept. 2026 – sept. 2027</span>
-          </div>
-        </div>
+        <dl class="meta-grid">
+          <div><dt>Entreprise</dt><dd>Fondation AMIPI — industrie</dd></div>
+          <div><dt>Service</dt><dd>Méthodes et atelier</dd></div>
+          <div><dt>Formation</dt><dd>Licence Informatique — ESUPEC</dd></div>
+          <div><dt>Stack</dt><dd>WinDev 2024 · SQL · AS400 · RDI</dd></div>
+        </dl>
       </div>
     </section>
 
-    <!-- ── CONTEXTE ── -->
-    <section class="section" aria-labelledby="contexte-title">
-      <div class="container">
-        <div class="grid grid--2">
-          <div class="fade-up">
-            <p class="section__overline">Contexte</p>
-            <h2 id="contexte-title">De stagiaire à alternant</h2>
-            <p style="color:var(--muted);margin-top:1rem;">
-              Après deux stages à la Fondation AMIPI (mai – juin 2025, puis janvier – février 2026),
-              j'ai rejoint l'entreprise en alternance pour ma Licence Informatique. Le projet de
-              dématérialisation des checklists démarré en stage est devenu une application complète,
-              utilisée par le service Méthodes et l'atelier.
-            </p>
-            <p style="color:var(--muted);">
-              Mon rôle : recueillir les besoins auprès des équipes, concevoir et développer les applications
-              en WinDev, les connecter aux données de l'ERP AS400 et accompagner leur mise en service.
-            </p>
-          </div>
-          <div class="fade-up delay-2">
-            <div class="card--highlight">
-              <h3>Technologies utilisées</h3>
-              <div class="tag-cloud" style="margin-top:.75rem;">
-                <span class="tag tag--primary">WinDev 2024</span>
-                <span class="tag tag--primary">WLangage</span>
-                <span class="tag tag--primary">SQL</span>
-                <span class="tag tag--primary">AS400 (ERP)</span>
-                <span class="tag tag--primary">RDI</span>
-              </div>
-            </div>
-            <div class="card--highlight" style="margin-top:1.25rem;">
-              <h3>Rythme</h3>
-              <p style="color:var(--muted);margin:.25rem 0 0;">
-                Alternance entre les cours de Licence à l'ESUPEC et l'entreprise,
-                de septembre 2026 à septembre 2027.
-              </p>
-            </div>
-          </div>
+    <!-- Contexte -->
+    <section class="section" aria-labelledby="ctx-title">
+      <div class="container split">
+        <div class="prose" data-reveal>
+          <p class="eyebrow"><span class="eyebrow__num">01</span> Contexte</p>
+          <h2 id="ctx-title">Un projet commencé en stage, devenu une application complète</h2>
+          <p>
+            La Fondation AMIPI dispose de plusieurs usines de production. Chaque <strong>moyen de production</strong> (machine,
+            outillage, poste) doit être paramétré, homologué puis entretenu, et chacune de ces étapes suit une checklist
+            de contrôles.
+          </p>
+          <p>
+            Lors de mon <a href="stage-2.html">second stage</a>, j'ai développé une première version numérique des
+            checklists de maintenance. Je l'ai ensuite poursuivie en alternance : la Base Méthodes
+            couvre aujourd'hui tout le cycle de vie des checklists, avec un circuit de validation et un historique.
+          </p>
         </div>
-      </div>
-    </section>
-
-    <!-- ── MISSIONS ── -->
-    <section class="section section--surface" aria-labelledby="missions-title">
-      <div class="container">
-        <header class="section__header">
-          <p class="section__overline">Missions</p>
-          <h2 id="missions-title">Deux applications métier</h2>
-          <p class="section__lead">Des outils concrets qui remplacent des processus manuels dans l'atelier.</p>
-        </header>
-
-        <div class="cards cards--2">
-          <article class="card fade-up">
-            <img class="card__media" loading="lazy" src="img/demat_cl.png" alt="Application WinDev de dématérialisation des checklists" />
-            <div class="card__body">
-              <span class="tag tag--primary" style="align-self:start;">Projet principal</span>
-              <h3 class="card__title">Base Méthodes</h3>
-              <p class="card__description">
-                Remplacement des checklists papier des moyens de production : fini l'impression,
-                les annotations à la main et le scan.
-              </p>
-              <ul class="list--check" style="margin-top:.5rem;">
-                <li>Checklists de paramétrage, d'homologation et de maintenance préventive</li>
-                <li>Validation des homologations par 5 responsables, avec envoi de mails automatique</li>
-                <li>Historique des checklists et impression des états</li>
-              </ul>
-              <div class="tag-cloud" style="margin-top:auto;padding-top:.75rem;">
-                <span class="tag">WinDev 2024</span>
-                <span class="tag">SQL</span>
-                <span class="tag">AS400</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="card fade-up delay-2">
-            <div class="card__media card__media--placeholder" aria-hidden="true">
-              <span>🏷️<br />Impression d'étiquettes</span>
-            </div>
-            <div class="card__body">
-              <span class="tag tag--primary" style="align-self:start;">Outil atelier</span>
-              <h3 class="card__title">Application d'impression d'étiquettes</h3>
-              <p class="card__description">
-                Une application qui remplace les commandes qu'il fallait lancer à la main dans un langage
-                spécifique : l'impression devient plus rapide et plus simple pour les opérateurs.
-              </p>
-              <ul class="list--check" style="margin-top:.5rem;">
-                <li>Interface simple à la place de commandes manuelles</li>
-                <li>Moins d'erreurs et un gain de temps à chaque impression</li>
-              </ul>
-              <div class="tag-cloud" style="margin-top:auto;padding-top:.75rem;">
-                <span class="tag">WinDev 2024</span>
-                <span class="tag">AS400</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── COMPÉTENCES ── -->
-    <section class="section" aria-labelledby="acquis-title">
-      <div class="container">
-        <div class="grid grid--2">
-          <div class="fade-up">
-            <p class="section__overline">Acquis</p>
-            <h2 id="acquis-title">Ce que l'alternance m'apporte</h2>
-            <ul class="list--check" style="margin-top:1.25rem;">
-              <li>Mener un projet de bout en bout, du recueil des besoins à la mise en service</li>
-              <li>Concevoir un circuit de validation avec plusieurs responsables et des notifications automatiques</li>
-              <li>Travailler avec les données d'un ERP industriel (AS400) en SQL et via RDI</li>
-              <li>Échanger avec des utilisateurs métier et présenter mon travail aux professionnels</li>
-              <li>Maintenir des applications utilisées au quotidien en production</li>
+        <aside class="aside-card sticky" data-reveal="2">
+          <div class="panel">
+            <h3>Mon rôle</h3>
+            <ul class="checklist">
+              <li>Recueil des besoins avec le service Méthodes</li>
+              <li>Conception des écrans et des données</li>
+              <li>Développement WinDev et requêtes SQL sur l'AS400</li>
+              <li>Présentation aux utilisateurs et ajustements</li>
             </ul>
           </div>
-          <div class="fade-up delay-2">
-            <p class="section__overline">Parcours chez AMIPI</p>
-            <h2>Une progression continue</h2>
-            <div class="timeline" style="margin-top:1.5rem;">
-              <div class="timeline__item">
-                <span class="timeline__dot"></span>
-                <p class="timeline__year">Sept. 2026 – sept. 2027</p>
-                <p class="timeline__title">Alternance — développeur d'applications</p>
-                <p class="timeline__desc">Base Méthodes et application d'impression d'étiquettes.</p>
-              </div>
-              <div class="timeline__item">
-                <span class="timeline__dot"></span>
-                <p class="timeline__year">Janv. – févr. 2026</p>
-                <p class="timeline__title"><a href="stage-2.html">Stage 2 — dématérialisation &amp; AS400</a></p>
-                <p class="timeline__desc">Première version de la dématérialisation des checklists de maintenance.</p>
-              </div>
-              <div class="timeline__item">
-                <span class="timeline__dot"></span>
-                <p class="timeline__year">Mai – juin 2025</p>
-                <p class="timeline__title"><a href="stage-1.html">Stage 1 — développement WinDev</a></p>
-                <p class="timeline__desc">Découverte de WinDev, maintenance d'applications, tests et corrections.</p>
-              </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Base Méthodes -->
+    <section class="section section--alt" id="base-methodes" aria-labelledby="bm-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow"><span class="eyebrow__num">02</span> Projet principal</p>
+            <h2 id="bm-title">Base Méthodes</h2>
+            <p class="lead">Remplacer les checklists papier des moyens de production par une application, de la saisie à l'archivage.</p>
+          </div>
+        </div>
+
+        <div class="grid grid--2" style="align-items:start;">
+          <div class="stack" style="--stack:1.25rem;" data-reveal>
+            <div class="panel">
+              <h3>Avant</h3>
+              <p class="muted">Imprimer la checklist, cocher et annoter à la main, faire signer, scanner, classer. Difficile de savoir où en est une homologation, et de retrouver un contrôle passé.</p>
             </div>
+            <div class="panel panel--soft">
+              <h3>Après</h3>
+              <p>Les checklists se remplissent dans l'application, la validation circule toute seule entre les responsables, et tout l'historique se consulte et s'imprime en quelques clics.</p>
+            </div>
+          </div>
+          <figure class="figure" data-reveal="2">
+            <button class="zoomable" type="button" data-zoom aria-label="Agrandir la capture de la Base Méthodes">
+              <img src="img/base-methodes.png" width="1185" height="666" loading="lazy" alt="Fenêtre WinDev « Base Méthodes — Liste des réalisations » avec filtres (type, état, emplacement, site, famille), liste des moyens et boutons Historique checklist, Homologation, Maintenance, Impression QR codes" />
+            </button>
+            <figcaption>Liste des réalisations : filtres, actions sur les moyens et accès aux checklists (vue éditeur WinDev).</figcaption>
+          </figure>
+        </div>
+
+        <h3 style="margin:3rem 0 1.5rem;">Fonctionnalités</h3>
+        <div class="grid grid--3">
+          <div class="feature" data-reveal>
+            <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h9"/></svg></div>
+            <div><h3>3 types de checklists</h3><p>Paramétrage, homologation et maintenance préventive, rattachées à chaque moyen de production.</p></div>
+          </div>
+          <div class="feature" data-reveal="2">
+            <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8"/></svg></div>
+            <div><h3>Validation à 5 responsables</h3><p>Une homologation n'est validée qu'après l'accord de chacun des 5 responsables concernés.</p></div>
+          </div>
+          <div class="feature" data-reveal="3">
+            <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg></div>
+            <div><h3>E-mails automatiques</h3><p>Chaque étape du circuit prévient les bonnes personnes, sans relance manuelle.</p></div>
+          </div>
+          <div class="feature" data-reveal>
+            <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v5h5"/><path d="M3.05 13A9 9 0 106 5.3L3 8"/><path d="M12 7v5l4 2"/></svg></div>
+            <div><h3>Historique</h3><p>Toutes les checklists d'un moyen restent consultables : qui a contrôlé quoi, et quand.</p></div>
+          </div>
+          <div class="feature" data-reveal="2">
+            <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><path d="M6 14h12v8H6z"/></svg></div>
+            <div><h3>Impression des états</h3><p>Les états et documents utiles se génèrent directement depuis l'application.</p></div>
+          </div>
+          <div class="feature" data-reveal="3">
+            <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.7-4 3-9 3s-9-1.3-9-3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/></svg></div>
+            <div><h3>Données dans l'ERP</h3><p>Les données vivent dans l'AS400 : requêtes SQL depuis WinDev et fichiers créés avec RDI.</p></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ── RECHERCHE MASTER ── -->
-    <section class="section section--surface" aria-labelledby="master-title">
-      <div class="container" style="text-align:center;max-width:680px;">
-        <p class="section__overline">Et après ?</p>
-        <h2 id="master-title">Je recherche une alternance pour mon Master</h2>
-        <p class="section__lead">
-          Alternance de <strong>2 ans à partir de septembre 2027</strong> pour un Master Informatique à
-          l'Université d'Angers. Ouvert à toutes les technologies, idéalement dans l'industrie.
-        </p>
-        <p style="color:var(--muted);font-size:.95rem;">
-          Rythme : 5 semaines à l'université / 4 semaines en entreprise jusqu'en mars, puis temps plein en entreprise.
-        </p>
-        <div style="display:flex;gap:.85rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem;">
-          <a class="btn btn--primary" href="contact.html">Me contacter</a>
-          <a class="btn btn--outline" href="docs/cv.pdf" target="_blank" rel="noreferrer">Voir mon CV</a>
+    <!-- Étiquettes -->
+    <section class="section" id="etiquettes" aria-labelledby="et-title">
+      <div class="container split">
+        <div class="prose" data-reveal>
+          <p class="eyebrow"><span class="eyebrow__num">03</span> Outil atelier</p>
+          <h2 id="et-title">Application d'impression d'étiquettes</h2>
+          <p>
+            Pour imprimer certaines étiquettes, il fallait lancer à la main des commandes dans un langage spécifique :
+            une opération lente, réservée aux personnes qui connaissaient la syntaxe, et source d'erreurs.
+          </p>
+          <p>
+            J'ai développé une application qui remplace ces commandes par une interface simple : on choisit ce que
+            l'on veut imprimer, l'application construit et envoie la commande. <strong>L'impression est plus rapide et
+            accessible à toute l'équipe.</strong>
+          </p>
+        </div>
+        <div class="panel" data-reveal="2">
+          <h3>En résumé</h3>
+          <dl class="meta-grid" style="grid-template-columns:1fr;margin-top:0;">
+            <div><dt>Problème</dt><dd>Commandes manuelles, lentes et techniques</dd></div>
+            <div><dt>Solution</dt><dd>Interface WinDev qui génère la commande</dd></div>
+            <div><dt>Résultat</dt><dd>Impression plus rapide et plus simple</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compétences -->
+    <section class="section section--alt" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow"><span class="eyebrow__num">04</span> Acquis</p>
+            <h2 id="skills-title">Ce que l'alternance me fait progresser</h2>
+          </div>
+        </div>
+        <div class="grid grid--2">
+          <ul class="checklist" data-reveal>
+            <li><strong>Mener un projet de bout en bout</strong>, du recueil des besoins à la mise en service.</li>
+            <li><strong>Modéliser un processus métier</strong> : états d'une checklist, rôles des valideurs, notifications.</li>
+            <li><strong>Travailler avec un ERP industriel</strong> : données AS400, SQL et RDI.</li>
+          </ul>
+          <ul class="checklist" data-reveal="2">
+            <li><strong>Communiquer avec des utilisateurs non techniques</strong> et présenter mon travail.</li>
+            <li><strong>Maintenir des applications utilisées au quotidien</strong> par l'atelier, avec l'exigence de fiabilité que cela implique.</li>
+            <li><strong>Gagner en autonomie</strong> en m'organisant entre école et entreprise.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Navigation entre expériences">
+      <div class="container container--narrow">
+        <nav class="pager" aria-label="Expériences">
+          <a href="stage-2.html"><span>← Précédent</span><strong>Stage 2 — 2026</strong></a>
+          <a class="pager__next" href="projects.html"><span>Ensuite →</span><strong>Mes projets</strong></a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-band" data-reveal>
+          <div>
+            <p class="eyebrow">Et après&nbsp;?</p>
+            <h2 id="cta-title">Je cherche une alternance pour mon Master</h2>
+            <p>2 ans à partir de <strong>septembre 2027</strong>, Master Informatique à l'Université d'Angers. Ouvert à toutes les technologies, idéalement dans l'industrie.</p>
+            <ul class="cta-band__list"><li>5 sem. université / 4 sem. entreprise jusqu'en mars</li><li>Puis temps plein en entreprise</li></ul>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn--light" href="contact.html">Me contacter</a>
+            <a class="btn btn--outline-light" href="docs/cv.pdf" target="_blank" rel="noopener">Voir mon CV</a>
+          </div>
         </div>
       </div>
     </section>
 
   </main>
 
-  <footer class="site-footer" aria-label="Pied de page">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <p class="footer-brand__name">Matéo Gonçalves Mota</p>
-        <p class="footer-brand__text">Développeur web &amp; applicatif</p>
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__about">
+        <a class="brand" href="index.html" aria-label="Matéo Gonçalves Mota — accueil">
+          <span class="brand__mark" aria-hidden="true">M<span>G</span></span>
+          <span class="brand__text">Matéo Gonçalves Mota</span>
+        </a>
+        <p>Développeur d'applications en alternance à la Fondation AMIPI. Je recherche une alternance de 2&nbsp;ans pour mon Master Informatique à partir de septembre&nbsp;2027.</p>
       </div>
-      <nav class="footer-nav">
-        <a class="footer-nav__link" href="index.html">Accueil</a>
-        <a class="footer-nav__link" href="about.html">À propos</a>
-        <a class="footer-nav__link" href="skills.html">Compétences</a>
-        <a class="footer-nav__link" href="projects.html">Projets</a>
-        <a class="footer-nav__link" href="stages.html">Stages</a>
-        <a class="footer-nav__link" href="alternance.html">Alternance</a>
-        <a class="footer-nav__link" href="veille.html">Veille</a>
-        <a class="footer-nav__link" href="contact.html">Contact</a>
-      </nav>
-      <div class="footer-social">
-        <a class="footer-social__link" href="https://github.com/Kayzmat" target="_blank" rel="noreferrer" aria-label="GitHub">🐙 GitHub</a>
-        <a class="footer-social__link" href="https://www.linkedin.com/in/mat%C3%A9o-gon%C3%A7alves-mota" target="_blank" rel="noreferrer" aria-label="LinkedIn">👔 LinkedIn</a>
+      <div>
+        <p class="footer__title">Navigation</p>
+        <ul class="footer__links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="about.html">Parcours</a></li>
+          <li><a href="projects.html">Projets</a></li>
+          <li><a href="skills.html">Compétences</a></li>
+          <li><a href="veille.html">Veille</a></li>
+        </ul>
       </div>
-      <p class="footer-copy">© 2026 Matéo Gonçalves Mota</p>
+      <div>
+        <p class="footer__title">Expériences</p>
+        <ul class="footer__links">
+          <li><a href="alternance.html">Alternance 2026–2027</a></li>
+          <li><a href="stage-2.html">Stage 2 — 2026</a></li>
+          <li><a href="stage-1.html">Stage 1 — 2025</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__title">Contact</p>
+        <ul class="footer__links">
+          <li><a href="mailto:mateo.goncalves@sfr.fr">mateo.goncalves@sfr.fr</a></li>
+          <li><a href="https://www.linkedin.com/in/mat%C3%A9o-gon%C3%A7alves-mota" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/Kayzmat" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="docs/cv.pdf" target="_blank" rel="noopener">CV (PDF)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 Matéo Gonçalves Mota — site statique codé à la main (HTML, CSS, JavaScript).</p>
+      <a href="#contenu">Retour en haut ↑</a>
     </div>
   </footer>
 
-  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

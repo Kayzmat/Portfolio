@@ -1,0 +1,94 @@
+<!--
+title: Ce portfolio — site statique accessible et rapide — Matéo Gonçalves Mota
+description: Comment ce portfolio est construit : HTML, CSS et JavaScript sans framework, thème clair/sombre, accessibilité, performances, SEO et sécurité du flux de veille.
+nav: projets
+-->
+  <main id="contenu" tabindex="-1">
+
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <ol><li><a href="index.html">Accueil</a></li><li><a href="projects.html">Projets</a></li><li aria-current="page">Portfolio</li></ol>
+        </nav>
+        <p class="eyebrow">Projet personnel · vous êtes dessus</p>
+        <h1 id="page-title">Ce portfolio, codé à la main</h1>
+        <p class="lead">
+          Pas de CMS ni de framework : du HTML sémantique, une feuille de style organisée autour de variables, et un peu de
+          JavaScript qui n'est jamais indispensable pour lire le contenu.
+        </p>
+        <ul class="tags"><li class="tag tag--accent">HTML</li><li class="tag tag--accent">CSS</li><li class="tag">JavaScript</li><li class="tag">Accessibilité</li><li class="tag">SEO</li></ul>
+        <dl class="meta-grid">
+          <div><dt>Type</dt><dd>Projet personnel</dd></div>
+          <div><dt>Version</dt><dd>2 — octobre 2026</dd></div>
+          <div><dt>Hébergement</dt><dd>GitHub Pages</dd></div>
+          <div><dt>Code</dt><dd><a href="https://github.com/Kayzmat/Portfolio" target="_blank" rel="noopener">Kayzmat/Portfolio</a></dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="choices-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow"><span class="eyebrow__num">01</span> Choix techniques</p>
+            <h2 id="choices-title">Pourquoi ces choix</h2>
+            <p class="lead">Chaque décision répond à un objectif : être lu facilement par un recruteur, sur n'importe quel appareil.</p>
+          </div>
+        </div>
+        <div class="grid grid--3">
+          <div class="panel" data-reveal>
+            <h3>Zéro dépendance</h3>
+            <p class="muted">Aucun framework ni bundler. Les en-têtes et pieds de page sont partagés grâce à un petit script d'assemblage, puis publiés en HTML statique.</p>
+          </div>
+          <div class="panel" data-reveal="2">
+            <h3>Accessibilité</h3>
+            <p class="muted">Lien d'évitement, focus visible, navigation clavier complète (menu, filtres, aperçu d'images), contrastes conformes WCAG AA, respect de « réduire les animations ».</p>
+          </div>
+          <div class="panel" data-reveal="3">
+            <h3>Thème clair / sombre</h3>
+            <p class="muted">Suit la préférence du système, avec un bouton pour la changer. Le choix est mémorisé et appliqué avant l'affichage, sans flash.</p>
+          </div>
+          <div class="panel" data-reveal>
+            <h3>Performances</h3>
+            <p class="muted">Captures recompressées (de 5 Mo à 0,6 Mo), chargement différé des images et dimensions déclarées pour éviter les sauts de mise en page.</p>
+          </div>
+          <div class="panel" data-reveal="2">
+            <h3>Référencement</h3>
+            <p class="muted">Titres et descriptions uniques, URL canoniques, image de partage, données structurées <code>Person</code> et sitemap XML.</p>
+          </div>
+          <div class="panel" data-reveal="3">
+            <h3>Sécurité</h3>
+            <p class="muted">Le flux de veille affiche des articles venant de sites tiers : ils sont insérés via l'API DOM (<code>textContent</code>), jamais en HTML brut, pour éviter toute injection.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="v1-title">
+      <div class="container split split--center">
+        <div class="prose" data-reveal>
+          <p class="eyebrow"><span class="eyebrow__num">02</span> Évolution</p>
+          <h2 id="v1-title">De la version 1 à la version 2</h2>
+          <p>
+            La première version présentait mes projets de BTS. La seconde repense tout pour mon alternance et ma recherche
+            de Master : contenus orientés « besoin, rôle, résultat », navigation resserrée à six rubriques, palette
+            alignée sur mon CV et corrections d'accessibilité.
+          </p>
+        </div>
+        <figure class="figure" data-reveal="2">
+          <button class="zoomable" type="button" data-zoom aria-label="Agrandir la capture de la version 1"><img src="img/portfolio-v1.jpg" width="1600" height="791" loading="lazy" alt="Page d'accueil de la première version du portfolio" /></button>
+          <figcaption>La version 1 du portfolio.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Autres projets">
+      <div class="container container--narrow">
+        <nav class="pager" aria-label="Projets">
+          <a href="project-windows-linux.html"><span>← Précédent</span><strong>Infrastructure réseau</strong></a>
+          <a class="pager__next" href="projects.html"><span>Retour →</span><strong>Tous les projets</strong></a>
+        </nav>
+      </div>
+    </section>
+
+  </main>

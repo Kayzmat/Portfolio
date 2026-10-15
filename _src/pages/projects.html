@@ -1,0 +1,148 @@
+<!--
+title: Projets — Matéo Gonçalves Mota
+description: Projets de Matéo Gonçalves Mota : applications WinDev en entreprise, application mobile Android et API Symfony, applications web PHP/MySQL, site WordPress, infrastructure réseau.
+nav: projets
+-->
+  <main id="contenu" tabindex="-1">
+
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <p class="eyebrow">Projets</p>
+        <h1 id="page-title">Ce que j'ai construit</h1>
+        <p class="lead">
+          Des applications réalisées en entreprise et pendant le BTS SIO, souvent en équipe. Pour chacune : le besoin,
+          mon rôle exact, les choix techniques et ce que j'en ai appris.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="list-title">
+      <div class="container">
+        <h2 id="list-title" class="visually-hidden">Liste des projets</h2>
+        <div class="filters" role="group" aria-label="Filtrer les projets" data-filters="#project-list" data-filters-status="#filter-status">
+          <button class="filter" type="button" data-filter="all" aria-pressed="true">Tous</button>
+          <button class="filter" type="button" data-filter="pro" aria-pressed="false">En entreprise</button>
+          <button class="filter" type="button" data-filter="web" aria-pressed="false">Web</button>
+          <button class="filter" type="button" data-filter="mobile" aria-pressed="false">Mobile</button>
+          <button class="filter" type="button" data-filter="applicatif" aria-pressed="false">Applicatif</button>
+          <button class="filter" type="button" data-filter="reseau" aria-pressed="false">Réseau</button>
+        </div>
+        <p id="filter-status" class="visually-hidden" aria-live="polite"></p>
+
+        <div class="grid grid--3" id="project-list">
+
+          <article class="card card--link" data-filter-item="pro applicatif" data-reveal>
+            <div class="card__media"><img src="img/base-methodes.png" width="1185" height="666" loading="lazy" alt="Fenêtre WinDev de la Base Méthodes" /></div>
+            <div class="card__body">
+              <p class="card__kicker"><span>Alternance · AMIPI</span><span>2026–27</span></p>
+              <h3><a class="card__stretch" href="alternance.html#base-methodes">Base Méthodes</a></h3>
+              <p>Checklists des moyens de production numériques, validation par 5 responsables, e-mails automatiques et historique.</p>
+              <ul class="tags"><li class="tag tag--accent">WinDev 2024</li><li class="tag">SQL</li><li class="tag">AS400</li></ul>
+            </div>
+          </article>
+
+          <article class="card card--link" data-filter-item="pro applicatif" data-reveal="2">
+            <div class="card__media card__media--placeholder">
+              <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4l-7.2 7.2a2 2 0 01-2.8 0L2 12V2h10l8.6 8.6a2 2 0 010 2.8z"/><circle cx="7" cy="7" r="1.5"/></svg><span class="small">Outil interne — pas de capture publique</span></div>
+            </div>
+            <div class="card__body">
+              <p class="card__kicker"><span>Alternance · AMIPI</span><span>2026–27</span></p>
+              <h3><a class="card__stretch" href="alternance.html#etiquettes">Impression d'étiquettes</a></h3>
+              <p>Une interface qui remplace des commandes saisies à la main : l'impression devient rapide et accessible à tous.</p>
+              <ul class="tags"><li class="tag tag--accent">WinDev 2024</li><li class="tag">AS400</li></ul>
+            </div>
+          </article>
+
+          <article class="card card--link" data-filter-item="mobile web" data-reveal="3">
+            <div class="card__media"><img src="img/sigeansud-backoffice.jpg" width="1447" height="656" loading="lazy" alt="Back-office SIGEANSUD" /></div>
+            <div class="card__body">
+              <p class="card__kicker"><span>BTS · équipe de 4</span><span>5 mois</span></p>
+              <h3><a class="card__stretch" href="project-sigeansud.html">SIGEANSUD — repas des animaux</a></h3>
+              <p>App Android pour les soigneurs, back-office web et API REST Symfony 7 pour tracer chaque repas d'un parc animalier.</p>
+              <ul class="tags"><li class="tag tag--accent">Java · Android</li><li class="tag">Symfony 7</li><li class="tag">API REST</li></ul>
+            </div>
+          </article>
+
+          <article class="card card--link" data-filter-item="web" data-reveal>
+            <div class="card__media"><img src="img/triathlon-admin.jpg" width="1346" height="643" loading="lazy" alt="Tableau de bord de l'application triathlon" /></div>
+            <div class="card__body">
+              <p class="card__kicker"><span>BTS · équipe de 4</span><span>2 mois</span></p>
+              <h3><a class="card__stretch" href="project-triathlon.html">Fédération de triathlon</a></h3>
+              <p>Application web sécurisée pour gérer clubs, licenciés, inscriptions, dossards et résultats des compétitions.</p>
+              <ul class="tags"><li class="tag tag--accent">PHP · MVC</li><li class="tag">MySQL</li><li class="tag">Merise</li></ul>
+            </div>
+          </article>
+
+          <article class="card card--link" data-filter-item="web" data-reveal="2">
+            <div class="card__media"><img src="img/tellis-connexion.jpg" width="1600" height="793" loading="lazy" alt="Connexion à la plateforme Tellis" /></div>
+            <div class="card__body">
+              <p class="card__kicker"><span>BTS · équipe</span><span>3 mois</span></p>
+              <h3><a class="card__stretch" href="project-tellis.html">Tellis — réservation d'un salon</a></h3>
+              <p>Plateforme de réservation d'emplacements pour exposants, avec plan interactif et tableau de bord organisateur.</p>
+              <ul class="tags"><li class="tag tag--accent">PHP</li><li class="tag">JavaScript</li><li class="tag">MySQL</li></ul>
+            </div>
+          </article>
+
+          <article class="card card--link" data-filter-item="web" data-reveal="3">
+            <div class="card__media"><img src="img/castellane-accueil.jpg" width="1600" height="793" loading="lazy" alt="Accueil de l'application Castellane Auto" /></div>
+            <div class="card__body">
+              <p class="card__kicker"><span>BTS · équipe de 3</span><span>1 mois</span></p>
+              <h3><a class="card__stretch" href="project-castellane-auto.html">Castellane Auto — auto-école</a></h3>
+              <p>Informatisation de la gestion des leçons, des moniteurs et des véhicules d'une auto-école.</p>
+              <ul class="tags"><li class="tag tag--accent">PHP</li><li class="tag">MySQL</li><li class="tag">CRUD</li></ul>
+            </div>
+          </article>
+
+          <article class="card card--link" data-filter-item="web" data-reveal>
+            <div class="card__media card__media--placeholder">
+              <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg><span class="small">Site client, plus en ligne</span></div>
+            </div>
+            <div class="card__body">
+              <p class="card__kicker"><span>BTS · client réel</span><span>2024–25</span></p>
+              <h3><a class="card__stretch" href="project-bst79.html">Site WordPress — bst79</a></h3>
+              <p>Site vitrine pour une entreprise réelle, réalisé en groupe de 4 : thème, contenus, SEO et responsive.</p>
+              <ul class="tags"><li class="tag tag--accent">WordPress</li><li class="tag">SEO</li></ul>
+            </div>
+          </article>
+
+          <article class="card card--link" data-filter-item="reseau" data-reveal="2">
+            <div class="card__media"><img src="img/infra-schema.png" width="792" height="358" loading="lazy" alt="Schéma de l'infrastructure réseau" style="object-fit:contain;background:#fff;" /></div>
+            <div class="card__body">
+              <p class="card__kicker"><span>BTS</span><span>2 mois</span></p>
+              <h3><a class="card__stretch" href="project-windows-linux.html">Infrastructure Windows &amp; Linux</a></h3>
+              <p>Domaine Active Directory, serveur web Debian, segmentation VLAN et services DNS/DHCP.</p>
+              <ul class="tags"><li class="tag tag--accent">Windows Server</li><li class="tag">Debian</li><li class="tag">Cisco</li></ul>
+            </div>
+          </article>
+
+          <article class="card card--link" data-filter-item="web" data-reveal="3">
+            <div class="card__media"><img src="img/portfolio-v2.jpg" width="800" height="455" loading="lazy" alt="Page d'accueil de ce portfolio" /></div>
+            <div class="card__body">
+              <p class="card__kicker"><span>Personnel</span><span>En continu</span></p>
+              <h3><a class="card__stretch" href="project-portfolio.html">Ce portfolio</a></h3>
+              <p>Site statique codé à la main : accessible, thème clair/sombre, rapide et sans dépendance.</p>
+              <ul class="tags"><li class="tag tag--accent">HTML</li><li class="tag">CSS</li><li class="tag">JavaScript</li></ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-band" data-reveal>
+          <div>
+            <p class="eyebrow">Recrutement</p>
+            <h2 id="cta-title">Un projet vous intéresse&nbsp;?</h2>
+            <p>Je peux vous le présenter plus en détail, code et démarche compris. Je recherche une alternance Master de 2 ans dès septembre 2027.</p>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn--light" href="contact.html">Me contacter</a>
+            <a class="btn btn--outline-light" href="https://github.com/Kayzmat" target="_blank" rel="noopener">Mon GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>

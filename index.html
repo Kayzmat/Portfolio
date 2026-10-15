@@ -3,299 +3,373 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Portfolio de Matéo Gonçalves Mota — développeur d'applications en alternance (Licence Informatique, Fondation AMIPI). Recherche une alternance Master Informatique à partir de septembre 2027." />
+  <title>Matéo Gonçalves Mota — Développeur d'applications en alternance</title>
+  <meta name="description" content="Développeur d'applications en alternance (Licence Informatique, Fondation AMIPI) : WinDev, SQL, AS400, PHP, Symfony. Recherche une alternance de 2 ans en Master Informatique dès septembre 2027." />
   <meta name="author" content="Matéo Gonçalves Mota" />
-  <meta property="og:title" content="Matéo Gonçalves Mota — Portfolio développeur web et applicatif" />
+  <link rel="canonical" href="https://kayzmat.github.io/Portfolio/" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/images/og-preview.svg" />
-  <title>Matéo Gonçalves Mota — Portfolio développeur web</title>
-  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Matéo Gonçalves Mota — Portfolio" />
+  <meta property="og:title" content="Matéo Gonçalves Mota — Développeur d'applications en alternance" />
+  <meta property="og:description" content="Développeur d'applications en alternance (Licence Informatique, Fondation AMIPI) : WinDev, SQL, AS400, PHP, Symfony. Recherche une alternance de 2 ans en Master Informatique dès septembre 2027." />
+  <meta property="og:url" content="https://kayzmat.github.io/Portfolio/" />
+  <meta property="og:image" content="https://kayzmat.github.io/Portfolio/assets/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Matéo Gonçalves Mota — développeur d'applications en alternance" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#1d2250" />
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
   <link rel="manifest" href="manifest.webmanifest" />
+  <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')d.dataset.theme=t}catch(e){}})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" />
   <link rel="stylesheet" href="css/style.css" />
-  <script defer src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Matéo Gonçalves Mota",
+    "jobTitle": "Développeur d'applications (alternance)",
+    "url": "https://kayzmat.github.io/Portfolio/",
+    "email": "mailto:mateo.goncalves@sfr.fr",
+    "worksFor": { "@type": "Organization", "name": "Fondation AMIPI" },
+    "alumniOf": { "@type": "EducationalOrganization", "name": "ESUPEC Cholet" },
+    "knowsLanguage": ["fr", "en", "es"],
+    "knowsAbout": ["WinDev", "WLangage", "SQL", "AS400", "PHP", "Symfony", "Java", "Android", "JavaScript"],
+    "sameAs": ["https://github.com/Kayzmat", "https://www.linkedin.com/in/mat%C3%A9o-gon%C3%A7alves-mota"]
+  }
+  </script>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Aller au contenu</a>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
 
   <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html"><span>Matéo Gonçalves Mota</span></a>
-      <button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Ouvrir le menu">
-        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
-      </button>
-      <nav class="site-nav" id="site-navigation" aria-label="Navigation principale">
-        <ul class="site-nav__list">
-          <li><a class="site-nav__link" href="index.html" aria-current="page">Accueil</a></li>
-          <li><a class="site-nav__link" href="about.html">À propos</a></li>
-          <li><a class="site-nav__link" href="skills.html">Compétences</a></li>
-          <li><a class="site-nav__link" href="projects.html">Projets</a></li>
-          <li><a class="site-nav__link" href="stages.html">Stages</a></li>
-          <li><a class="site-nav__link" href="alternance.html">Alternance</a></li>
-          <li><a class="site-nav__link" href="veille.html">Veille</a></li>
-          <li><a class="site-nav__link" href="contact.html">Contact</a></li>
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Matéo Gonçalves Mota — accueil">
+        <span class="brand__mark" aria-hidden="true">M<span>G</span></span>
+        <span class="brand__text">Matéo Gonçalves Mota</span>
+      </a>
+
+      <nav class="nav" id="site-nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html" data-nav="home" aria-current="page">Accueil</a></li>
+          <li><a class="nav__link" href="about.html" data-nav="parcours">Parcours</a></li>
+          <li><a class="nav__link" href="projects.html" data-nav="projets">Projets</a></li>
+          <li><a class="nav__link" href="skills.html" data-nav="competences">Compétences</a></li>
+          <li><a class="nav__link" href="veille.html" data-nav="veille">Veille</a></li>
+          <li><a class="nav__link" href="contact.html" data-nav="contact">Contact</a></li>
         </ul>
-        <div class="site-nav__actions">
-          <a class="btn btn--primary" href="docs/cv.pdf" target="_blank" rel="noreferrer">Télécharger CV</a>
-        </div>
+        <a class="btn btn--primary btn--sm" href="docs/cv.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+          CV (PDF)
+        </a>
       </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Changer de thème">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button class="icon-btn nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Ouvrir le menu">
+          <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main id="main-content">
+  <main id="contenu" tabindex="-1">
 
-    <!-- ── HERO ── -->
+    <!-- Hero -->
     <section class="hero" aria-labelledby="hero-title">
-      <div class="container hero__inner">
+      <div class="container hero__grid">
         <div>
-          <p class="hero__eyebrow"><span class="hero__eyebrow-dot"></span>Alternant en Licence Informatique</p>
-          <h1 class="hero__title" id="hero-title">
-            Bonjour, je suis<br />
-            <span class="text-gradient">Matéo</span>
-          </h1>
-          <p class="hero__subtitle">
-            Développeur d'applications en alternance à la <strong>Fondation AMIPI</strong>, je conçois
-            des applications métier fiables pour l'industrie — du besoin terrain jusqu'à la mise en production.
+          <span class="badge"><span class="badge__dot" aria-hidden="true"></span>Recherche une alternance Master · sept. 2027</span>
+          <h1 id="hero-title" style="margin-top:1.25rem;">Matéo<br /><span class="accent">Gonçalves Mota</span></h1>
+          <p class="hero__role">Développeur d'applications — alternant en Licence Informatique</p>
+          <p class="lead">
+            À la Fondation AMIPI, je remplace le papier et les manipulations manuelles de l'atelier par des
+            applications WinDev reliées à l'ERP AS400. Je cherche une alternance de 2&nbsp;ans pour mon
+            Master Informatique à l'Université d'Angers.
           </p>
-          <div class="hero__actions">
-            <a class="btn btn--primary" href="alternance.html">Mon alternance</a>
-            <a class="btn btn--outline" href="projects.html">Voir mes projets</a>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="docs/cv.pdf" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+              Télécharger mon CV
+            </a>
+            <a class="btn btn--secondary" href="contact.html">Me contacter</a>
           </div>
-          <ul class="hero__pills" aria-label="Technologies principales">
-            <li class="hero__pill">WinDev / WLangage</li>
-            <li class="hero__pill">SQL</li>
-            <li class="hero__pill">AS400 / RDI</li>
-            <li class="hero__pill">PHP</li>
-            <li class="hero__pill">Symfony</li>
-            <li class="hero__pill">JavaScript</li>
-            <li class="hero__pill">Python</li>
-            <li class="hero__pill">Java</li>
+          <ul class="hero__meta">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0119 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Mauges (49) · permis B</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5V5a2 2 0 012-2h12a2 2 0 012 2v14.5"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>BTS SIO obtenu · 16,77/20</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>Anglais B2 · TOEIC 885</li>
           </ul>
         </div>
 
         <div class="hero__visual">
-          <div class="hero__card">
-            <div class="hero__card-header">
-              <span class="hero__card-label">Vue d'ensemble</span>
-              <span class="hero__card-badge">En alternance</span>
-            </div>
-            <div class="hero__stat-grid">
-              <div class="hero__stat">
-                <div class="hero__stat-value">5+</div>
-                <div class="hero__stat-label">Projets réalisés</div>
-              </div>
-              <div class="hero__stat">
-                <div class="hero__stat-value">3</div>
-                <div class="hero__stat-label">Expériences chez AMIPI</div>
-              </div>
-              <div class="hero__stat">
-                <div class="hero__stat-value">16,77</div>
-                <div class="hero__stat-label">Moyenne BTS SIO</div>
-              </div>
-              <div class="hero__stat">
-                <div class="hero__stat-value">885</div>
-                <div class="hero__stat-label">Score TOEIC</div>
-              </div>
-            </div>
+          <div class="code-window" role="img" aria-label="Extrait de code WLangage simplifié : validation d'une homologation par plusieurs responsables puis envoi d'un e-mail">
+            <div class="code-window__bar" aria-hidden="true"><i></i><i></i><i></i><span class="code-window__title">BaseMethodes · Homologation.wdg</span></div>
+<pre aria-hidden="true"><code><span class="tok-c">// Base Méthodes — exemple simplifié</span>
+<span class="tok-k">PROCÉDURE</span> <span class="tok-f">ValiderHomologation</span>(nID <span class="tok-k">est un</span> entier)
+
+	<span class="tok-k">POUR TOUT</span> stValideur <span class="tok-k">DE</span> gtabValideurs
+		<span class="tok-k">SI PAS</span> stValideur.bAValidé <span class="tok-k">ALORS RENVOYER</span> Faux
+	<span class="tok-k">FIN</span>
+
+	Checklist.Statut = <span class="tok-s">"Homologuée"</span>
+	<span class="tok-f">HModifie</span>(Checklist)
+	<span class="tok-f">EnvoyerMailResponsables</span>(nID)
+	<span class="tok-k">RENVOYER</span> Vrai</code></pre>
+            <div class="code-window__foot" aria-hidden="true"><span>WLangage · WinDev 2024</span><span>ERP AS400</span></div>
+          </div>
+          <div class="hero__float">
+            <span class="badge__dot" style="color:var(--success);" aria-hidden="true"></span>
+            <div><strong>En alternance</strong><span class="muted">Fondation AMIPI · 2026–2027</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ── RECHERCHE MASTER ── -->
-    <section class="container" aria-label="Recherche d'alternance">
-      <div class="callout fade-up">
-        <div>
-          <p class="callout__title">🎓 Je recherche une alternance de 2 ans à partir de septembre 2027</p>
-          <p class="callout__text">
-            Pour mon <strong>Master Informatique à l'Université d'Angers</strong>. Ouvert à toutes les technologies,
-            idéalement dans l'industrie. Rythme : 5 semaines à l'université / 4 semaines en entreprise jusqu'en mars,
-            puis temps plein en entreprise.
-          </p>
-        </div>
-        <a class="btn btn--primary" href="contact.html">Me contacter</a>
-      </div>
-    </section>
-
-    <!-- ── ALTERNANCE EN COURS ── -->
-    <section class="section" id="alternance" aria-labelledby="alternance-title">
+    <!-- Chiffres -->
+    <section class="section--tight" aria-label="Chiffres clés">
       <div class="container">
-        <div class="grid grid--2">
-          <div class="fade-up">
-            <p class="section__overline">Alternance 2026 – 2027</p>
-            <h2 id="alternance-title">Développeur d'applications chez AMIPI</h2>
-            <p style="color:var(--muted);margin-top:1rem;">
-              En Licence Informatique à l'ESUPEC (Cholet), je travaille en alternance au sein du service
-              Méthodes et de l'atelier de la Fondation AMIPI, une entreprise industrielle. Je développe des
-              applications WinDev connectées à l'ERP AS400 qui simplifient le quotidien des équipes de production.
-            </p>
-            <ul class="list--check" style="margin-top:1.25rem;">
-              <li><span><strong>Base Méthodes</strong> — remplacement des checklists papier des moyens de production</span></li>
-              <li><span>Circuit de validation des homologations par 5 responsables, avec mails automatiques</span></li>
-              <li><span><strong>Impression d'étiquettes</strong> — une application à la place de commandes manuelles</span></li>
-            </ul>
-            <div style="margin-top:1.75rem;display:flex;gap:.85rem;flex-wrap:wrap;">
-              <a class="btn btn--primary" href="alternance.html">Voir l'alternance en détail</a>
-              <a class="btn btn--outline" href="stages.html">Mes stages</a>
-            </div>
+        <div class="facts" data-reveal>
+          <div class="fact"><div class="fact__value">3</div><p class="fact__label">expériences à la Fondation AMIPI (2 stages + alternance)</p></div>
+          <div class="fact"><div class="fact__value">2</div><p class="fact__label">applications métier développées en alternance</p></div>
+          <div class="fact"><div class="fact__value">16,77<small>/20</small></div><p class="fact__label">de moyenne au BTS SIO option SLAM</p></div>
+          <div class="fact"><div class="fact__value">9</div><p class="fact__label">projets détaillés : web, mobile, réseau, applicatif</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alternance -->
+    <section class="section" aria-labelledby="alt-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow"><span class="eyebrow__num">01</span> Alternance en cours</p>
+            <h2 id="alt-title">Du papier à l'application, pour l'atelier</h2>
+            <p class="lead">Depuis septembre 2026, je suis développeur d'applications au service Méthodes de la Fondation AMIPI, une entreprise industrielle.</p>
           </div>
-          <div class="fade-up delay-2">
-            <figure>
-              <img src="img/demat_cl.png" loading="lazy" alt="Application WinDev de dématérialisation des checklists de maintenance" />
-              <figcaption>Dématérialisation des checklists — projet démarré en stage, poursuivi en alternance.</figcaption>
+          <a class="link-arrow" href="alternance.html">Toute l'alternance</a>
+        </div>
+
+        <article class="spotlight" data-reveal>
+          <div class="spotlight__content">
+            <div class="tags"><span class="tag tag--accent">Projet principal</span><span class="tag">WinDev 2024</span><span class="tag">SQL</span><span class="tag">AS400</span></div>
+            <h3>Base Méthodes — les checklists des moyens de production, enfin numériques</h3>
+            <p class="muted">
+              Pour chaque moyen de production, les équipes imprimaient une checklist, la remplissaient à la main puis la
+              scannaient. J'ai conçu l'application qui remplace tout ce circuit : saisie, validation, historique et impression.
+            </p>
+            <div class="metrics">
+              <div class="metric"><strong>3</strong><span>types de checklists : paramétrage, homologation, maintenance</span></div>
+              <div class="metric"><strong>5</strong><span>responsables dans le circuit de validation</span></div>
+              <div class="metric"><strong>Auto</strong><span>e-mails envoyés à chaque étape</span></div>
+            </div>
+            <a class="link-arrow" href="alternance.html#base-methodes">Lire l'étude de cas</a>
+          </div>
+          <div class="spotlight__media">
+            <figure class="figure">
+              <button class="zoomable" type="button" data-zoom aria-label="Agrandir la capture de la Base Méthodes">
+                <img src="img/base-methodes.png" width="1185" height="666" loading="lazy" alt="Fenêtre WinDev « Base Méthodes — Liste des réalisations » : filtres, liste des moyens et boutons Historique checklist, Homologation, Maintenance, Impression QR codes" />
+              </button>
+              <figcaption>Écran principal de la Base Méthodes (vue éditeur WinDev).</figcaption>
             </figure>
           </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Projets -->
+    <section class="section section--alt" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow"><span class="eyebrow__num">02</span> Projets</p>
+            <h2 id="projects-title">Projets sélectionnés</h2>
+            <p class="lead">Des applications complètes menées en équipe pendant le BTS : de l'analyse du besoin jusqu'aux tests.</p>
+          </div>
+          <a class="link-arrow" href="projects.html">Les 9 projets</a>
+        </div>
+
+        <div class="grid grid--3">
+          <article class="card card--link" data-reveal>
+            <div class="card__media"><img src="img/sigeansud-backoffice.jpg" width="1447" height="656" loading="lazy" alt="Back-office SIGEANSUD : compteurs de soignants, espèces et menus" /></div>
+            <div class="card__body">
+              <p class="card__kicker"><span>Mobile + API</span><span>5 mois</span></p>
+              <h3><a class="card__stretch" href="project-sigeansud.html">SIGEANSUD — repas des animaux</a></h3>
+              <p>App Android pour les soigneurs, back-office et API REST Symfony 7 pour tracer chaque repas.</p>
+              <ul class="tags"><li class="tag">Java · Android</li><li class="tag">Symfony 7</li><li class="tag">API REST</li></ul>
+            </div>
+          </article>
+          <article class="card card--link" data-reveal="2">
+            <div class="card__media"><img src="img/triathlon-admin.jpg" width="1346" height="643" loading="lazy" alt="Tableau de bord administrateur de l'application de gestion de triathlons" /></div>
+            <div class="card__body">
+              <p class="card__kicker"><span>Web full-stack</span><span>BTS</span></p>
+              <h3><a class="card__stretch" href="project-triathlon.html">Fédération de triathlon</a></h3>
+              <p>Application web sécurisée : clubs, licenciés, inscriptions, dossards et résultats.</p>
+              <ul class="tags"><li class="tag">PHP · MVC</li><li class="tag">MySQL</li><li class="tag">Merise</li></ul>
+            </div>
+          </article>
+          <article class="card card--link" data-reveal="3">
+            <div class="card__media"><img src="img/tellis-connexion.jpg" width="1600" height="793" loading="lazy" alt="Page de connexion de la plateforme de réservation Tellis" /></div>
+            <div class="card__body">
+              <p class="card__kicker"><span>Web</span><span>BTS</span></p>
+              <h3><a class="card__stretch" href="project-tellis.html">Tellis — réservation d'un salon</a></h3>
+              <p>Plateforme pour réserver des emplacements d'exposants, avec plan interactif et espace organisateur.</p>
+              <ul class="tags"><li class="tag">PHP</li><li class="tag">JavaScript</li><li class="tag">MySQL</li></ul>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ── PROJETS RÉCENTS ── -->
-    <section class="section section--surface" id="projects" aria-labelledby="projects-title">
+    <!-- Compétences -->
+    <section class="section" aria-labelledby="skills-title">
       <div class="container">
-        <header class="section__header">
-          <p class="section__overline">Réalisations</p>
-          <h2 id="projects-title">Projets récents</h2>
-          <p class="section__lead">Sélection de réalisations techniques, du prototype à la solution déployée.</p>
-        </header>
-
-        <div class="cards cards--grid">
-          <article class="card fade-up">
-            <img class="card__media" loading="lazy" src="img/portfolio_accueil.png" alt="Capture d'écran de ce portfolio" />
-            <div class="card__body">
-              <h3 class="card__title">Portfolio personnel</h3>
-              <p class="card__description">Ce portfolio est conçu pour être performant, accessible et facile à maintenir — 100% HTML/CSS/JS vanilla.</p>
-              <p class="card__meta"><strong>Stack :</strong> HTML5, CSS, JavaScript</p>
-              <a class="card__cta" href="project-portfolio.html">Voir le projet</a>
-            </div>
-          </article>
-
-          <article class="card fade-up delay-1">
-            <img class="card__media" loading="lazy" src="img/sigansud_accueil.png" alt="Interface application mobile de gestion des repas" />
-            <div class="card__body">
-              <h3 class="card__title">Gestion des repas — SIGEANSUD</h3>
-              <p class="card__description">Application complète pour parc animalier : app mobile, back-office et API REST avec Symfony 7.</p>
-              <p class="card__meta"><strong>Stack :</strong> Android, Symfony 7, MySQL</p>
-              <a class="card__cta" href="project-sigeansud.html">Voir le projet</a>
-            </div>
-          </article>
-
-          <article class="card fade-up delay-2">
-            <img class="card__media" loading="lazy" src="img/triathlon_accueil_admin.png" alt="Interface d'administration d'une application de triathlon" />
-            <div class="card__body">
-              <h3 class="card__title">Gestion d'événement sportif</h3>
-              <p class="card__description">Application full-stack pour gérer inscriptions, parcours et statistiques d'un triathlon.</p>
-              <p class="card__meta"><strong>Stack :</strong> PHP, MySQL, JavaScript</p>
-              <a class="card__cta" href="project-triathlon.html">Voir le projet</a>
-            </div>
-          </article>
+        <div class="section-head">
+          <div>
+            <p class="eyebrow"><span class="eyebrow__num">03</span> Compétences</p>
+            <h2 id="skills-title">Ma boîte à outils</h2>
+            <p class="lead">Un socle applicatif solide, utilisé en entreprise, et une pratique régulière du web.</p>
+          </div>
+          <a class="link-arrow" href="skills.html">Le détail, avec preuves</a>
         </div>
-
-        <div class="section__footer">
-          <a class="btn btn--outline" href="projects.html">Voir tous les projets</a>
+        <div class="grid grid--4">
+          <div class="panel" data-reveal>
+            <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div>
+            <h3 style="margin-top:1rem;">Applicatif &amp; ERP</h3>
+            <ul class="tags"><li class="tag tag--accent">WinDev / WLangage</li><li class="tag tag--accent">SQL</li><li class="tag">AS400 · RDI</li></ul>
+          </div>
+          <div class="panel" data-reveal="2">
+            <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M14 5l-4 14"/></svg></div>
+            <h3 style="margin-top:1rem;">Web</h3>
+            <ul class="tags"><li class="tag tag--accent">PHP</li><li class="tag tag--accent">Symfony</li><li class="tag">JavaScript</li><li class="tag">HTML / CSS</li><li class="tag">MySQL</li></ul>
+          </div>
+          <div class="panel" data-reveal="3">
+            <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+            <h3 style="margin-top:1rem;">Objet &amp; mobile</h3>
+            <ul class="tags"><li class="tag tag--accent">Java · Android</li><li class="tag">Python</li><li class="tag">C++</li></ul>
+          </div>
+          <div class="panel" data-reveal>
+            <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h9"/></svg></div>
+            <h3 style="margin-top:1rem;">Méthodes</h3>
+            <ul class="tags"><li class="tag tag--accent">Merise · MCD</li><li class="tag">UML</li><li class="tag">MVC</li><li class="tag">Git</li><li class="tag">Scrum</li></ul>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ── À PROPOS ── -->
-    <section class="section" id="about" aria-labelledby="about-title">
+    <!-- Parcours -->
+    <section class="section section--alt" aria-labelledby="path-title">
+      <div class="container split">
+        <div>
+          <p class="eyebrow"><span class="eyebrow__num">04</span> Parcours</p>
+          <h2 id="path-title">Trois ans dans la même entreprise, des responsabilités qui grandissent</h2>
+          <p class="lead" style="margin-top:1rem;">Deux stages puis une alternance à la Fondation AMIPI : de la maintenance d'applications à la conduite de projets complets.</p>
+          <a class="btn btn--secondary" href="about.html" style="margin-top:1.75rem;">Voir tout le parcours</a>
+        </div>
+        <ol class="timeline" data-reveal>
+          <li class="timeline__item timeline__item--next">
+            <p class="timeline__date">Sept. 2027 · objectif</p>
+            <h3 class="timeline__title">Master Informatique en alternance</h3>
+            <p class="timeline__org">Université d'Angers — 2 ans</p>
+          </li>
+          <li class="timeline__item timeline__item--current">
+            <p class="timeline__date">Sept. 2026 – sept. 2027 · en cours</p>
+            <h3 class="timeline__title"><a href="alternance.html">Développeur d'applications — alternance</a></h3>
+            <p class="timeline__org">Fondation AMIPI · Licence Informatique, ESUPEC</p>
+          </li>
+          <li class="timeline__item">
+            <p class="timeline__date">Janv. – févr. 2026</p>
+            <h3 class="timeline__title"><a href="stage-2.html">Stage — dématérialisation &amp; AS400</a></h3>
+            <p class="timeline__org">Fondation AMIPI</p>
+          </li>
+          <li class="timeline__item">
+            <p class="timeline__date">Mai – juin 2025</p>
+            <h3 class="timeline__title"><a href="stage-1.html">Stage — développement WinDev</a></h3>
+            <p class="timeline__org">Fondation AMIPI</p>
+          </li>
+          <li class="timeline__item">
+            <p class="timeline__date">2024 – 2026</p>
+            <h3 class="timeline__title">BTS SIO option SLAM — 16,77/20</h3>
+            <p class="timeline__org">ESUPEC, Lycée Sainte-Marie, Cholet</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" aria-labelledby="cta-title">
       <div class="container">
-        <div class="grid grid--2">
-          <div class="fade-up">
-            <p class="section__overline">À propos</p>
-            <h2 id="about-title">Qui suis-je ?</h2>
-            <p style="color:var(--muted);margin-top:1rem;">
-              Titulaire d'un BTS SIO option SLAM (16,77/20 de moyenne), je poursuis en Licence Informatique
-              en alternance. Je conçois, développe et maintiens des applications web et métier, et j'aime
-              transformer des besoins concrets en outils fiables et simples à utiliser.
-            </p>
-            <ul class="list--check" style="margin-top:1.25rem;">
-              <li>Code lisible, modulaire et maintenable</li>
-              <li>Interfaces accessibles et performantes</li>
-              <li>Collaboration transparente et orientée résultats</li>
+        <div class="cta-band" data-reveal>
+          <div>
+            <p class="eyebrow">Recrutement</p>
+            <h2 id="cta-title">Vous cherchez un alternant pour 2027&nbsp;?</h2>
+            <p>Je recherche une <strong>alternance de 2 ans à partir de septembre 2027</strong> pour mon Master Informatique à l'Université d'Angers. Ouvert à toutes les technologies, idéalement dans l'industrie.</p>
+            <ul class="cta-band__list">
+              <li>5 semaines université / 4 semaines entreprise jusqu'en mars</li>
+              <li>Puis temps plein en entreprise</li>
+              <li>Déjà opérationnel en entreprise</li>
             </ul>
-            <div style="margin-top:1.75rem;display:flex;gap:.85rem;flex-wrap:wrap;">
-              <a class="btn btn--primary" href="about.html">En savoir plus</a>
-              <a class="btn btn--outline" href="docs/cv.pdf" target="_blank" rel="noreferrer">Télécharger CV</a>
-            </div>
           </div>
-
-          <div class="fade-up delay-2">
-            <div class="card--highlight">
-              <h3>Quelques chiffres</h3>
-              <div class="hero__stat-grid" style="margin-top:1rem;">
-                <div class="hero__stat">
-                  <div class="hero__stat-value">2</div>
-                  <div class="hero__stat-label">Stages</div>
-                </div>
-                <div class="hero__stat">
-                  <div class="hero__stat-value">1</div>
-                  <div class="hero__stat-label">Alternance en cours</div>
-                </div>
-                <div class="hero__stat">
-                  <div class="hero__stat-value">10+</div>
-                  <div class="hero__stat-label">Technologies</div>
-                </div>
-                <div class="hero__stat">
-                  <div class="hero__stat-value">B2</div>
-                  <div class="hero__stat-label">Anglais</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="card--highlight" style="margin-top:1.5rem;">
-              <h3>Objectifs</h3>
-              <ul class="list--check" style="margin-top:.75rem;">
-                <li>Valider ma Licence Informatique en alternance</li>
-                <li>Poursuivre en Master Informatique à l'Université d'Angers (sept. 2027)</li>
-                <li>Devenir développeur d'applications, idéalement dans l'industrie</li>
-              </ul>
-            </div>
+          <div class="btn-row">
+            <a class="btn btn--light" href="contact.html">Me contacter</a>
+            <a class="btn btn--outline-light" href="docs/cv.pdf" target="_blank" rel="noopener">Voir mon CV</a>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── CONTACT CTA ── -->
-    <section class="section section--surface" id="contact-cta" aria-labelledby="cta-title">
-      <div class="container" style="text-align:center;max-width:600px;">
-        <p class="section__overline">Contact</p>
-        <h2 id="cta-title">Vous recrutez un alternant ?</h2>
-        <p class="section__lead">Je cherche une alternance de 2 ans à partir de septembre 2027 pour mon Master Informatique — discutons-en.</p>
-        <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2rem;">
-          <a class="btn btn--primary" href="contact.html">Me contacter</a>
-          <a class="btn btn--outline" href="docs/cv.pdf" target="_blank" rel="noreferrer">Voir mon CV</a>
         </div>
       </div>
     </section>
 
   </main>
 
-  <footer class="site-footer" aria-label="Pied de page">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <p class="footer-brand__name">Matéo Gonçalves Mota</p>
-        <p class="footer-brand__text">Développeur web &amp; applicatif</p>
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__about">
+        <a class="brand" href="index.html" aria-label="Matéo Gonçalves Mota — accueil">
+          <span class="brand__mark" aria-hidden="true">M<span>G</span></span>
+          <span class="brand__text">Matéo Gonçalves Mota</span>
+        </a>
+        <p>Développeur d'applications en alternance à la Fondation AMIPI. Je recherche une alternance de 2&nbsp;ans pour mon Master Informatique à partir de septembre&nbsp;2027.</p>
       </div>
-      <nav class="footer-nav" aria-label="Liens du pied de page">
-        <a class="footer-nav__link" href="index.html">Accueil</a>
-        <a class="footer-nav__link" href="about.html">À propos</a>
-        <a class="footer-nav__link" href="skills.html">Compétences</a>
-        <a class="footer-nav__link" href="projects.html">Projets</a>
-        <a class="footer-nav__link" href="stages.html">Stages</a>
-        <a class="footer-nav__link" href="alternance.html">Alternance</a>
-        <a class="footer-nav__link" href="veille.html">Veille</a>
-        <a class="footer-nav__link" href="contact.html">Contact</a>
-      </nav>
-      <div class="footer-social">
-        <a class="footer-social__link" href="https://github.com/Kayzmat" target="_blank" rel="noreferrer" aria-label="GitHub">🐙 GitHub</a>
-        <a class="footer-social__link" href="https://www.linkedin.com/in/mat%C3%A9o-gon%C3%A7alves-mota" target="_blank" rel="noreferrer" aria-label="LinkedIn">👔 LinkedIn</a>
+      <div>
+        <p class="footer__title">Navigation</p>
+        <ul class="footer__links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="about.html">Parcours</a></li>
+          <li><a href="projects.html">Projets</a></li>
+          <li><a href="skills.html">Compétences</a></li>
+          <li><a href="veille.html">Veille</a></li>
+        </ul>
       </div>
-      <p class="footer-copy">© 2026 Matéo Gonçalves Mota</p>
+      <div>
+        <p class="footer__title">Expériences</p>
+        <ul class="footer__links">
+          <li><a href="alternance.html">Alternance 2026–2027</a></li>
+          <li><a href="stage-2.html">Stage 2 — 2026</a></li>
+          <li><a href="stage-1.html">Stage 1 — 2025</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__title">Contact</p>
+        <ul class="footer__links">
+          <li><a href="mailto:mateo.goncalves@sfr.fr">mateo.goncalves@sfr.fr</a></li>
+          <li><a href="https://www.linkedin.com/in/mat%C3%A9o-gon%C3%A7alves-mota" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/Kayzmat" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="docs/cv.pdf" target="_blank" rel="noopener">CV (PDF)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 Matéo Gonçalves Mota — site statique codé à la main (HTML, CSS, JavaScript).</p>
+      <a href="#contenu">Retour en haut ↑</a>
     </div>
   </footer>
 
-  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

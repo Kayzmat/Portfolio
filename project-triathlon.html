@@ -3,251 +3,212 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Projet gestion d'événement sportif — application full-stack de gestion d'un triathlon." />
+  <title>Application de gestion de triathlons — Matéo Gonçalves Mota</title>
+  <meta name="description" content="Projet BTS SIO : application web PHP/MVC sécurisée pour une fédération de triathlon (clubs, licenciés, inscriptions, dossards, résultats). Rôle : cahier des charges, MCD, base MySQL, développement." />
   <meta name="author" content="Matéo Gonçalves Mota" />
-  <title>Projet — Gestion d'événement sportif — Matéo Gonçalves Mota</title>
-  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+  <link rel="canonical" href="https://kayzmat.github.io/Portfolio/project-triathlon.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Matéo Gonçalves Mota — Portfolio" />
+  <meta property="og:title" content="Application de gestion de triathlons — Matéo Gonçalves Mota" />
+  <meta property="og:description" content="Projet BTS SIO : application web PHP/MVC sécurisée pour une fédération de triathlon (clubs, licenciés, inscriptions, dossards, résultats). Rôle : cahier des charges, MCD, base MySQL, développement." />
+  <meta property="og:url" content="https://kayzmat.github.io/Portfolio/project-triathlon.html" />
+  <meta property="og:image" content="https://kayzmat.github.io/Portfolio/assets/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Matéo Gonçalves Mota — développeur d'applications en alternance" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#1d2250" />
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')d.dataset.theme=t}catch(e){}})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" />
   <link rel="stylesheet" href="css/style.css" />
-  <script defer src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Aller au contenu</a>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
 
   <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html"><span>Matéo Gonçalves Mota</span></a>
-      <button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Ouvrir le menu">
-        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
-      </button>
-      <nav class="site-nav" id="site-navigation" aria-label="Navigation principale">
-        <ul class="site-nav__list">
-          <li><a class="site-nav__link" href="index.html">Accueil</a></li>
-          <li><a class="site-nav__link" href="about.html">À propos</a></li>
-          <li><a class="site-nav__link" href="skills.html">Compétences</a></li>
-          <li><a class="site-nav__link" href="projects.html" aria-current="page">Projets</a></li>
-          <li><a class="site-nav__link" href="stages.html">Stages</a></li>
-          <li><a class="site-nav__link" href="alternance.html">Alternance</a></li>
-          <li><a class="site-nav__link" href="veille.html">Veille</a></li>
-          <li><a class="site-nav__link" href="contact.html">Contact</a></li>
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Matéo Gonçalves Mota — accueil">
+        <span class="brand__mark" aria-hidden="true">M<span>G</span></span>
+        <span class="brand__text">Matéo Gonçalves Mota</span>
+      </a>
+
+      <nav class="nav" id="site-nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html" data-nav="home">Accueil</a></li>
+          <li><a class="nav__link" href="about.html" data-nav="parcours">Parcours</a></li>
+          <li><a class="nav__link" href="projects.html" data-nav="projets" aria-current="page">Projets</a></li>
+          <li><a class="nav__link" href="skills.html" data-nav="competences">Compétences</a></li>
+          <li><a class="nav__link" href="veille.html" data-nav="veille">Veille</a></li>
+          <li><a class="nav__link" href="contact.html" data-nav="contact">Contact</a></li>
         </ul>
-        <div class="site-nav__actions">
-          <a class="btn btn--primary" href="docs/cv.pdf" target="_blank" rel="noreferrer">Télécharger CV</a>
-        </div>
+        <a class="btn btn--primary btn--sm" href="docs/cv.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+          CV (PDF)
+        </a>
       </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Changer de thème">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button class="icon-btn nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Ouvrir le menu">
+          <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main id="main-content">
+  <main id="contenu" tabindex="-1">
 
-    <!-- ── HERO ── -->
-    <section class="hero hero--page" aria-labelledby="project-title">
+    <section class="page-hero" aria-labelledby="page-title">
       <div class="container">
         <nav class="breadcrumb" aria-label="Fil d'Ariane">
-          <a href="index.html">Accueil</a>
-          <span class="breadcrumb__sep">›</span>
-          <a href="projects.html">Projets</a>
-          <span class="breadcrumb__sep">›</span>
-          <span>Triathlon</span>
+          <ol><li><a href="index.html">Accueil</a></li><li><a href="projects.html">Projets</a></li><li aria-current="page">Triathlon</li></ol>
         </nav>
-        <p class="hero__eyebrow"><span class="hero__eyebrow-dot"></span>AP3 - BTS SIO SLAM</p>
-        <h1 id="project-title">Gestion d'événement sportif<br /><span class="text-gradient">Application Triathlon</span></h1>
-        <p class="hero__subtitle">
-          Application full-stack réalisée en équipe de 4 étudiants pour simplifier l'organisation et le suivi
-          d'un triathlon — inscriptions, parcours et résultats.
+        <p class="eyebrow">Projet BTS SIO · AP3</p>
+        <h1 id="page-title">Une application web pour une fédération de triathlon</h1>
+        <p class="lead">
+          Clubs, licenciés, compétitions, inscriptions, dossards et résultats : une application sécurisée qui centralise
+          l'organisation des triathlons.
         </p>
-        <div class="hero__actions" style="margin-top:1.5rem;">
-          <div class="project__tags" style="margin:0;">
-            <span class="project__tag">PHP</span>
-            <span class="project__tag">MySQL</span>
-            <span class="project__tag">JavaScript</span>
-            <span class="project__tag">MVC</span>
-            <span class="project__tag">Mobile</span>
-          </div>
-        </div>
+        <ul class="tags"><li class="tag tag--accent">PHP · MVC</li><li class="tag tag--accent">MySQL</li><li class="tag">Merise</li><li class="tag">JavaScript</li><li class="tag">Git</li></ul>
+        <dl class="meta-grid">
+          <div><dt>Contexte</dt><dd>BTS SIO SLAM — AP3</dd></div>
+          <div><dt>Durée</dt><dd>2 mois</dd></div>
+          <div><dt>Équipe</dt><dd>4 étudiants</dd></div>
+          <div><dt>Mon rôle</dt><dd>Conception, base de données, développement</dd></div>
+        </dl>
       </div>
     </section>
 
-    <!-- ── APERÇU ── -->
-    <section class="section section--surface">
-      <div class="container">
-        <div class="grid grid--2">
-          <div class="fade-up">
-            <figure>
-              <img src="img/triathlon_accueil_admin.png" loading="lazy" alt="Tableau de bord administrateur de l'application triathlon" />
-              <figcaption>Interface d'administration — vue tableau de bord.</figcaption>
-            </figure>
-          </div>
-          <div class="fade-up delay-2">
-            <div class="project__meta">
-              <div class="project__meta-item">
-                <strong>Rôle</strong>
-                <span>Développeur full-stack</span>
-              </div>
-              <div class="project__meta-item">
-                <strong>Équipe</strong>
-                <span>4 étudiants</span>
-              </div>
-              <div class="project__meta-item">
-                <strong>Durée</strong>
-                <span>2 mois</span>
-              </div>
-              <div class="project__meta-item">
-                <strong>Contexte</strong>
-                <span>AP3 - BTS SIO SLAM</span>
-              </div>
+    <section class="section" aria-labelledby="need-title">
+      <div class="container split">
+        <div class="prose" data-reveal>
+          <h2 id="need-title">Le besoin</h2>
+          <p>
+            La fédération (FFTRI, dans le scénario du projet) devait disposer d'une application web sécurisée pour gérer ses
+            compétitions, ses clubs et ses licenciés, avec deux profils d'utilisateurs.
+          </p>
+          <div class="grid grid--2" style="margin:1.25rem 0 1.5rem;">
+            <div class="panel">
+              <h3>Gestionnaire fédéral</h3>
+              <ul class="bullets small">
+                <li>Clubs, catégories d'âge, types de triathlons</li>
+                <li>Création et publication des compétitions</li>
+                <li>Inscriptions et attribution des dossards</li>
+                <li>Saisie des résultats par épreuve</li>
+              </ul>
             </div>
+            <div class="panel">
+              <h3>Responsable de club</h3>
+              <ul class="bullets small">
+                <li>Gestion de ses licenciés</li>
+                <li>Suivi des inscriptions</li>
+                <li>Consultation des résultats de ses athlètes</li>
+              </ul>
+            </div>
+          </div>
 
-            <div class="card--highlight" style="margin-top:1.5rem;">
-              <h3>Technologies</h3>
-              <div class="tag-cloud" style="margin-top:.75rem;">
-                <span class="tag tag--primary">HTML5 / CSS3</span>
-                <span class="tag tag--primary">PHP (MVC)</span>
-                <span class="tag tag--primary">MySQL</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">Responsive Design</span>
-                <span class="tag">Git</span>
-              </div>
-            </div>
-          </div>
+          <h2>Ma contribution</h2>
+          <ul class="checklist">
+            <li><strong>Cahier des charges</strong> : besoins fonctionnels, contraintes techniques, périmètre et livrables.</li>
+            <li><strong>Schéma de navigation</strong> : parcours utilisateur et enchaînement des pages.</li>
+            <li><strong>Base de données</strong> : MCD Merise, schéma MySQL et jeux de données de test représentatifs.</li>
+            <li><strong>Développement PHP/MVC</strong> du tableau de bord administrateur et de l'espace licencié.</li>
+          </ul>
+
+          <h2>Contraintes respectées</h2>
+          <ul class="bullets">
+            <li>Architecture MVC et conventions de nommage communes à l'équipe.</li>
+            <li>Authentification obligatoire : application réservée à la fédération et aux clubs.</li>
+            <li>Aucune fonctionnalité livrée sans tests fonctionnels validés.</li>
+            <li>Travail en Scrum/Kanban sur Trello, code partagé avec Git.</li>
+          </ul>
+
+          <h2>Ce que j'en retiens</h2>
+          <p>
+            Concevoir la base de données en premier a évité beaucoup de retours en arrière : un MCD solide rend le
+            développement des écrans presque mécanique. J'ai aussi appris à découper le travail pour que quatre personnes
+            avancent sans se bloquer.
+          </p>
         </div>
+        <aside class="aside-card sticky" data-reveal="2">
+          <figure class="figure">
+            <button class="zoomable" type="button" data-zoom aria-label="Agrandir la capture du tableau de bord">
+              <img src="img/triathlon-admin.jpg" width="1346" height="643" loading="lazy" alt="Tableau de bord administrateur de l'application de gestion de triathlons" />
+            </button>
+            <figcaption>Tableau de bord administrateur.</figcaption>
+          </figure>
+          <div class="panel">
+            <h3>Stack</h3>
+            <ul class="tags"><li class="tag tag--accent">PHP</li><li class="tag tag--accent">MySQL</li><li class="tag">HTML / CSS</li><li class="tag">JavaScript</li><li class="tag">Git</li><li class="tag">Trello</li></ul>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <!-- ── MISSIONS GLOBALES ── -->
-    <section class="section section--surface" aria-labelledby="context-title">
-      <div class="container">
-        <header class="section__header">
-          <p class="section__overline">Contexte</p>
-          <h2 id="context-title">Missions globales du projet</h2>
-          <p class="section__lead">La FFTRI devait disposer d'une application web sécurisée pour gérer ses compétitions, ses clubs et ses licenciés.</p>
-        </header>
-
-        <div class="grid grid--2 fade-up">
-          <div>
-            <h3>Pour le gestionnaire FFTRI</h3>
-            <ul class="list--check" style="margin-top:1rem;">
-              <li>Gestion des clubs, catégories d'âge et types de triathlons</li>
-              <li>Organisation des triathlons : création, publication</li>
-              <li>Gestion des inscriptions et attribution des dossards</li>
-              <li>Saisie des résultats : classements et temps par épreuve</li>
-            </ul>
-
-            <h3 style="margin-top:2rem;">Pour les responsables de clubs</h3>
-            <ul class="list--check" style="margin-top:1rem;">
-              <li>Gestion de leurs licenciés (ajout, modification)</li>
-              <li>Suivi des inscriptions aux compétitions</li>
-              <li>Consultation des résultats de leurs athlètes</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3>Contraintes du projet</h3>
-            <div style="display:grid;gap:1rem;margin-top:1rem;">
-              <div class="card--highlight">
-                <h4>🏗️ Architecture MVC</h4>
-                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Application PHP structurée en Model-View-Controller, avec respect des normes de développement et de nommage.</p>
-              </div>
-              <div class="card--highlight">
-                <h4>🔐 Sécurité &amp; accès</h4>
-                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Authentification obligatoire — application réservée au personnel de la fédération et aux responsables de clubs.</p>
-              </div>
-              <div class="card--highlight">
-                <h4>🧪 Tests fonctionnels</h4>
-                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Aucune fonctionnalité déployée sans tests métier, fonctionnel et unitaire validés.</p>
-              </div>
-              <div class="card--highlight">
-                <h4>📋 Méthode Agile (SCRUM/KANBAN)</h4>
-                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Suivi des tâches par étudiant via TRELLO, développement itératif et collaboratif avec Git.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── MISSION ── -->
-    <section class="section" aria-labelledby="mission-title">
-      <div class="container">
-        <header class="section__header">
-          <p class="section__overline">Mission</p>
-          <h2 id="mission-title">Mes contributions au projet</h2>
-          <p class="section__lead">Au sein de l'équipe de 4 étudiants, j'ai pris en charge les volets conception, base de données et développement front-end.</p>
-        </header>
-
-        <div class="cards cards--grid fade-up">
-          <article class="card">
-            <div class="card__body">
-              <h3>📄 Cahier des charges</h3>
-              <p class="card__description">
-                Rédaction du cahier des charges : définition des besoins fonctionnels,
-                contraintes techniques, périmètre du projet et livrables attendus.
-              </p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__body">
-              <h3>🗺️ Schéma de navigation</h3>
-              <p class="card__description">
-                Modélisation du parcours utilisateur et des enchaînements de pages
-                pour assurer une navigation claire et cohérente dans l'application.
-              </p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__body">
-              <h3>🗄️ Base de données</h3>
-              <p class="card__description">
-                Conception du MCD (Merise), création du schéma MySQL et alimentation
-                des tables avec des jeux de données représentatifs pour les tests.
-              </p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__body">
-              <h3>📊 Tableau de bord &amp; espace licencié</h3>
-              <p class="card__description">
-                Développement PHP/MVC des pages tableau de bord administrateur et
-                de l'espace dédié aux licenciés : consultation des inscriptions et résultats.
-              </p>
-            </div>
-          </article>
-        </div>
-
-        <div style="margin-top:2.5rem;">
-          <a class="btn btn--outline" href="projects.html">← Retour aux projets</a>
-        </div>
+    <section class="section" style="padding-top:0;" aria-label="Autres projets">
+      <div class="container container--narrow">
+        <nav class="pager" aria-label="Projets">
+          <a href="project-sigeansud.html"><span>← Précédent</span><strong>SIGEANSUD</strong></a>
+          <a class="pager__next" href="project-tellis.html"><span>Suivant →</span><strong>Tellis</strong></a>
+        </nav>
       </div>
     </section>
 
   </main>
 
-  <footer class="site-footer" aria-label="Pied de page">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <p class="footer-brand__name">Matéo Gonçalves Mota</p>
-        <p class="footer-brand__text">Développeur web &amp; applicatif</p>
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__about">
+        <a class="brand" href="index.html" aria-label="Matéo Gonçalves Mota — accueil">
+          <span class="brand__mark" aria-hidden="true">M<span>G</span></span>
+          <span class="brand__text">Matéo Gonçalves Mota</span>
+        </a>
+        <p>Développeur d'applications en alternance à la Fondation AMIPI. Je recherche une alternance de 2&nbsp;ans pour mon Master Informatique à partir de septembre&nbsp;2027.</p>
       </div>
-      <nav class="footer-nav">
-        <a class="footer-nav__link" href="index.html">Accueil</a>
-        <a class="footer-nav__link" href="about.html">À propos</a>
-        <a class="footer-nav__link" href="skills.html">Compétences</a>
-        <a class="footer-nav__link" href="projects.html">Projets</a>
-        <a class="footer-nav__link" href="stages.html">Stages</a>
-        <a class="footer-nav__link" href="alternance.html">Alternance</a>
-        <a class="footer-nav__link" href="veille.html">Veille</a>
-        <a class="footer-nav__link" href="contact.html">Contact</a>
-      </nav>
-      <div class="footer-social">
-        <a class="footer-social__link" href="https://github.com/Kayzmat" target="_blank" rel="noreferrer" aria-label="GitHub">🐙 GitHub</a>
-        <a class="footer-social__link" href="https://www.linkedin.com/in/mat%C3%A9o-gon%C3%A7alves-mota" target="_blank" rel="noreferrer" aria-label="LinkedIn">👔 LinkedIn</a>
+      <div>
+        <p class="footer__title">Navigation</p>
+        <ul class="footer__links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="about.html">Parcours</a></li>
+          <li><a href="projects.html">Projets</a></li>
+          <li><a href="skills.html">Compétences</a></li>
+          <li><a href="veille.html">Veille</a></li>
+        </ul>
       </div>
-      <p class="footer-copy">© 2026 Matéo Gonçalves Mota</p>
+      <div>
+        <p class="footer__title">Expériences</p>
+        <ul class="footer__links">
+          <li><a href="alternance.html">Alternance 2026–2027</a></li>
+          <li><a href="stage-2.html">Stage 2 — 2026</a></li>
+          <li><a href="stage-1.html">Stage 1 — 2025</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__title">Contact</p>
+        <ul class="footer__links">
+          <li><a href="mailto:mateo.goncalves@sfr.fr">mateo.goncalves@sfr.fr</a></li>
+          <li><a href="https://www.linkedin.com/in/mat%C3%A9o-gon%C3%A7alves-mota" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/Kayzmat" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="docs/cv.pdf" target="_blank" rel="noopener">CV (PDF)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 Matéo Gonçalves Mota — site statique codé à la main (HTML, CSS, JavaScript).</p>
+      <a href="#contenu">Retour en haut ↑</a>
     </div>
   </footer>
 
-  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

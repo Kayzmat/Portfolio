@@ -1,15 +1,16 @@
 {
-  "name": "Portfolio Matéo Gonçalves Mota",
-  "short_name": "Portfolio MG",
+  "name": "Matéo Gonçalves Mota — Portfolio",
+  "short_name": "Matéo G. M.",
+  "description": "Développeur d'applications en alternance. Recherche une alternance Master dès septembre 2027.",
+  "lang": "fr",
   "start_url": "/Portfolio/",
+  "scope": "/Portfolio/",
   "display": "standalone",
-  "background_color": "#0C0E16",
-  "theme_color": "#3366FF",
+  "background_color": "#f8f9fc",
+  "theme_color": "#1d2250",
   "icons": [
-    {
-      "src": "assets/icons/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
-    }
+    { "src": "assets/icons/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "assets/icons/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
   ]
 }

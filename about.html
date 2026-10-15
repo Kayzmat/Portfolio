@@ -3,296 +3,359 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="À propos de Matéo Gonçalves Mota — parcours, philosophie de travail et objectifs." />
+  <title>Parcours — Matéo Gonçalves Mota</title>
+  <meta name="description" content="Parcours de Matéo Gonçalves Mota : alternance et stages à la Fondation AMIPI, Licence Informatique, BTS SIO SLAM (16,77/20), certifications TOEIC et Voltaire." />
   <meta name="author" content="Matéo Gonçalves Mota" />
-  <title>À propos — Matéo Gonçalves Mota</title>
-  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+  <link rel="canonical" href="https://kayzmat.github.io/Portfolio/about.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Matéo Gonçalves Mota — Portfolio" />
+  <meta property="og:title" content="Parcours — Matéo Gonçalves Mota" />
+  <meta property="og:description" content="Parcours de Matéo Gonçalves Mota : alternance et stages à la Fondation AMIPI, Licence Informatique, BTS SIO SLAM (16,77/20), certifications TOEIC et Voltaire." />
+  <meta property="og:url" content="https://kayzmat.github.io/Portfolio/about.html" />
+  <meta property="og:image" content="https://kayzmat.github.io/Portfolio/assets/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Matéo Gonçalves Mota — développeur d'applications en alternance" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#1d2250" />
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')d.dataset.theme=t}catch(e){}})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" />
   <link rel="stylesheet" href="css/style.css" />
-  <script defer src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Aller au contenu</a>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
 
   <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html"><span>Matéo Gonçalves Mota</span></a>
-      <button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Ouvrir le menu">
-        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
-      </button>
-      <nav class="site-nav" id="site-navigation" aria-label="Navigation principale">
-        <ul class="site-nav__list">
-          <li><a class="site-nav__link" href="index.html">Accueil</a></li>
-          <li><a class="site-nav__link" href="about.html" aria-current="page">À propos</a></li>
-          <li><a class="site-nav__link" href="skills.html">Compétences</a></li>
-          <li><a class="site-nav__link" href="projects.html">Projets</a></li>
-          <li><a class="site-nav__link" href="stages.html">Stages</a></li>
-          <li><a class="site-nav__link" href="alternance.html">Alternance</a></li>
-          <li><a class="site-nav__link" href="veille.html">Veille</a></li>
-          <li><a class="site-nav__link" href="contact.html">Contact</a></li>
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Matéo Gonçalves Mota — accueil">
+        <span class="brand__mark" aria-hidden="true">M<span>G</span></span>
+        <span class="brand__text">Matéo Gonçalves Mota</span>
+      </a>
+
+      <nav class="nav" id="site-nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html" data-nav="home">Accueil</a></li>
+          <li><a class="nav__link" href="about.html" data-nav="parcours" aria-current="page">Parcours</a></li>
+          <li><a class="nav__link" href="projects.html" data-nav="projets">Projets</a></li>
+          <li><a class="nav__link" href="skills.html" data-nav="competences">Compétences</a></li>
+          <li><a class="nav__link" href="veille.html" data-nav="veille">Veille</a></li>
+          <li><a class="nav__link" href="contact.html" data-nav="contact">Contact</a></li>
         </ul>
-        <div class="site-nav__actions">
-          <a class="btn btn--primary" href="docs/cv.pdf" target="_blank" rel="noreferrer">Télécharger CV</a>
-        </div>
+        <a class="btn btn--primary btn--sm" href="docs/cv.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+          CV (PDF)
+        </a>
       </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Changer de thème">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button class="icon-btn nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Ouvrir le menu">
+          <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main id="main-content">
+  <main id="contenu" tabindex="-1">
 
-    <!-- ── HERO PAGE ── -->
-    <section class="hero hero--page" aria-labelledby="about-title">
+    <section class="page-hero" aria-labelledby="page-title">
       <div class="container">
-        <p class="hero__eyebrow"><span class="hero__eyebrow-dot"></span>Mon histoire</p>
-        <h1 class="hero__title" id="about-title">À propos de moi</h1>
-        <p class="hero__subtitle">
-          Alternant en Licence Informatique et développeur d'applications à la Fondation AMIPI,
-          je construis des solutions numériques fiables, pensées pour les utilisateurs du terrain.
+        <p class="eyebrow">Parcours</p>
+        <h1 id="page-title">Formé à l'école, confirmé sur le terrain</h1>
+        <p class="lead">
+          Après un BTS SIO validé avec 16,77/20, je prépare une Licence Informatique en alternance à la Fondation AMIPI,
+          où j'ai déjà effectué deux stages. Prochaine étape : un Master Informatique en alternance, dès septembre 2027.
         </p>
-        <div class="hero__actions" style="margin-top:1.5rem;">
-          <a class="btn btn--primary" href="docs/cv.pdf" target="_blank" rel="noreferrer">Télécharger mon CV</a>
-          <a class="btn btn--outline" href="contact.html">Me contacter</a>
+        <div class="btn-row">
+          <a class="btn btn--primary" href="docs/cv.pdf" target="_blank" rel="noopener">Télécharger mon CV</a>
+          <a class="btn btn--secondary" href="#experiences">Mes expériences</a>
         </div>
       </div>
     </section>
 
-    <!-- ── PARCOURS & PHILOSOPHIE ── -->
-    <section class="section" aria-labelledby="parcours-title">
+    <!-- Présentation -->
+    <section class="section" aria-labelledby="intro-title">
+      <div class="container split">
+        <div class="prose" data-reveal>
+          <h2 id="intro-title">En quelques mots</h2>
+          <p>
+            Je m'appelle Matéo et je programme depuis le lycée, où j'ai choisi les
+            spécialités Mathématiques et NSI. Le BTS SIO option SLAM m'a donné des bases larges — web, mobile,
+            bases de données, réseau — et une méthode : analyser le besoin, modéliser, développer, tester.
+          </p>
+          <p>
+            C'est en entreprise que j'ai trouvé ce qui me plaît le plus : construire des outils qui changent le
+            quotidien des gens qui les utilisent. À la Fondation AMIPI, mes utilisateurs sont les techniciens du service
+            Méthodes et de l'atelier ; je les écoute, je leur présente mon travail et j'ajuste jusqu'à ce que l'outil
+            soit vraiment plus simple que l'ancienne méthode.
+          </p>
+          <p>
+            Je cherche maintenant une entreprise pour mon <strong>Master Informatique à l'Université d'Angers</strong>,
+            en alternance sur 2 ans à partir de septembre 2027. Je suis ouvert à toutes les technologies, avec une
+            préférence pour l'industrie.
+          </p>
+        </div>
+        <aside class="panel sticky" aria-label="Fiche résumée" data-reveal="2">
+          <dl class="meta-grid" style="grid-template-columns:1fr;margin-top:0;">
+            <div><dt>Poste actuel</dt><dd>Développeur d'applications (alternance) — Fondation AMIPI</dd></div>
+            <div><dt>Formation actuelle</dt><dd>Licence Informatique — ESUPEC, Cholet</dd></div>
+            <div><dt>Recherche</dt><dd>Alternance Master, 2 ans, dès sept. 2027</dd></div>
+            <div><dt>Mobilité</dt><dd>Mauges (49) · permis B</dd></div>
+            <div><dt>Langues</dt><dd>Anglais B2 (TOEIC 885) · Espagnol A2</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Expériences -->
+    <section class="section section--alt" id="experiences" aria-labelledby="exp-title">
+      <div class="container container--narrow">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow"><span class="eyebrow__num">01</span> Expériences</p>
+            <h2 id="exp-title">Fondation AMIPI, trois fois</h2>
+            <p class="lead">Chaque passage m'a confié plus d'autonomie : maintenance, puis un projet complet, puis plusieurs applications.</p>
+          </div>
+        </div>
+        <ol class="timeline" data-reveal>
+          <li class="timeline__item timeline__item--current">
+            <p class="timeline__date">Sept. 2026 – sept. 2027 · Alternance</p>
+            <h3 class="timeline__title"><a href="alternance.html">Développeur d'applications</a></h3>
+            <p class="timeline__org">Fondation AMIPI — service Méthodes et atelier</p>
+            <ul class="bullets timeline__desc">
+              <li>Base Méthodes : dématérialisation des checklists des moyens de production (paramétrage, homologation, maintenance préventive).</li>
+              <li>Circuit de validation des homologations par 5 responsables, avec e-mails automatiques, historique et impression des états.</li>
+              <li>Application d'impression d'étiquettes qui remplace des commandes saisies à la main.</li>
+            </ul>
+            <ul class="tags"><li class="tag">WinDev 2024</li><li class="tag">SQL</li><li class="tag">AS400</li><li class="tag">RDI</li></ul>
+          </li>
+          <li class="timeline__item">
+            <p class="timeline__date">Janv. – févr. 2026 · Stage</p>
+            <h3 class="timeline__title"><a href="stage-2.html">Développeur WinDev — dématérialisation &amp; AS400</a></h3>
+            <p class="timeline__org">Fondation AMIPI</p>
+            <ul class="bullets timeline__desc">
+              <li>Première version de l'application de checklists de maintenance numériques.</li>
+              <li>Présentation du projet et échanges avec les professionnels concernés.</li>
+              <li>Création de fichiers dans la base AS400 avec RDI.</li>
+            </ul>
+            <ul class="tags"><li class="tag">WinDev</li><li class="tag">AS400</li><li class="tag">RDI</li></ul>
+          </li>
+          <li class="timeline__item">
+            <p class="timeline__date">Mai – juin 2025 · Stage</p>
+            <h3 class="timeline__title"><a href="stage-1.html">Développeur WinDev</a></h3>
+            <p class="timeline__org">Fondation AMIPI</p>
+            <ul class="bullets timeline__desc">
+              <li>Prise en main de WinDev et du WLangage sur des applications en production.</li>
+              <li>Développement, maintenance, tests et correction de bugs.</li>
+            </ul>
+            <ul class="tags"><li class="tag">WinDev</li><li class="tag">SQL</li></ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Formation -->
+    <section class="section" aria-labelledby="edu-title">
+      <div class="container container--narrow">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow"><span class="eyebrow__num">02</span> Formation</p>
+            <h2 id="edu-title">Diplômes</h2>
+          </div>
+        </div>
+        <ol class="timeline" data-reveal>
+          <li class="timeline__item timeline__item--next">
+            <p class="timeline__date">Sept. 2027 – 2029 · objectif</p>
+            <h3 class="timeline__title">Master Informatique — en alternance</h3>
+            <p class="timeline__org">Université d'Angers</p>
+            <p class="timeline__desc">Rythme : 5 semaines à l'université / 4 semaines en entreprise jusqu'en mars, puis temps plein en entreprise.</p>
+          </li>
+          <li class="timeline__item timeline__item--current">
+            <p class="timeline__date">2026 – 2027 · en cours</p>
+            <h3 class="timeline__title">Licence Informatique — en alternance</h3>
+            <p class="timeline__org">ESUPEC, Cholet</p>
+          </li>
+          <li class="timeline__item">
+            <p class="timeline__date">2024 – 2026</p>
+            <h3 class="timeline__title">BTS SIO option SLAM — obtenu avec 16,77/20 de moyenne</h3>
+            <p class="timeline__org">ESUPEC, Lycée Sainte-Marie, Cholet</p>
+            <p class="timeline__desc">Solutions logicielles et applications métiers : développement web et mobile, bases de données, conception (Merise, UML), gestion de projet Agile, cybersécurité.</p>
+          </li>
+          <li class="timeline__item">
+            <p class="timeline__date">2024</p>
+            <h3 class="timeline__title">Baccalauréat général — mention Bien</h3>
+            <p class="timeline__org">Lycée Dom Sortais, Beaupréau</p>
+            <p class="timeline__desc">Spécialités Mathématiques et NSI, option Mathématiques expertes.</p>
+          </li>
+          <li class="timeline__item">
+            <p class="timeline__date">2021</p>
+            <h3 class="timeline__title">Diplôme national du brevet — mention Bien</h3>
+            <p class="timeline__org">Collège Frédéric Ozanam, Saint-Pierre-Montlimart</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="section section--alt" aria-labelledby="cert-title">
       <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow"><span class="eyebrow__num">03</span> Certifications &amp; langues</p>
+            <h2 id="cert-title">Des niveaux attestés</h2>
+          </div>
+        </div>
+        <div class="grid grid--4">
+          <article class="card" data-reveal>
+            <div class="card__body">
+              <p class="card__kicker"><span>Certification</span></p>
+              <h3>TOEIC — 885/990</h3>
+              <p>Anglais professionnel, niveau B2 : documentation technique, échanges écrits et oraux.</p>
+              <a class="link-arrow" href="docs/TOEIC.pdf" target="_blank" rel="noopener">Voir le certificat</a>
+            </div>
+          </article>
+          <article class="card" data-reveal="2">
+            <div class="card__body">
+              <p class="card__kicker"><span>Certification</span></p>
+              <h3>Certificat Voltaire</h3>
+              <p>Orthographe et expression écrite en français — 587/1000, certificat n°&nbsp;E64TH9Y.</p>
+              <a class="link-arrow" href="docs/VOLTAIRE.pdf" target="_blank" rel="noopener">Voir le certificat</a>
+            </div>
+          </article>
+          <article class="card" data-reveal="3">
+            <div class="card__body">
+              <p class="card__kicker"><span>Langue</span></p>
+              <h3>Anglais — B2</h3>
+              <p>À l'aise pour lire de la documentation, suivre des ressources techniques et échanger à l'écrit.</p>
+            </div>
+          </article>
+          <article class="card" data-reveal>
+            <div class="card__body">
+              <p class="card__kicker"><span>Langue</span></p>
+              <h3>Espagnol — A2</h3>
+              <p>Échanges simples du quotidien et compréhension de textes courts.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Méthode -->
+    <section class="section" aria-labelledby="method-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow"><span class="eyebrow__num">04</span> Façon de travailler</p>
+            <h2 id="method-title">Ce que j'apporte à une équipe</h2>
+          </div>
+        </div>
         <div class="grid grid--2">
-          <!-- Parcours -->
-          <div class="fade-up">
-            <p class="section__overline">Parcours</p>
-            <h2 id="parcours-title">Mon background</h2>
-            <p style="color:var(--muted);margin-top:1rem;">
-              Après un BTS SIO option SLAM obtenu avec 16,77/20 de moyenne, je suis en Licence Informatique
-              en alternance à l'ESUPEC (Cholet) et développeur d'applications à la Fondation AMIPI.
-              J'y conçois des applications WinDev reliées à l'ERP AS400 pour le service Méthodes et l'atelier.
-              En parallèle, je réalise des projets personnels pour explorer de nouvelles technologies.
-            </p>
-            <p style="color:var(--muted);">
-              <strong style="color:var(--text);">Prochaine étape :</strong> un Master Informatique à l'Université
-              d'Angers, en alternance sur 2 ans à partir de septembre 2027 — idéalement dans l'industrie.
-            </p>
-
-            <div style="margin-top:2rem;">
-              <h3 style="margin-bottom:1.25rem;">Langues</h3>
-              <div class="cards cards--grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem;">
-                <article class="card" style="margin:0;">
-                  <div class="card__body">
-                    <h4>Anglais</h4>
-                    <p class="card__description">Niveau B2, solide pour la lecture technique, la documentation et la communication professionnelle.</p>
-                  </div>
-                </article>
-                <article class="card" style="margin:0;">
-                  <div class="card__body">
-                    <h4>Espagnol</h4>
-                    <p class="card__description">Niveau A2, capable d'échanger sur des sujets simples et de comprendre des ressources de base.</p>
-                  </div>
-                </article>
-              </div>
-            </div>
-
-            <div style="margin-top:2rem;">
-              <h3 style="margin-bottom:1.25rem;">Certifications</h3>
-              <div class="card--highlight">
-                <ul class="list--check">
-                  <li><strong>Voltaire</strong> — Score : 587/1000 <a href="docs/VOLTAIRE.pdf" target="_blank" rel="noreferrer" style="color:var(--primary);text-decoration:underline;">(Voir le certificat)</a></li>
-                  <li><strong>TOEIC</strong> — Score : 885/990 <a href="docs/TOEIC.pdf" target="_blank" rel="noreferrer" style="color:var(--primary);text-decoration:underline;">(Voir le certificat)</a></li>
-                </ul>
-              </div>
-            </div>
-
-            <div style="margin-top:1.5rem;display:flex;gap:.85rem;flex-wrap:wrap;">
-              <a class="btn btn--primary" href="contact.html">Me contacter</a>
-              <a class="btn btn--outline" href="skills.html">Voir mes compétences</a>
-            </div>
+          <div class="feature" data-reveal>
+            <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8"/></svg></div>
+            <div><h3>Je pars des utilisateurs</h3><p>J'observe comment le travail se fait vraiment, je présente mon avancement aux équipes concernées et j'ajuste avant de livrer.</p></div>
           </div>
-
-          <!-- Philosophie -->
-          <div class="fade-up delay-2">
-            <p class="section__overline">Approche</p>
-            <h2>Philosophie de travail</h2>
-            <p style="color:var(--muted);margin-top:1rem;">
-              J'applique les principes du développement durable : code clair, documentation soignée,
-              tests réguliers et optimisation des performances. Chaque projet est une occasion d'apprendre.
-            </p>
-
-            <div style="margin-top:1.5rem;display:grid;gap:1rem;">
-              <div class="card--highlight">
-                <h4>🤝 Collaboration</h4>
-                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">
-                  Communication transparente, revue de code, respect des délais.
-                </p>
-              </div>
-              <div class="card--highlight">
-                <h4>♿ Accessibilité</h4>
-                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">
-                  Navigation clavier, contraste élevé, support des technologies d'assistance.
-                </p>
-              </div>
-              <div class="card--highlight">
-                <h4>⚡ Performance</h4>
-                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">
-                  Optimisation des images, chargement asynchrone, réduction des dépendances.
-                </p>
-              </div>
-              <div class="card--highlight">
-                <h4>🔧 Maintenabilité</h4>
-                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">
-                  Structure modulaire et commentaires clairs pour faciliter la montée en charge.
-                </p>
-              </div>
-            </div>
+          <div class="feature" data-reveal="2">
+            <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.1V12a10 10 0 11-5.9-9.1"/><path d="M22 4L12 14l-3-3"/></svg></div>
+            <div><h3>Je livre du concret</h3><p>Des outils utilisés au quotidien : je préfère une fonctionnalité simple et fiable à une démo spectaculaire.</p></div>
+          </div>
+          <div class="feature" data-reveal>
+            <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></div>
+            <div><h3>Je documente</h3><p>Cahiers des charges, schémas de navigation, documentation technique : ce que je fais doit pouvoir être repris.</p></div>
+          </div>
+          <div class="feature" data-reveal="2">
+            <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
+            <div><h3>J'apprends vite</h3><p>WinDev, l'AS400 et RDI m'étaient inconnus avant mon premier stage ; je les utilise aujourd'hui sur des projets complets.</p></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ── TIMELINE ── -->
-    <section class="section section--surface" aria-labelledby="timeline-title">
-      <div class="container">
-        <header class="section__header">
-          <p class="section__overline">Chronologie</p>
-          <h2 id="timeline-title">Mon parcours</h2>
-          <p class="section__lead">Les étapes clés qui ont forgé mon profil de développeur.</p>
-        </header>
-
-        <div style="max-width:680px;margin:0 auto;">
-          <div class="timeline fade-up">
-            <div class="timeline__item">
-              <span class="timeline__dot"></span>
-              <p class="timeline__year">Sept. 2027 — objectif</p>
-              <p class="timeline__title">Master Informatique — Université d'Angers</p>
-              <p class="timeline__desc">
-                Recherche d'une alternance de 2 ans, ouvert à toutes les technologies, idéalement dans l'industrie.
-              </p>
-            </div>
-            <div class="timeline__item">
-              <span class="timeline__dot"></span>
-              <p class="timeline__year">Sept. 2026 – sept. 2027</p>
-              <p class="timeline__title"><a href="alternance.html">Alternance — Fondation AMIPI</a></p>
-              <p class="timeline__desc">
-                Développeur d'applications : dématérialisation des checklists des moyens de production
-                (Base Méthodes) et application d'impression d'étiquettes. WinDev 2024, SQL, AS400, RDI.
-              </p>
-            </div>
-            <div class="timeline__item">
-              <span class="timeline__dot"></span>
-              <p class="timeline__year">2026 – 2027</p>
-              <p class="timeline__title">Licence Informatique — ESUPEC, Cholet</p>
-              <p class="timeline__desc">
-                Licence en alternance, dans la continuité du BTS SIO.
-              </p>
-            </div>
-            <div class="timeline__item">
-              <span class="timeline__dot"></span>
-              <p class="timeline__year">Janv. – févr. 2026</p>
-              <p class="timeline__title"><a href="stage-2.html">Stage 2 — Fondation AMIPI</a></p>
-              <p class="timeline__desc">
-                Application de dématérialisation des checklists de maintenance, présentation du projet
-                aux professionnels et création de fichiers AS400 avec RDI.
-              </p>
-            </div>
-            <div class="timeline__item">
-              <span class="timeline__dot"></span>
-              <p class="timeline__year">Mai – juin 2025</p>
-              <p class="timeline__title"><a href="stage-1.html">Stage 1 — Fondation AMIPI</a></p>
-              <p class="timeline__desc">
-                Prise en main de WinDev, développement et maintenance d'applications, tests et correction de bugs.
-              </p>
-            </div>
-            <div class="timeline__item">
-              <span class="timeline__dot"></span>
-              <p class="timeline__year">2024 – 2026</p>
-              <p class="timeline__title">BTS SIO option SLAM — obtenu (16,77/20)</p>
-              <p class="timeline__desc">
-                ESUPEC, Lycée Sainte-Marie, Cholet. Développement logiciel et applicatif : web, bases de données,
-                architecture MVC, gestion de projet Agile.
-              </p>
-            </div>
-            <div class="timeline__item">
-              <span class="timeline__dot"></span>
-              <p class="timeline__year">Juin 2024</p>
-              <p class="timeline__title">Baccalauréat général — Mention Bien</p>
-              <p class="timeline__desc">
-                Spécialités Mathématiques et NSI, option Mathématiques expertes.
-                Lycée Dom Sortais - Beaupréau (49).
-              </p>
-            </div>
-            <div class="timeline__item">
-              <span class="timeline__dot"></span>
-              <p class="timeline__year">Juin 2021</p>
-              <p class="timeline__title">Brevet des collèges — Mention Bien</p>
-              <p class="timeline__desc">
-                Collège Frédéric Ozanam - Saint-Pierre-Montlimart (49).
-              </p>
-            </div>
-          </div>
+    <!-- Hors code -->
+    <section class="section section--alt" aria-labelledby="hobbies-title">
+      <div class="container split split--center">
+        <div data-reveal>
+          <p class="eyebrow"><span class="eyebrow__num">05</span> En dehors du code</p>
+          <h2 id="hobbies-title">Esprit d'équipe, sur le terrain aussi</h2>
         </div>
+        <ul class="checklist" data-reveal="2">
+          <li><strong>Football en club de 6 à 19 ans</strong> — régularité, engagement et jeu collectif.</li>
+          <li><strong>Arbitrage des jeunes</strong> — prendre des décisions et les expliquer.</li>
+          <li><strong>Jeux vidéo</strong> — la curiosité qui m'a amené à la programmation.</li>
+        </ul>
       </div>
     </section>
 
-    <!-- ── CE QUE J'APPORTE ── -->
-    <section class="section" aria-labelledby="apport-title">
+    <section class="section" aria-labelledby="cta-title">
       <div class="container">
-        <header class="section__header">
-          <p class="section__overline">Valeur ajoutée</p>
-          <h2 id="apport-title">Ce que j'apporte</h2>
-          <p class="section__lead">Soft skills et posture professionnelle qui font la différence.</p>
-        </header>
-
-        <div class="cards cards--grid fade-up">
-          <article class="card">
-            <div class="card__body">
-              <h3>🧠 Esprit logique</h3>
-              <p class="card__description">Capacité à décomposer des problèmes complexes en étapes claires et à trouver des solutions efficaces.</p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__body">
-              <h3>🔄 Adaptabilité</h3>
-              <p class="card__description">À l'aise pour apprendre de nouveaux frameworks, langages et environnements de travail rapidement.</p>
-            </div>
-          </article>
-          <article class="card">
-            <div class="card__body">
-              <h3>👁️ Sens du détail</h3>
-              <p class="card__description">Attention portée à la qualité du code, à l'UI et à l'expérience utilisateur finale.</p>
-            </div>
-          </article>
+        <div class="cta-band" data-reveal>
+          <div>
+            <p class="eyebrow">Recrutement</p>
+            <h2 id="cta-title">Parlons de votre alternance 2027</h2>
+            <p>Master Informatique à l'Université d'Angers, 2 ans dès septembre 2027. Je peux vous présenter mes projets en détail lors d'un échange.</p>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn--light" href="contact.html">Me contacter</a>
+            <a class="btn btn--outline-light" href="projects.html">Voir mes projets</a>
+          </div>
         </div>
       </div>
     </section>
 
   </main>
 
-  <footer class="site-footer" aria-label="Pied de page">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <p class="footer-brand__name">Matéo Gonçalves Mota</p>
-        <p class="footer-brand__text">Développeur web &amp; applicatif</p>
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__about">
+        <a class="brand" href="index.html" aria-label="Matéo Gonçalves Mota — accueil">
+          <span class="brand__mark" aria-hidden="true">M<span>G</span></span>
+          <span class="brand__text">Matéo Gonçalves Mota</span>
+        </a>
+        <p>Développeur d'applications en alternance à la Fondation AMIPI. Je recherche une alternance de 2&nbsp;ans pour mon Master Informatique à partir de septembre&nbsp;2027.</p>
       </div>
-      <nav class="footer-nav">
-        <a class="footer-nav__link" href="index.html">Accueil</a>
-        <a class="footer-nav__link" href="about.html">À propos</a>
-        <a class="footer-nav__link" href="skills.html">Compétences</a>
-        <a class="footer-nav__link" href="projects.html">Projets</a>
-        <a class="footer-nav__link" href="stages.html">Stages</a>
-        <a class="footer-nav__link" href="alternance.html">Alternance</a>
-        <a class="footer-nav__link" href="veille.html">Veille</a>
-        <a class="footer-nav__link" href="contact.html">Contact</a>        
-      </nav>
-      <div class="footer-social">
-        <a class="footer-social__link" href="https://github.com/Kayzmat" target="_blank" rel="noreferrer" aria-label="GitHub">🐙 GitHub</a>
-        <a class="footer-social__link" href="https://www.linkedin.com/in/mat%C3%A9o-gon%C3%A7alves-mota" target="_blank" rel="noreferrer" aria-label="LinkedIn">👔 LinkedIn</a>
+      <div>
+        <p class="footer__title">Navigation</p>
+        <ul class="footer__links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="about.html">Parcours</a></li>
+          <li><a href="projects.html">Projets</a></li>
+          <li><a href="skills.html">Compétences</a></li>
+          <li><a href="veille.html">Veille</a></li>
+        </ul>
       </div>
-      <p class="footer-copy">© 2026 Matéo Gonçalves Mota</p>
+      <div>
+        <p class="footer__title">Expériences</p>
+        <ul class="footer__links">
+          <li><a href="alternance.html">Alternance 2026–2027</a></li>
+          <li><a href="stage-2.html">Stage 2 — 2026</a></li>
+          <li><a href="stage-1.html">Stage 1 — 2025</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__title">Contact</p>
+        <ul class="footer__links">
+          <li><a href="mailto:mateo.goncalves@sfr.fr">mateo.goncalves@sfr.fr</a></li>
+          <li><a href="https://www.linkedin.com/in/mat%C3%A9o-gon%C3%A7alves-mota" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/Kayzmat" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="docs/cv.pdf" target="_blank" rel="noopener">CV (PDF)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 Matéo Gonçalves Mota — site statique codé à la main (HTML, CSS, JavaScript).</p>
+      <a href="#contenu">Retour en haut ↑</a>
     </div>
   </footer>
 
-  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

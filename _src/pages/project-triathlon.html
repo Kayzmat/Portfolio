@@ -1,0 +1,104 @@
+<!--
+title: Application de gestion de triathlons — Matéo Gonçalves Mota
+description: Projet BTS SIO : application web PHP/MVC sécurisée pour une fédération de triathlon (clubs, licenciés, inscriptions, dossards, résultats). Rôle : cahier des charges, MCD, base MySQL, développement.
+nav: projets
+-->
+  <main id="contenu" tabindex="-1">
+
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <ol><li><a href="index.html">Accueil</a></li><li><a href="projects.html">Projets</a></li><li aria-current="page">Triathlon</li></ol>
+        </nav>
+        <p class="eyebrow">Projet BTS SIO · AP3</p>
+        <h1 id="page-title">Une application web pour une fédération de triathlon</h1>
+        <p class="lead">
+          Clubs, licenciés, compétitions, inscriptions, dossards et résultats : une application sécurisée qui centralise
+          l'organisation des triathlons.
+        </p>
+        <ul class="tags"><li class="tag tag--accent">PHP · MVC</li><li class="tag tag--accent">MySQL</li><li class="tag">Merise</li><li class="tag">JavaScript</li><li class="tag">Git</li></ul>
+        <dl class="meta-grid">
+          <div><dt>Contexte</dt><dd>BTS SIO SLAM — AP3</dd></div>
+          <div><dt>Durée</dt><dd>2 mois</dd></div>
+          <div><dt>Équipe</dt><dd>4 étudiants</dd></div>
+          <div><dt>Mon rôle</dt><dd>Conception, base de données, développement</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="need-title">
+      <div class="container split">
+        <div class="prose" data-reveal>
+          <h2 id="need-title">Le besoin</h2>
+          <p>
+            La fédération (FFTRI, dans le scénario du projet) devait disposer d'une application web sécurisée pour gérer ses
+            compétitions, ses clubs et ses licenciés, avec deux profils d'utilisateurs.
+          </p>
+          <div class="grid grid--2" style="margin:1.25rem 0 1.5rem;">
+            <div class="panel">
+              <h3>Gestionnaire fédéral</h3>
+              <ul class="bullets small">
+                <li>Clubs, catégories d'âge, types de triathlons</li>
+                <li>Création et publication des compétitions</li>
+                <li>Inscriptions et attribution des dossards</li>
+                <li>Saisie des résultats par épreuve</li>
+              </ul>
+            </div>
+            <div class="panel">
+              <h3>Responsable de club</h3>
+              <ul class="bullets small">
+                <li>Gestion de ses licenciés</li>
+                <li>Suivi des inscriptions</li>
+                <li>Consultation des résultats de ses athlètes</li>
+              </ul>
+            </div>
+          </div>
+
+          <h2>Ma contribution</h2>
+          <ul class="checklist">
+            <li><strong>Cahier des charges</strong> : besoins fonctionnels, contraintes techniques, périmètre et livrables.</li>
+            <li><strong>Schéma de navigation</strong> : parcours utilisateur et enchaînement des pages.</li>
+            <li><strong>Base de données</strong> : MCD Merise, schéma MySQL et jeux de données de test représentatifs.</li>
+            <li><strong>Développement PHP/MVC</strong> du tableau de bord administrateur et de l'espace licencié.</li>
+          </ul>
+
+          <h2>Contraintes respectées</h2>
+          <ul class="bullets">
+            <li>Architecture MVC et conventions de nommage communes à l'équipe.</li>
+            <li>Authentification obligatoire : application réservée à la fédération et aux clubs.</li>
+            <li>Aucune fonctionnalité livrée sans tests fonctionnels validés.</li>
+            <li>Travail en Scrum/Kanban sur Trello, code partagé avec Git.</li>
+          </ul>
+
+          <h2>Ce que j'en retiens</h2>
+          <p>
+            Concevoir la base de données en premier a évité beaucoup de retours en arrière : un MCD solide rend le
+            développement des écrans presque mécanique. J'ai aussi appris à découper le travail pour que quatre personnes
+            avancent sans se bloquer.
+          </p>
+        </div>
+        <aside class="aside-card sticky" data-reveal="2">
+          <figure class="figure">
+            <button class="zoomable" type="button" data-zoom aria-label="Agrandir la capture du tableau de bord">
+              <img src="img/triathlon-admin.jpg" width="1346" height="643" loading="lazy" alt="Tableau de bord administrateur de l'application de gestion de triathlons" />
+            </button>
+            <figcaption>Tableau de bord administrateur.</figcaption>
+          </figure>
+          <div class="panel">
+            <h3>Stack</h3>
+            <ul class="tags"><li class="tag tag--accent">PHP</li><li class="tag tag--accent">MySQL</li><li class="tag">HTML / CSS</li><li class="tag">JavaScript</li><li class="tag">Git</li><li class="tag">Trello</li></ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;" aria-label="Autres projets">
+      <div class="container container--narrow">
+        <nav class="pager" aria-label="Projets">
+          <a href="project-sigeansud.html"><span>← Précédent</span><strong>SIGEANSUD</strong></a>
+          <a class="pager__next" href="project-tellis.html"><span>Suivant →</span><strong>Tellis</strong></a>
+        </nav>
+      </div>
+    </section>
+
+  </main>

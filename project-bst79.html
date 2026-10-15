@@ -3,254 +3,186 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Projet WordPress bst79 — réalisation d'un site pour une entreprise réelle en groupe de 4." />
+  <title>Site WordPress pour bst79 — Matéo Gonçalves Mota</title>
+  <meta name="description" content="Projet BTS SIO pour un client réel : site WordPress de l'entreprise bst79, réalisé en groupe de 4 (thème, contenus, SEO, responsive). Rôle : page « À propos »." />
   <meta name="author" content="Matéo Gonçalves Mota" />
-  <title>Projet — Site WordPress bst79 — Matéo Gonçalves Mota</title>
-  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
+  <link rel="canonical" href="https://kayzmat.github.io/Portfolio/project-bst79.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:site_name" content="Matéo Gonçalves Mota — Portfolio" />
+  <meta property="og:title" content="Site WordPress pour bst79 — Matéo Gonçalves Mota" />
+  <meta property="og:description" content="Projet BTS SIO pour un client réel : site WordPress de l'entreprise bst79, réalisé en groupe de 4 (thème, contenus, SEO, responsive). Rôle : page « À propos »." />
+  <meta property="og:url" content="https://kayzmat.github.io/Portfolio/project-bst79.html" />
+  <meta property="og:image" content="https://kayzmat.github.io/Portfolio/assets/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Matéo Gonçalves Mota — développeur d'applications en alternance" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#1d2250" />
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')d.dataset.theme=t}catch(e){}})();</script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;700&amp;display=swap" />
   <link rel="stylesheet" href="css/style.css" />
-  <script defer src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main-content">Aller au contenu</a>
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
 
-   <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="index.html"><span>Matéo Gonçalves Mota</span></a>
-      <button class="nav-toggle" aria-controls="site-navigation" aria-expanded="false" aria-label="Ouvrir le menu">
-        <span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span><span class="nav-toggle__bar"></span>
-      </button>
-      <nav class="site-nav" id="site-navigation" aria-label="Navigation principale">
-        <ul class="site-nav__list">
-          <li><a class="site-nav__link" href="index.html">Accueil</a></li>
-          <li><a class="site-nav__link" href="about.html">À propos</a></li>
-          <li><a class="site-nav__link" href="skills.html">Compétences</a></li>
-          <li><a class="site-nav__link" href="projects.html" aria-current="page">Projets</a></li>
-          <li><a class="site-nav__link" href="stages.html">Stages</a></li>
-          <li><a class="site-nav__link" href="alternance.html">Alternance</a></li>
-          <li><a class="site-nav__link" href="veille.html">Veille</a></li>
-          <li><a class="site-nav__link" href="contact.html">Contact</a></li>
+  <header class="site-header">
+    <div class="container header__inner">
+      <a class="brand" href="index.html" aria-label="Matéo Gonçalves Mota — accueil">
+        <span class="brand__mark" aria-hidden="true">M<span>G</span></span>
+        <span class="brand__text">Matéo Gonçalves Mota</span>
+      </a>
+
+      <nav class="nav" id="site-nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="index.html" data-nav="home">Accueil</a></li>
+          <li><a class="nav__link" href="about.html" data-nav="parcours">Parcours</a></li>
+          <li><a class="nav__link" href="projects.html" data-nav="projets" aria-current="page">Projets</a></li>
+          <li><a class="nav__link" href="skills.html" data-nav="competences">Compétences</a></li>
+          <li><a class="nav__link" href="veille.html" data-nav="veille">Veille</a></li>
+          <li><a class="nav__link" href="contact.html" data-nav="contact">Contact</a></li>
         </ul>
-        <div class="site-nav__actions">
-          <a class="btn btn--primary" href="docs/cv.pdf" target="_blank" rel="noreferrer">Télécharger CV</a>
-        </div>
+        <a class="btn btn--primary btn--sm" href="docs/cv.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+          CV (PDF)
+        </a>
       </nav>
+
+      <div class="header__actions">
+        <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Changer de thème">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+        <button class="icon-btn nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Ouvrir le menu">
+          <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <main id="main-content">
+  <main id="contenu" tabindex="-1">
 
-    <!-- ── HERO ── -->
-    <section class="hero hero--page" aria-labelledby="project-title">
+    <section class="page-hero" aria-labelledby="page-title">
       <div class="container">
         <nav class="breadcrumb" aria-label="Fil d'Ariane">
-          <a href="index.html">Accueil</a>
-          <span class="breadcrumb__sep">›</span>
-          <a href="projects.html">Projets</a>
-          <span class="breadcrumb__sep">›</span>
-          <span>bst79</span>
+          <ol><li><a href="index.html">Accueil</a></li><li><a href="projects.html">Projets</a></li><li aria-current="page">bst79</li></ol>
         </nav>
-        <p class="hero__eyebrow"><span class="hero__eyebrow-dot"></span>AP1 - BTS SIO SLAM</p>
-        <h1 id="project-title">Site WordPress<br /><span class="text-gradient">bst79</span></h1>
-        <p class="hero__subtitle">
-          Réalisation d'un site WordPress pour l'entreprise réelle bst79. Projet réalisé en groupe de 4,
-          avec intégration, configuration et optimisation. Le site n'est plus en ligne actuellement.
+        <p class="eyebrow">Projet BTS SIO · AP1 · client réel</p>
+        <h1 id="page-title">Un site WordPress pour une vraie entreprise</h1>
+        <p class="lead">
+          Mon premier projet pour un client : le site vitrine de l'entreprise bst79, livré à quatre en sept semaines.
+          Le site n'est plus en ligne aujourd'hui.
         </p>
-        <div class="hero__actions" style="margin-top:1.5rem;">
-          <div class="project__tags" style="margin:0;">
-            <span class="project__tag">WordPress</span>
-            <span class="project__tag">Responsive</span>
-          </div>
-        </div>
+        <ul class="tags"><li class="tag tag--accent">WordPress</li><li class="tag">SEO</li><li class="tag">Responsive</li></ul>
+        <dl class="meta-grid">
+          <div><dt>Contexte</dt><dd>BTS SIO SLAM — AP1</dd></div>
+          <div><dt>Dates</dt><dd>28 nov. 2024 – 16 janv. 2025</dd></div>
+          <div><dt>Équipe</dt><dd>4 étudiants</dd></div>
+          <div><dt>Mon rôle</dt><dd>Page « À propos »</dd></div>
+        </dl>
       </div>
     </section>
 
-    <!-- ── APERÇU ── -->
-    <section class="section section--surface">
-      <div class="container">
-        <div class="grid grid--2">
-          <div class="fade-up">
-            <div class="card--highlight" style="padding:2rem;">
-              <h3>Pas de capture disponible</h3>
-              <p style="color:var(--muted);margin-top:.75rem;">
-                Le site WordPress réalisé pour bst79 n'est plus en ligne, il n'y a donc pas de capture
-                d'écran disponible pour ce projet.
-              </p>
-            </div>
-          </div>
-          <div class="fade-up delay-2">
-            <div class="project__meta">
-              <div class="project__meta-item">
-                <strong>Rôle</strong>
-                <span>Développeur web</span>
-              </div>
-              <div class="project__meta-item">
-                <strong>Durée</strong>
-                <span>28/11/2024 – 16/01/2025</span>
-              </div>
-              <div class="project__meta-item">
-                <strong>Contexte</strong>
-                <span>AP1 - BTS SIO SLAM</span>
-              </div>
-              <div class="project__meta-item">
-                <strong>Équipe</strong>
-                <span>Groupe de 4</span>
-              </div>
-            </div>
-
-            <div class="card--highlight" style="margin-top:1.5rem;">
-              <h3>Technologies</h3>
-              <div class="tag-cloud" style="margin-top:.75rem;">
-                <span class="tag tag--primary">WordPress</span>
-                <span class="tag tag--primary">PHP</span>
-                <span class="tag tag--primary">HTML &amp; CSS</span>
-                <span class="tag">SEO</span>
-                <span class="tag">Responsive</span>
-              </div>
-            </div>
-
-            <div class="card--highlight" style="margin-top:1rem;">
-              <h3>Objectifs</h3>
-              <ul class="list--check" style="margin-top:.75rem;">
-                <li>Créer ou refondre le site WordPress existant de bst79</li>
-                <li>Adapter le contenu à l'identité de l'entreprise</li>
-                <li>Rendre le site responsive et accessible</li>
-                <li>Optimiser les performances et le référencement</li>
-              </ul>
-            </div>
-          </div>
+    <section class="section" aria-labelledby="need-title">
+      <div class="container split">
+        <div class="prose" data-reveal>
+          <h2 id="need-title">Le besoin</h2>
+          <p>
+            bst79 avait besoin d'un site à son image, lisible sur mobile et bien référencé. L'équipe a choisi WordPress
+            pour que l'entreprise puisse ensuite mettre à jour ses contenus elle-même.
+          </p>
+          <h2>Ce que l'équipe a livré</h2>
+          <ul class="bullets">
+            <li>Choix et personnalisation d'un thème adapté à l'identité de l'entreprise.</li>
+            <li>Pages de présentation, services et contact.</li>
+            <li>Extensions de SEO, sécurité et sauvegarde.</li>
+            <li>Optimisation mobile et tests multi-navigateurs avant la mise en ligne.</li>
+          </ul>
+          <h2>Ma contribution : la page « À propos »</h2>
+          <ul class="checklist">
+            <li><strong>Structure et rédaction</strong> des sections de la page.</li>
+            <li><strong>Intégration dans WordPress</strong> : mise en forme, navigation et liens internes, cohérence avec le thème.</li>
+            <li><strong>Vérifications</strong> : lisibilité sur mobile, corrections d'affichage, tests de navigation.</li>
+          </ul>
+          <h2>Ce que j'en retiens</h2>
+          <p>
+            Travailler pour un vrai client change tout : il faut écrire pour ses visiteurs, pas pour le correcteur,
+            et livrer à une date fixée. C'est aussi là que j'ai découvert l'importance du référencement.
+          </p>
         </div>
+        <aside class="aside-card sticky" data-reveal="2">
+          <div class="callout">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+            <p>Le site n'étant plus en ligne, aucune capture n'est disponible pour ce projet.</p>
+          </div>
+          <div class="panel">
+            <h3>Outils</h3>
+            <ul class="tags"><li class="tag tag--accent">WordPress</li><li class="tag">HTML / CSS</li><li class="tag">SEO</li></ul>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <!-- ── DÉTAILS ── -->
-    <section class="section" aria-labelledby="detail-title">
-      <div class="container">
-        <div class="grid grid--2">
-          <div class="fade-up">
-            <h2 id="detail-title">Détails du projet</h2>
-            <p style="color:var(--muted);margin-top:.75rem;">
-              Mise en ligne d'un site WordPress fonctionnel pour bst79, avec configuration du thème,
-              adaptation du contenu, installation des plugins essentiels et mise en place d'un design cohérent.
-            </p>
-
-            <h3 style="margin-top:2rem;">Réalisations principales</h3>
-            <ul class="list--check" style="margin-top:1rem;">
-              <li>Choix et personnalisation d'un thème WordPress adapté</li>
-              <li>Intégration de pages de présentation, contact et services</li>
-              <li>Configuration de plugins SEO, sécurité et sauvegarde</li>
-              <li>Optimisation pour mobile et compatibilité multi-navigateurs</li>
-              <li>Tests de navigation et validation finale avant mise en ligne</li>
-            </ul>
-          </div>
-
-          <div class="fade-up delay-2">
-            <h2>Ce que j'ai appris</h2>
-            <div style="display:grid;gap:1rem;margin-top:1rem;">
-              <div class="card--highlight">
-                <h4>🧩 Travail en équipe</h4>
-                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Coordination et répartition des tâches entre 4 membres pour livrer le site ensemble.</p>
-              </div>
-              <div class="card--highlight">
-                <h4>⚙️ Configuration WordPress</h4>
-                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Installation de thèmes et plugins, gestion des mises à jour et sécurisation du back-office.</p>
-              </div>
-              <div class="card--highlight">
-                <h4>📱 Adaptation responsive</h4>
-                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Optimisation de l'affichage sur mobile et tablette pour une expérience utilisateur uniforme.</p>
-              </div>
-              <div class="card--highlight">
-                <h4>🔎 Référencement</h4>
-                <p style="color:var(--muted);font-size:.9rem;margin:.4rem 0 0;">Amélioration du SEO grâce à une structure de pages claire et un contenu optimisé.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div style="margin-top:2.5rem;">
-          <a class="btn btn--outline" href="projects.html">← Retour aux projets</a>
-        </div>
+    <section class="section" style="padding-top:0;" aria-label="Autres projets">
+      <div class="container container--narrow">
+        <nav class="pager" aria-label="Projets">
+          <a href="project-castellane-auto.html"><span>← Précédent</span><strong>Castellane Auto</strong></a>
+          <a class="pager__next" href="project-windows-linux.html"><span>Suivant →</span><strong>Infrastructure réseau</strong></a>
+        </nav>
       </div>
     </section>
-  <!-- ── MISSIONS ── -->
-        <section class="section" aria-labelledby="missions-bst79" style="padding-top:0;margin-top:1.5rem;">
-          <div class="container">
-            <header class="section__header">
-              <p class="section__overline">Missions</p>
-              <h2 id="missions-bst79">Mes missions réalisées</h2>
-              <p class="section__lead">Réalisation de la page « À propos » : contenu, mise en forme, intégration et cohérence visuelle avec le reste du site.</p>
-            </header>
 
-            <div class="cards cards--grid fade-up">
-              <article class="card">
-                <div class="card__body">
-                  <h3>🧩 Mise en forme de la page</h3>
-                  <ul class="list--check" style="margin-top:.75rem;">
-                    <li>Structuration des sections et rédaction des blocs</li>
-                    <li>Intégration du style (typographies, espacements)</li>
-                    <li>Vérification de la lisibilité sur mobile</li>
-                  </ul>
-                </div>
-              </article>
-
-              <article class="card">
-                <div class="card__body">
-                  <h3>🔧 Intégration WordPress</h3>
-                  <ul class="list--check" style="margin-top:.75rem;">
-                    <li>Création / mise à jour de la page « À propos »</li>
-                    <li>Paramétrage de la navigation et des liens internes</li>
-                    <li>Contrôle de la cohérence avec le thème</li>
-                  </ul>
-                </div>
-              </article>
-
-              <article class="card">
-                <div class="card__body">
-                  <h3>✅ Validation</h3>
-                  <ul class="list--check" style="margin-top:.75rem;">
-                    <li>Relecture et correction des erreurs d’affichage</li>
-                    <li>Tests de navigation</li>
-                    <li>Validation finale avant intégration groupe</li>
-                  </ul>
-                </div>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <div style="margin-top:2.5rem;">
-          <a class="btn btn--outline" href="projects.html">← Retour aux projets</a>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <footer class="site-footer" aria-label="Pied de page">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <p class="footer-brand__name">Matéo Gonçalves Mota</p>
-        <p class="footer-brand__text">Développeur web &amp; applicatif</p>
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__about">
+        <a class="brand" href="index.html" aria-label="Matéo Gonçalves Mota — accueil">
+          <span class="brand__mark" aria-hidden="true">M<span>G</span></span>
+          <span class="brand__text">Matéo Gonçalves Mota</span>
+        </a>
+        <p>Développeur d'applications en alternance à la Fondation AMIPI. Je recherche une alternance de 2&nbsp;ans pour mon Master Informatique à partir de septembre&nbsp;2027.</p>
       </div>
-      <nav class="footer-nav" aria-label="Liens du pied de page">
-        <a class="footer-nav__link" href="index.html">Accueil</a>
-        <a class="footer-nav__link" href="about.html">À propos</a>
-        <a class="footer-nav__link" href="skills.html">Compétences</a>
-        <a class="footer-nav__link" href="projects.html">Projets</a>
-        <a class="footer-nav__link" href="stages.html">Stages</a>
-        <a class="footer-nav__link" href="alternance.html">Alternance</a>
-        <a class="footer-nav__link" href="veille.html">Veille</a>
-        <a class="footer-nav__link" href="contact.html">Contact</a>
-      </nav>
-      <div class="footer-social">
-        <a class="footer-social__link" href="https://github.com/Kayzmat" target="_blank" rel="noreferrer" aria-label="GitHub">🐙 GitHub</a>
-        <a class="footer-social__link" href="https://www.linkedin.com/in/mat%C3%A9o-gon%C3%A7alves-mota" target="_blank" rel="noreferrer" aria-label="LinkedIn">👔 LinkedIn</a>
+      <div>
+        <p class="footer__title">Navigation</p>
+        <ul class="footer__links">
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="about.html">Parcours</a></li>
+          <li><a href="projects.html">Projets</a></li>
+          <li><a href="skills.html">Compétences</a></li>
+          <li><a href="veille.html">Veille</a></li>
+        </ul>
       </div>
-      <p class="footer-copy">© 2026 Matéo Gonçalves Mota</p>
+      <div>
+        <p class="footer__title">Expériences</p>
+        <ul class="footer__links">
+          <li><a href="alternance.html">Alternance 2026–2027</a></li>
+          <li><a href="stage-2.html">Stage 2 — 2026</a></li>
+          <li><a href="stage-1.html">Stage 1 — 2025</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__title">Contact</p>
+        <ul class="footer__links">
+          <li><a href="mailto:mateo.goncalves@sfr.fr">mateo.goncalves@sfr.fr</a></li>
+          <li><a href="https://www.linkedin.com/in/mat%C3%A9o-gon%C3%A7alves-mota" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://github.com/Kayzmat" target="_blank" rel="noopener">GitHub</a></li>
+          <li><a href="docs/cv.pdf" target="_blank" rel="noopener">CV (PDF)</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <p>© 2026 Matéo Gonçalves Mota — site statique codé à la main (HTML, CSS, JavaScript).</p>
+      <a href="#contenu">Retour en haut ↑</a>
     </div>
   </footer>
 
-  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

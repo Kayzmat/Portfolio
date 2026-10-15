@@ -1,63 +1,52 @@
 # Portfolio — Matéo Gonçalves Mota
 
-Portfolio personnel présentant mon parcours, mes compétences, mes projets et mon alternance en développement d'applications.
+Développeur d'applications en alternance à la **Fondation AMIPI** (Licence Informatique, ESUPEC Cholet).
+🎓 **Recherche une alternance de 2 ans à partir de septembre 2027** pour un Master Informatique à l'Université d'Angers.
 
-🔗 https://kayzmat.github.io/Portfolio/
-
----
-
-## Présentation
-
-Titulaire d'un BTS SIO option SLAM (16,77/20), je suis en **Licence Informatique en alternance** à l'ESUPEC (Cholet) et **développeur d'applications à la Fondation AMIPI** (sept. 2026 – sept. 2027) : WinDev 2024, SQL et ERP AS400.
-
-🎓 **Je recherche une alternance de 2 ans à partir de septembre 2027** pour mon Master Informatique à l'Université d'Angers — ouvert à toutes les technologies, idéalement dans l'industrie.
+🔗 **https://kayzmat.github.io/Portfolio/**
 
 ---
 
-## Sections
+## Contenu du site
 
-| Section | Description |
+| Page | Contenu |
 |---|---|
-| Accueil | Présentation rapide, alternance en cours et recherche Master |
-| À propos | Parcours, certifications et objectifs |
-| Compétences | Technologies et outils maîtrisés |
-| Projets | Réalisations techniques détaillées |
-| Stages | Deux stages à la Fondation AMIPI (2025, 2026) |
-| Alternance | Missions de développeur d'applications à la Fondation AMIPI |
-| Veille | Suivi des tendances technologiques |
-| Contact | Formulaire de prise de contact |
+| Accueil | Présentation, alternance en cours, projets sélectionnés, compétences, parcours |
+| Parcours (`about.html`) | Présentation, expériences, diplômes, certifications, façon de travailler |
+| Alternance / Stages | Études de cas : Base Méthodes, impression d'étiquettes, dématérialisation, WinDev |
+| Projets | 9 projets filtrables (entreprise, web, mobile, applicatif, réseau) avec une fiche détaillée chacun |
+| Compétences | Compétences reliées aux projets qui les prouvent, tableau de synthèse BTS |
+| Veille | Low-code & no-code : chiffres Gartner, outils, comparatif, regard depuis WinDev, articles récents |
+| Contact | Formulaire (FormSubmit), coordonnées, résumé de la recherche d'alternance |
 
----
+## Technique
 
-## Stack technique
+Site **100 % statique**, sans framework ni dépendance :
 
-Site **100 % statique**, sans framework ni base de données.
+- **HTML sémantique** et accessible : lien d'évitement, navigation clavier, contrastes WCAG AA, `prefers-reduced-motion`.
+- **CSS** organisé en design system (variables, composants), **thème clair / sombre** mémorisé sans flash.
+- **JavaScript** léger et non bloquant : menu mobile, filtres de projets, aperçu des captures, copie de l'e-mail.
+- **Veille** : articles récupérés via l'API publique de Dev.to, insérés sans `innerHTML` (pas d'injection possible).
+- **SEO** : titres et descriptions uniques, URL canoniques, Open Graph, données structurées `Person`, `sitemap.xml`.
+- **Performances** : captures compressées, chargement différé, dimensions d'images déclarées.
 
-- **HTML5** — structure sémantique
-- **CSS** — mise en page, responsive, thème clair/sombre automatique
-- **JavaScript vanilla** — menu mobile, animations, flux de veille
+## Modifier le site
 
----
+Les pages publiées sont générées à partir de `_src/` :
 
-## Projets mis en avant
+```
+_src/partials/   head.html, header.html, footer.html (communs à toutes les pages)
+_src/pages/      le contenu de chaque page, avec son titre et sa description
+```
 
-- **Base Méthodes (alternance)** — Dématérialisation des checklists des moyens de production, validation par 5 responsables avec mails automatiques (WinDev 2024, SQL, AS400)
-- **Gestion des repas – SIGEANSUD** — App mobile Android + back-office Symfony 7 + API REST pour un parc animalier
-- **Gestion d'événement sportif** — Application full-stack PHP/MySQL pour un triathlon (inscriptions, parcours, statistiques)
-- **Portfolio personnel** — Ce site
+1. Modifier le fichier voulu dans `_src/`.
+2. Régénérer les pages depuis la racine du dépôt :
+   ```powershell
+   powershell -ExecutionPolicy Bypass -File build.ps1
+   ```
+3. Commit et push : GitHub Pages publie automatiquement la branche `main`.
 
----
-
-## Déploiement
-
-Le site est hébergé sur **GitHub Pages**, publié automatiquement à chaque push sur la branche `main`.
-
----
-
-## Contact
-
-📧 mateo.goncalves@sfr.fr
-📄 [Télécharger mon CV](https://kayzmat.github.io/Portfolio/docs/cv.pdf)
+Le dossier `_src/` n'est pas publié (GitHub Pages ignore les dossiers commençant par `_`).
 
 ---
 

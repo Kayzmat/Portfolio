@@ -1,0 +1,98 @@
+<!--
+title: SIGEANSUD — application mobile et API Symfony — Matéo Gonçalves Mota
+description: Projet SIGEANSUD (BTS SIO) : application Android pour les soigneurs d'un parc animalier, back-office web et API REST Symfony 7 pour tracer les repas. Rôle : développeur mobile.
+nav: projets
+-->
+  <main id="contenu" tabindex="-1">
+
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <ol><li><a href="index.html">Accueil</a></li><li><a href="projects.html">Projets</a></li><li aria-current="page">SIGEANSUD</li></ol>
+        </nav>
+        <p class="eyebrow">Projet BTS SIO · AP4</p>
+        <h1 id="page-title">SIGEANSUD : tracer chaque repas d'un parc animalier</h1>
+        <p class="lead">
+          Une solution complète pour un parc animalier : une application Android pour les soigneurs, un back-office pour
+          les gestionnaires et une API REST Symfony 7 qui relie les deux.
+        </p>
+        <ul class="tags"><li class="tag tag--accent">Java · Android</li><li class="tag tag--accent">Symfony 7</li><li class="tag">API REST</li><li class="tag">MySQL</li><li class="tag">UML</li></ul>
+        <dl class="meta-grid">
+          <div><dt>Contexte</dt><dd>BTS SIO SLAM — AP4</dd></div>
+          <div><dt>Durée</dt><dd>5 mois</dd></div>
+          <div><dt>Équipe</dt><dd>4 étudiants</dd></div>
+          <div><dt>Mon rôle</dt><dd>Développeur mobile</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="need-title">
+      <div class="container split">
+        <div class="prose" data-reveal>
+          <h2 id="need-title">Le besoin</h2>
+          <p>
+            Le parc animalier SIGEANSUD gérait l'alimentation de ses animaux à la main. Impossible de savoir rapidement
+            qui avait nourri quel animal, à quelle heure et en quelle quantité. Le parc voulait <strong>une traçabilité
+            complète</strong> pour suivre la santé des animaux et organiser le travail des soigneurs.
+          </p>
+
+          <h2>La solution de l'équipe</h2>
+          <ul class="checklist">
+            <li><strong>Application mobile</strong> : les soigneurs saisissent en temps réel l'heure et la quantité des repas donnés aux espèces dont ils ont la charge.</li>
+            <li><strong>Back-office web</strong> : les gestionnaires administrent les soigneurs, affectent les espèces, définissent les menus et consultent l'historique.</li>
+            <li><strong>API REST Symfony 7</strong> : une couche métier unique qui fournit les données au mobile et au web.</li>
+          </ul>
+
+          <h2>Ma contribution : l'application Android</h2>
+          <ul class="checklist">
+            <li><strong>Maquettage des écrans</strong> et des parcours, pensés pour le terrain : saisie rapide, peu de manipulations.</li>
+            <li><strong>Développement natif en Java</strong> sous Android Studio : saisie d'un repas, animaux par espèce, menus du jour et historique des repas.</li>
+            <li><strong>Intégration de l'API REST</strong> : récupération des menus et envoi des repas saisis.</li>
+            <li><strong>Accès filtré</strong> : chaque soigneur ne voit que les espèces qui lui sont affectées.</li>
+          </ul>
+
+          <h2>Méthode et livrables</h2>
+          <ul class="bullets">
+            <li>Modèle organisationnel des traitements (MOT) validé avec l'équipe pédagogique.</li>
+            <li>Spécification de l'API, diagrammes UML (classes, séquences) et MCD.</li>
+            <li>Plans de tests avec jeux de données, documentation utilisateur.</li>
+            <li>Suivi Agile des tâches sur Trello.</li>
+          </ul>
+
+          <h2>Ce que j'en retiens</h2>
+          <p>
+            Faire communiquer un client mobile avec une API m'a appris à raisonner en contrat d'interface : se mettre
+            d'accord sur les routes et les formats avant de coder, pour que le mobile et le back-office avancent en parallèle.
+          </p>
+        </div>
+        <aside class="aside-card sticky" data-reveal="2">
+          <figure class="figure">
+            <button class="zoomable" type="button" data-zoom aria-label="Agrandir la capture du back-office">
+              <img src="img/sigeansud-backoffice.jpg" width="1447" height="656" loading="lazy" alt="Back-office SIGEANSUD : accueil avec le nombre de soignants, d'espèces et de menus" />
+            </button>
+            <figcaption>Back-office des gestionnaires.</figcaption>
+          </figure>
+          <figure class="figure" style="max-width:220px;">
+            <button class="zoomable" type="button" data-zoom aria-label="Agrandir la capture de l'application mobile">
+              <img src="img/sigeansud-mobile.png" width="204" height="441" loading="lazy" alt="Menu de l'application Android SIGEANSUD : saisir un repas, animaux par espèce, menus du jour, historique des repas" />
+            </button>
+            <figcaption>Application Android des soigneurs.</figcaption>
+          </figure>
+          <div class="panel">
+            <h3>Stack</h3>
+            <ul class="tags"><li class="tag tag--accent">Java</li><li class="tag tag--accent">Android Studio</li><li class="tag">Symfony 7</li><li class="tag">API REST</li><li class="tag">MySQL</li><li class="tag">Laragon</li><li class="tag">Trello</li></ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;" aria-label="Autres projets">
+      <div class="container container--narrow">
+        <nav class="pager" aria-label="Projets">
+          <a href="projects.html"><span>← Tous les projets</span><strong>Projets</strong></a>
+          <a class="pager__next" href="project-triathlon.html"><span>Suivant →</span><strong>Fédération de triathlon</strong></a>
+        </nav>
+      </div>
+    </section>
+
+  </main>

@@ -1,0 +1,196 @@
+<!--
+title: Alternance à la Fondation AMIPI — Matéo Gonçalves Mota
+description: Alternance de développeur d'applications à la Fondation AMIPI (2026–2027) : Base Méthodes, checklists numériques avec circuit de validation, application d'impression d'étiquettes. WinDev 2024, SQL, AS400.
+nav: parcours
+-->
+  <main id="contenu" tabindex="-1">
+
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Fil d'Ariane">
+          <ol><li><a href="index.html">Accueil</a></li><li><a href="about.html">Parcours</a></li><li aria-current="page">Alternance</li></ol>
+        </nav>
+        <span class="badge"><span class="badge__dot" aria-hidden="true"></span>En cours · sept. 2026 – sept. 2027</span>
+        <h1 id="page-title" style="margin-top:1rem;">Développeur d'applications à la Fondation AMIPI</h1>
+        <p class="lead">
+          En alternance pendant ma Licence Informatique, je conçois et développe les applications du service Méthodes
+          et de l'atelier : des outils WinDev connectés à l'ERP AS400, qui remplacent le papier et les manipulations manuelles.
+        </p>
+        <dl class="meta-grid">
+          <div><dt>Entreprise</dt><dd>Fondation AMIPI — industrie</dd></div>
+          <div><dt>Service</dt><dd>Méthodes et atelier</dd></div>
+          <div><dt>Formation</dt><dd>Licence Informatique — ESUPEC</dd></div>
+          <div><dt>Stack</dt><dd>WinDev 2024 · SQL · AS400 · RDI</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Contexte -->
+    <section class="section" aria-labelledby="ctx-title">
+      <div class="container split">
+        <div class="prose" data-reveal>
+          <p class="eyebrow"><span class="eyebrow__num">01</span> Contexte</p>
+          <h2 id="ctx-title">Un projet commencé en stage, devenu une application complète</h2>
+          <p>
+            La Fondation AMIPI dispose de plusieurs usines de production. Chaque <strong>moyen de production</strong> (machine,
+            outillage, poste) doit être paramétré, homologué puis entretenu, et chacune de ces étapes suit une checklist
+            de contrôles.
+          </p>
+          <p>
+            Lors de mon <a href="stage-2.html">second stage</a>, j'ai développé une première version numérique des
+            checklists de maintenance. Je l'ai ensuite poursuivie en alternance : la Base Méthodes
+            couvre aujourd'hui tout le cycle de vie des checklists, avec un circuit de validation et un historique.
+          </p>
+        </div>
+        <aside class="aside-card sticky" data-reveal="2">
+          <div class="panel">
+            <h3>Mon rôle</h3>
+            <ul class="checklist">
+              <li>Recueil des besoins avec le service Méthodes</li>
+              <li>Conception des écrans et des données</li>
+              <li>Développement WinDev et requêtes SQL sur l'AS400</li>
+              <li>Présentation aux utilisateurs et ajustements</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Base Méthodes -->
+    <section class="section section--alt" id="base-methodes" aria-labelledby="bm-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow"><span class="eyebrow__num">02</span> Projet principal</p>
+            <h2 id="bm-title">Base Méthodes</h2>
+            <p class="lead">Remplacer les checklists papier des moyens de production par une application, de la saisie à l'archivage.</p>
+          </div>
+        </div>
+
+        <div class="grid grid--2" style="align-items:start;">
+          <div class="stack" style="--stack:1.25rem;" data-reveal>
+            <div class="panel">
+              <h3>Avant</h3>
+              <p class="muted">Imprimer la checklist, cocher et annoter à la main, faire signer, scanner, classer. Difficile de savoir où en est une homologation, et de retrouver un contrôle passé.</p>
+            </div>
+            <div class="panel panel--soft">
+              <h3>Après</h3>
+              <p>Les checklists se remplissent dans l'application, la validation circule toute seule entre les responsables, et tout l'historique se consulte et s'imprime en quelques clics.</p>
+            </div>
+          </div>
+          <figure class="figure" data-reveal="2">
+            <button class="zoomable" type="button" data-zoom aria-label="Agrandir la capture de la Base Méthodes">
+              <img src="img/base-methodes.png" width="1185" height="666" loading="lazy" alt="Fenêtre WinDev « Base Méthodes — Liste des réalisations » avec filtres (type, état, emplacement, site, famille), liste des moyens et boutons Historique checklist, Homologation, Maintenance, Impression QR codes" />
+            </button>
+            <figcaption>Liste des réalisations : filtres, actions sur les moyens et accès aux checklists (vue éditeur WinDev).</figcaption>
+          </figure>
+        </div>
+
+        <h3 style="margin:3rem 0 1.5rem;">Fonctionnalités</h3>
+        <div class="grid grid--3">
+          <div class="feature" data-reveal>
+            <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h9"/></svg></div>
+            <div><h3>3 types de checklists</h3><p>Paramétrage, homologation et maintenance préventive, rattachées à chaque moyen de production.</p></div>
+          </div>
+          <div class="feature" data-reveal="2">
+            <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.9M16 3.1a4 4 0 010 7.8"/></svg></div>
+            <div><h3>Validation à 5 responsables</h3><p>Une homologation n'est validée qu'après l'accord de chacun des 5 responsables concernés.</p></div>
+          </div>
+          <div class="feature" data-reveal="3">
+            <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg></div>
+            <div><h3>E-mails automatiques</h3><p>Chaque étape du circuit prévient les bonnes personnes, sans relance manuelle.</p></div>
+          </div>
+          <div class="feature" data-reveal>
+            <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v5h5"/><path d="M3.05 13A9 9 0 106 5.3L3 8"/><path d="M12 7v5l4 2"/></svg></div>
+            <div><h3>Historique</h3><p>Toutes les checklists d'un moyen restent consultables : qui a contrôlé quoi, et quand.</p></div>
+          </div>
+          <div class="feature" data-reveal="2">
+            <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><path d="M6 14h12v8H6z"/></svg></div>
+            <div><h3>Impression des états</h3><p>Les états et documents utiles se génèrent directement depuis l'application.</p></div>
+          </div>
+          <div class="feature" data-reveal="3">
+            <div class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.7-4 3-9 3s-9-1.3-9-3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/></svg></div>
+            <div><h3>Données dans l'ERP</h3><p>Les données vivent dans l'AS400 : requêtes SQL depuis WinDev et fichiers créés avec RDI.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Étiquettes -->
+    <section class="section" id="etiquettes" aria-labelledby="et-title">
+      <div class="container split">
+        <div class="prose" data-reveal>
+          <p class="eyebrow"><span class="eyebrow__num">03</span> Outil atelier</p>
+          <h2 id="et-title">Application d'impression d'étiquettes</h2>
+          <p>
+            Pour imprimer certaines étiquettes, il fallait lancer à la main des commandes dans un langage spécifique :
+            une opération lente, réservée aux personnes qui connaissaient la syntaxe, et source d'erreurs.
+          </p>
+          <p>
+            J'ai développé une application qui remplace ces commandes par une interface simple : on choisit ce que
+            l'on veut imprimer, l'application construit et envoie la commande. <strong>L'impression est plus rapide et
+            accessible à toute l'équipe.</strong>
+          </p>
+        </div>
+        <div class="panel" data-reveal="2">
+          <h3>En résumé</h3>
+          <dl class="meta-grid" style="grid-template-columns:1fr;margin-top:0;">
+            <div><dt>Problème</dt><dd>Commandes manuelles, lentes et techniques</dd></div>
+            <div><dt>Solution</dt><dd>Interface WinDev qui génère la commande</dd></div>
+            <div><dt>Résultat</dt><dd>Impression plus rapide et plus simple</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compétences -->
+    <section class="section section--alt" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow"><span class="eyebrow__num">04</span> Acquis</p>
+            <h2 id="skills-title">Ce que l'alternance me fait progresser</h2>
+          </div>
+        </div>
+        <div class="grid grid--2">
+          <ul class="checklist" data-reveal>
+            <li><strong>Mener un projet de bout en bout</strong>, du recueil des besoins à la mise en service.</li>
+            <li><strong>Modéliser un processus métier</strong> : états d'une checklist, rôles des valideurs, notifications.</li>
+            <li><strong>Travailler avec un ERP industriel</strong> : données AS400, SQL et RDI.</li>
+          </ul>
+          <ul class="checklist" data-reveal="2">
+            <li><strong>Communiquer avec des utilisateurs non techniques</strong> et présenter mon travail.</li>
+            <li><strong>Maintenir des applications utilisées au quotidien</strong> par l'atelier, avec l'exigence de fiabilité que cela implique.</li>
+            <li><strong>Gagner en autonomie</strong> en m'organisant entre école et entreprise.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Navigation entre expériences">
+      <div class="container container--narrow">
+        <nav class="pager" aria-label="Expériences">
+          <a href="stage-2.html"><span>← Précédent</span><strong>Stage 2 — 2026</strong></a>
+          <a class="pager__next" href="projects.html"><span>Ensuite →</span><strong>Mes projets</strong></a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-band" data-reveal>
+          <div>
+            <p class="eyebrow">Et après&nbsp;?</p>
+            <h2 id="cta-title">Je cherche une alternance pour mon Master</h2>
+            <p>2 ans à partir de <strong>septembre 2027</strong>, Master Informatique à l'Université d'Angers. Ouvert à toutes les technologies, idéalement dans l'industrie.</p>
+            <ul class="cta-band__list"><li>5 sem. université / 4 sem. entreprise jusqu'en mars</li><li>Puis temps plein en entreprise</li></ul>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn--light" href="contact.html">Me contacter</a>
+            <a class="btn btn--outline-light" href="docs/cv.pdf" target="_blank" rel="noopener">Voir mon CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
