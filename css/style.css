@@ -151,7 +151,7 @@ button, input, select, textarea { font-family: inherit; }
 
 .site-nav__list { display: flex; gap: .15rem; flex-shrink: 1; }
 .site-nav__link {
-  display: block; padding: .4rem .65rem; font-size: .9rem; font-weight: 600;
+  display: block; padding: .4rem .55rem; font-size: .9rem; font-weight: 600;
   color: var(--muted); border-radius: 8px; white-space: nowrap;
   transition: color var(--dur) var(--ease), background var(--dur) var(--ease);
 }
@@ -522,7 +522,8 @@ figcaption { text-align: center; font-size: .82rem; color: var(--muted); margin-
 .delay-6 { transition-delay: .6s; }
 
 /* ─────── RESPONSIVE ─────── */
-@media (max-width: 980px) {
+/* Menu burger dès 1180px : 8 liens + CV ne tiennent pas sur une ligne en dessous */
+@media (max-width: 1180px) {
   .nav-toggle { display: flex; }
   .site-nav {
     position: fixed; inset: 0; padding: 5rem 1.5rem 2.5rem;
@@ -576,6 +577,8 @@ figcaption { text-align: center; font-size: .82rem; color: var(--muted); margin-
   .site-nav__actions .btn--ghost:hover {
     background: rgba(255,255,255,.12);
   }
+}
+@media (max-width: 980px) {
   .hero__inner { grid-template-columns: 1fr; }
   .grid--2 { grid-template-columns: 1fr; }
   .grid--3 { grid-template-columns: 1fr 1fr; }
@@ -603,7 +606,7 @@ img, video, iframe, table {
   max-width: 100%;
 }
 /* Ensure the hidden menu never causes scroll even on old Safari/Chrome */
-@media (max-width: 980px) {
+@media (max-width: 1180px) {
   .site-nav:not([data-open="true"]) {
     pointer-events: none;
   }
