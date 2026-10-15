@@ -52,7 +52,7 @@ function initSmoothScroll() {
 
 function initAccessibility() {
   document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
+    if (e.key === 'Escape' && nav && toggle) {
       nav.setAttribute('data-open', 'false');
       toggle.setAttribute('aria-expanded', 'false');
       document.body.classList.remove('menu-open');
@@ -63,7 +63,7 @@ function initAccessibility() {
 function checkSuccessMessage() {
   if (window.location.search.includes('success=true')) {
     const msg = document.getElementById('success-message');
-    if (msg) msg.style.display = 'block';
+    if (msg) msg.hidden = false;
   }
 }
 

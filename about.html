@@ -14,6 +14,7 @@
   <script defer src="js/main.js"></script>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
 
   <header class="site-header">
     <div class="container header-inner">
@@ -28,12 +29,12 @@
           <li><a class="site-nav__link" href="skills.html">Compétences</a></li>
           <li><a class="site-nav__link" href="projects.html">Projets</a></li>
           <li><a class="site-nav__link" href="stages.html">Stages</a></li>
+          <li><a class="site-nav__link" href="alternance.html">Alternance</a></li>
           <li><a class="site-nav__link" href="veille.html">Veille</a></li>
           <li><a class="site-nav__link" href="contact.html">Contact</a></li>
         </ul>
         <div class="site-nav__actions">
           <a class="btn btn--primary" href="docs/cv.pdf" target="_blank" rel="noreferrer">Télécharger CV</a>
-          <a class="btn btn--outline" href="docs/tableau_competences.xlsx" download="tableau_competences_mateo.xlsx">Tableau compétences</a>
         </div>
       </nav>
     </div>
@@ -47,8 +48,8 @@
         <p class="hero__eyebrow"><span class="hero__eyebrow-dot"></span>Mon histoire</p>
         <h1 class="hero__title" id="about-title">À propos de moi</h1>
         <p class="hero__subtitle">
-          Étudiant passionné par le développement web et applicatif, je construis des solutions
-          numériques fiables, accessibles et pensées pour les utilisateurs.
+          Alternant en Licence Informatique et développeur d'applications à la Fondation AMIPI,
+          je construis des solutions numériques fiables, pensées pour les utilisateurs du terrain.
         </p>
         <div class="hero__actions" style="margin-top:1.5rem;">
           <a class="btn btn--primary" href="docs/cv.pdf" target="_blank" rel="noreferrer">Télécharger mon CV</a>
@@ -66,10 +67,14 @@
             <p class="section__overline">Parcours</p>
             <h2 id="parcours-title">Mon background</h2>
             <p style="color:var(--muted);margin-top:1rem;">
-              Actuellement en BTS Services Informatiques aux Organisations (option SLAM), j'ai acquis
-              des bases solides en développement web, gestion de bases de données et architecture
-              applicative. En parallèle, je réalise des projets personnels pour explorer de nouvelles
-              technologies et consolider mes acquis.
+              Après un BTS SIO option SLAM obtenu avec 16,77/20 de moyenne, je suis en Licence Informatique
+              en alternance à l'ESUPEC (Cholet) et développeur d'applications à la Fondation AMIPI.
+              J'y conçois des applications WinDev reliées à l'ERP AS400 pour le service Méthodes et l'atelier.
+              En parallèle, je réalise des projets personnels pour explorer de nouvelles technologies.
+            </p>
+            <p style="color:var(--muted);">
+              <strong style="color:var(--text);">Prochaine étape :</strong> un Master Informatique à l'Université
+              d'Angers, en alternance sur 2 ans à partir de septembre 2027 — idéalement dans l'industrie.
             </p>
 
             <div style="margin-top:2rem;">
@@ -159,29 +164,53 @@
           <div class="timeline fade-up">
             <div class="timeline__item">
               <span class="timeline__dot"></span>
+              <p class="timeline__year">Sept. 2027 — objectif</p>
+              <p class="timeline__title">Master Informatique — Université d'Angers</p>
+              <p class="timeline__desc">
+                Recherche d'une alternance de 2 ans, ouvert à toutes les technologies, idéalement dans l'industrie.
+              </p>
+            </div>
+            <div class="timeline__item">
+              <span class="timeline__dot"></span>
+              <p class="timeline__year">Sept. 2026 – sept. 2027</p>
+              <p class="timeline__title"><a href="alternance.html">Alternance — Fondation AMIPI</a></p>
+              <p class="timeline__desc">
+                Développeur d'applications : dématérialisation des checklists des moyens de production
+                (Base Méthodes) et application d'impression d'étiquettes. WinDev 2024, SQL, AS400, RDI.
+              </p>
+            </div>
+            <div class="timeline__item">
+              <span class="timeline__dot"></span>
+              <p class="timeline__year">2026 – 2027</p>
+              <p class="timeline__title">Licence Informatique — ESUPEC, Cholet</p>
+              <p class="timeline__desc">
+                Licence en alternance, dans la continuité du BTS SIO.
+              </p>
+            </div>
+            <div class="timeline__item">
+              <span class="timeline__dot"></span>
+              <p class="timeline__year">Janv. – févr. 2026</p>
+              <p class="timeline__title"><a href="stage-2.html">Stage 2 — Fondation AMIPI</a></p>
+              <p class="timeline__desc">
+                Application de dématérialisation des checklists de maintenance, présentation du projet
+                aux professionnels et création de fichiers AS400 avec RDI.
+              </p>
+            </div>
+            <div class="timeline__item">
+              <span class="timeline__dot"></span>
+              <p class="timeline__year">Mai – juin 2025</p>
+              <p class="timeline__title"><a href="stage-1.html">Stage 1 — Fondation AMIPI</a></p>
+              <p class="timeline__desc">
+                Prise en main de WinDev, développement et maintenance d'applications, tests et correction de bugs.
+              </p>
+            </div>
+            <div class="timeline__item">
+              <span class="timeline__dot"></span>
               <p class="timeline__year">2024 – 2026</p>
-              <p class="timeline__title">BTS SIO — option SLAM</p>
+              <p class="timeline__title">BTS SIO option SLAM — obtenu (16,77/20)</p>
               <p class="timeline__desc">
-                Formation en développement logiciel et applicatif : web, bases de données, architecture MVC,
-                gestion de projet Agile et stages en entreprise.
-              </p>
-            </div>
-            <div class="timeline__item">
-              <span class="timeline__dot"></span>
-              <p class="timeline__year">2025 (Stage 2)</p>
-              <p class="timeline__title">Stage — Fondation Amipi</p>
-              <p class="timeline__desc">
-                Développement et maintenance d'applications internes avec Windev, SQL et AS400
-                au sein des usines de production.
-              </p>
-            </div>
-            <div class="timeline__item">
-              <span class="timeline__dot"></span>
-              <p class="timeline__year">2024 (Stage 1)</p>
-              <p class="timeline__title">Stage — Fondation Amipi</p>
-              <p class="timeline__desc">
-                Prise en main de l'environnement Windev, développement d'outils de suivi
-                et de gestion pour les équipes de production.
+                ESUPEC, Lycée Sainte-Marie, Cholet. Développement logiciel et applicatif : web, bases de données,
+                architecture MVC, gestion de projet Agile.
               </p>
             </div>
             <div class="timeline__item">
@@ -252,12 +281,13 @@
         <a class="footer-nav__link" href="skills.html">Compétences</a>
         <a class="footer-nav__link" href="projects.html">Projets</a>
         <a class="footer-nav__link" href="stages.html">Stages</a>
+        <a class="footer-nav__link" href="alternance.html">Alternance</a>
         <a class="footer-nav__link" href="veille.html">Veille</a>
         <a class="footer-nav__link" href="contact.html">Contact</a>        
       </nav>
       <div class="footer-social">
         <a class="footer-social__link" href="https://github.com/Kayzmat" target="_blank" rel="noreferrer" aria-label="GitHub">🐙 GitHub</a>
-        <a class="footer-social__link" href="https://linkedin.com/in/mateo-goncalves-mota" target="_blank" rel="noreferrer" aria-label="LinkedIn">👔 LinkedIn</a>
+        <a class="footer-social__link" href="https://www.linkedin.com/in/mat%C3%A9o-gon%C3%A7alves-mota" target="_blank" rel="noreferrer" aria-label="LinkedIn">👔 LinkedIn</a>
       </div>
       <p class="footer-copy">© 2026 Matéo Gonçalves Mota</p>
     </div>

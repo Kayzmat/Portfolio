@@ -581,7 +581,6 @@ figcaption { text-align: center; font-size: .82rem; color: var(--muted); margin-
   .grid--3 { grid-template-columns: 1fr 1fr; }
   .footer-inner { grid-template-columns: 1fr; gap: 1.5rem; }
   .project__meta { grid-template-columns: 1fr; }
-  .skill-item { grid-template-columns: 8rem 1fr 2rem; }
 
   /* Reset any letter-spacing overrides to keep text from feeling stretched */
   * { letter-spacing: normal !important; }
@@ -592,7 +591,6 @@ figcaption { text-align: center; font-size: .82rem; color: var(--muted); margin-
   .btn { width: 100%; justify-content: center; }
   .grid--3 { grid-template-columns: 1fr; }
   .skill-item { grid-template-columns: 1fr; gap: .3rem; }
-  .skill__pct { text-align: left; }
   .project__meta { grid-template-columns: 1fr 1fr; }
 }
 
@@ -610,3 +608,42 @@ img, video, iframe, table {
     pointer-events: none;
   }
 }
+
+/* ─────── SKIP LINK ─────── */
+.skip-link {
+  position: absolute; left: 1rem; top: -4rem; z-index: 300;
+  padding: .6rem 1rem; border-radius: 10px;
+  background: var(--primary); color: #fff; font-weight: 700;
+  transition: top var(--dur) var(--ease);
+}
+.skip-link:focus { top: 1rem; }
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+
+/* ─────── CALLOUT (recherche d'alternance) ─────── */
+.callout {
+  display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+  margin: 0 auto clamp(1rem, 3vw, 2rem);
+  padding: 1.5rem 1.75rem; border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--primary) 7%, var(--bg));
+  border: 1px solid color-mix(in srgb, var(--primary) 25%, var(--border));
+  border-left: 4px solid var(--primary);
+}
+.callout__title { font-family: var(--font-head); font-weight: 700; font-size: 1.1rem; margin: 0; }
+.callout__text { color: var(--muted); font-size: .95rem; margin: .5rem 0 0; max-width: 70ch; }
+@media (max-width: 760px) {
+  .callout { flex-direction: column; align-items: stretch; }
+}
+
+/* ─────── FORM SUCCESS ─────── */
+.alert-success {
+  margin-top: 1rem; padding: 1rem 1.25rem; border-radius: var(--radius);
+  background: color-mix(in srgb, #22c55e 12%, var(--bg));
+  border: 1px solid color-mix(in srgb, #22c55e 40%, var(--border));
+  color: var(--text);
+}
+.alert-success p { margin: 0; }
+
+/* Liens dans la timeline et les sous-titres */
+.timeline__title a { color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--primary) 40%, transparent); text-underline-offset: 3px; }
+.timeline__title a:hover { color: var(--primary); }
+.hero__subtitle a { text-decoration: underline; text-underline-offset: 3px; }

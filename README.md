@@ -1,14 +1,16 @@
 # Portfolio — Matéo Gonçalves Mota
 
-Portfolio personnel présentant mon parcours, mes compétences et mes projets en développement web et applicatif.
+Portfolio personnel présentant mon parcours, mes compétences, mes projets et mon alternance en développement d'applications.
 
-🔗https://kayzmat.github.io/Portfolio/
+🔗 https://kayzmat.github.io/Portfolio/
 
 ---
 
 ## Présentation
 
-Étudiant en BTS SIO (Services Informatiques aux Organisations), je conçois et développe des applications web et des services informatiques. Ce portfolio regroupe mes réalisations, mes stages et ma veille technologique.
+Titulaire d'un BTS SIO option SLAM (16,77/20), je suis en **Licence Informatique en alternance** à l'ESUPEC (Cholet) et **développeur d'applications à la Fondation AMIPI** (sept. 2026 – sept. 2027) : WinDev 2024, SQL et ERP AS400.
+
+🎓 **Je recherche une alternance de 2 ans à partir de septembre 2027** pour mon Master Informatique à l'Université d'Angers — ouvert à toutes les technologies, idéalement dans l'industrie.
 
 ---
 
@@ -16,11 +18,12 @@ Portfolio personnel présentant mon parcours, mes compétences et mes projets en
 
 | Section | Description |
 |---|---|
-| Accueil | Présentation rapide et accès aux documents |
-| À propos | Mon parcours et mes objectifs |
+| Accueil | Présentation rapide, alternance en cours et recherche Master |
+| À propos | Parcours, certifications et objectifs |
 | Compétences | Technologies et outils maîtrisés |
 | Projets | Réalisations techniques détaillées |
-| Stages | Expériences professionnelles |
+| Stages | Deux stages à la Fondation AMIPI (2025, 2026) |
+| Alternance | Missions de développeur d'applications à la Fondation AMIPI |
 | Veille | Suivi des tendances technologiques |
 | Contact | Formulaire de prise de contact |
 
@@ -28,32 +31,33 @@ Portfolio personnel présentant mon parcours, mes compétences et mes projets en
 
 ## Stack technique
 
-Ce site est un site **100% statique**, sans framework ni base de données.
+Site **100 % statique**, sans framework ni base de données.
 
-- **HTML5** — Structure sémantique
-- **CSS** — Mise en page et responsive design
-- **JavaScript vanilla** — Interactivité
+- **HTML5** — structure sémantique
+- **CSS** — mise en page, responsive, thème clair/sombre automatique
+- **JavaScript vanilla** — menu mobile, animations, flux de veille
 
 ---
 
 ## Projets mis en avant
 
-- **Portfolio personnel** — Ce site, conçu pour être performant et maintenable
+- **Base Méthodes (alternance)** — Dématérialisation des checklists des moyens de production, validation par 5 responsables avec mails automatiques (WinDev 2024, SQL, AS400)
 - **Gestion des repas – SIGEANSUD** — App mobile Android + back-office Symfony 7 + API REST pour un parc animalier
 - **Gestion d'événement sportif** — Application full-stack PHP/MySQL pour un triathlon (inscriptions, parcours, statistiques)
+- **Portfolio personnel** — Ce site
 
 ---
 
 ## Déploiement
 
-Le site est hébergé gratuitement sur **Netlify**, avec déploiement automatique à chaque push sur la branche `master`.
+Le site est hébergé sur **GitHub Pages**, publié automatiquement à chaque push sur la branche `main`.
 
 ---
 
 ## Contact
 
-Disponible pour un **stage**, une **alternance** ou une **collaboration**.  
-📄 [Télécharger mon CV](https://kayzmat.github.io/Portfolio//docs/cv.pdf)
+📧 mateo.goncalves@sfr.fr
+📄 [Télécharger mon CV](https://kayzmat.github.io/Portfolio/docs/cv.pdf)
 
 ---
 
